@@ -1,0 +1,138 @@
+/* RESET DE NAVEGADOR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* CORES DO NOSSO BLOG (Identidade Visual) */
+:root {
+    --fundo-site: #f0f2f5;       /* Cinza bem claro, estilo o fundo do Pinterest */
+    --fundo-menu: #ffffff;       /* Branco para o painel lateral destacar */
+    --cor-texto-principal: #111111; /* Preto quase puro para títulos */
+    --cor-texto-secundario: #5f5f5f; /* Cinza para informações menores */
+    --cor-botao-hover: #e1e1e1;  /* Cinza claro para quando passar o mouse */
+}
+
+body {
+    background-color: var(--fundo-site);
+    color: var(--cor-texto-principal);
+}/* ESTRUTURA DIVIDIDA (Menu na esquerda, Conteúdo na direita) */
+.container-plataforma {
+    display: flex;
+    min-height: 100vh; /* Garante que o site ocupe a altura toda da tela */
+}/* PAINEL LATERAL */
+.menu-lateral {
+    width: 280px;                /* Largura fixa para o menu */
+    background-color: var(--fundo-menu);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;      /* Alinha os blocos de cima para baixo */
+    gap: 35px;                   /* Espaço entre as seções do menu */
+    border-right: 1px solid #e6e6e6;
+}
+
+.logo-blog h2 {
+    font-size: 24px;
+    color: #bd081c; /* Um vermelho vibrante para a logo */
+}
+
+.grupo-menu h3 {
+    font-size: 14px;
+    text-transform: uppercase;   /* Deixa as letras em maiúsculo */
+    color: var(--cor-texto-secundario);
+    margin-bottom: 15px;
+    letter-spacing: 1px;         /* Espaçamento entre as letras */
+}
+
+/* BOTÕES DAS CATEGORIAS */
+.btn-menu {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;           /* Deixa o efeito de passar o mouse suave */
+}
+
+.btn-menu:hover {
+    background-color: var(--cor-botao-hover);
+}
+
+/* GRADE DE BANDEIRAS (Visual de Bolinhas) */
+.grade-bandeiras {
+    display: flex;
+    flex-wrap: wrap;             /* Se não couber na linha, pula para a de baixo */
+    gap: 12px;
+}
+
+.btn-pais {
+    font-size: 28px;             /* Aumenta o tamanho do emoji da bandeira */
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-pais:hover {
+    transform: scale(1.3);       /* A bandeira aumenta um pouquinho ao passar o mouse! */
+}/* O MURAL DO PINTEREST */
+.mural-pinterest {
+    flex-content: 1;             /* Faz o mural ocupar todo o resto da tela */
+    padding: 40px;
+    display: grid;
+    /* Cria colunas automáticas de tamanho igual (mínimo 250px) */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;                   /* Espaço entre os cards */
+    align-items: start;
+}
+
+/* OS CARDS (QUADRADINHOS) */
+.card-pinterest {
+    background-color: #ffffff;
+    border-radius: 16px;         /* Bordas bem arredondadas estilo Pinterest */
+    overflow: hidden;            /* Garante que a imagem não saia das bordas prontas */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra bem leve e elegante */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.card-pinterest:hover {
+    transform: translateY(-5px); /* O card sobe de leve quando o usuário passa o mouse */
+}
+
+/* Espaço da Imagem (Colocamos cores temporárias para você ver o formato) */
+.imagem-card {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Simulando tamanhos diferentes para as imagens (efeito cascata do Pinterest) */
+.placeholder-img1 { height: 300px; background-color: #3a7bd5; }
+.placeholder-img2 { height: 200px; background-color: #3a6073; }
+.placeholder-img3 { height: 350px; background-color: #00b4db; }
+.placeholder-img4 { height: 250px; background-color: #0083b0; }
+
+/* Textos dentro do Card */
+.info-card {
+    padding: 15px;
+}
+
+.info-card span {
+    font-size: 12px;
+    color: var(--cor-texto-secundario);
+    font-weight: bold;
+}
+
+.info-card h4 {
+    font-size: 16px;
+    margin-top: 5px;
+}
