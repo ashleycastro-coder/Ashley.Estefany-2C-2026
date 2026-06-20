@@ -72,22 +72,22 @@ h1, h2, .botao-acao-navegar {
 }
 
 .icone-mapa {
-    font-size: 50px; /* Deixamos a flor um pouco maior também */
+    font-size: 35px; /* Deixamos o mapa um pouco maior também */
 }
 
 .botao-acao-navegar {
-    background-color: #469e63;
+    background-color: #e60023;
     color: #ffffff;
     border: none;
-    padding: 12px 30px; /* Botão ligeiramente maior e mais elegante */
-    font-size: 10px;
+    padding: 12px 28px; /* Botão ligeiramente maior e mais elegante */
+    font-size: 16px;
     border-radius: 24px;
     cursor: pointer;
     transition: background 0.2s;
 }
 
 .botao-acao-navegar:hover {
-    background-color: #c01956;
+    background-color: #b8001a;
 }
 
 .fileira-bandeiras {
@@ -126,7 +126,6 @@ h1, h2, .botao-acao-navegar {
 .desenho-bandeira:hover {
     transform: scale(1.2);
 }
-
 
 
 /* ==========================================================================
