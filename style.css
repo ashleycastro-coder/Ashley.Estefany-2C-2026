@@ -72,12 +72,12 @@ h1, h2, .botao-acao-navegar {
 }
 
 .icone-mapa {
-    font-size: 35px; /* Deixamos o mapa um pouco maior também */
+    font-size: 50px; /* Deixamos a flor um pouco maior também */
 }
 
 .botao-acao-navegar {
     background-color: #469e63;
-    color: #ffffff;
+    color: #ded4d4;
     border: none;
     padding: 12px 28px; /* Botão ligeiramente maior e mais elegante */
     font-size: 16px;
@@ -87,7 +87,7 @@ h1, h2, .botao-acao-navegar {
 }
 
 .botao-acao-navegar:hover {
-    background-color: #b8001a;
+    background-color: #c01956;
 }
 
 .fileira-bandeiras {
