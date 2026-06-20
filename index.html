@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aventure-se no nosso sazón</title>
+    <title>América do Sul</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,40 +13,33 @@
 <body>
 
     <header class="topo-imagem">
-    <h1 class="titulo-esboco">
-         <br>Aventure-se no nosso sazón
-        <span class="subtitulo-continente">América do Sul</span>
-    </h1>
-    <div class="lado-direito-limpo"></div>
-</header>
+        <h1 class="titulo-esboco">
+            América do Sul <br>
+            <span class="subtitulo-continente">Aventure-se nestas terras de sazon</span>
+        </h1>
+        <div class="lado-direito-limpo"></div>
+    </header>
 
-   <nav class="barra-abas">
-    <div class="icone-mapa" title="América do Sul">🦋</div>
-    
-    <button class="botao-acao-navegar" onclick="toggleBandeiras()">Navegar 👉🏾</button>
-    
-    <div id="fileiraPaises" class="fileira-bandeiras escondido">
-        <img src="https://flagcdn.com/w40/ar.png" alt="Argentina" title="Argentina" class="desenho-bandeira">
-        <img src="https://flagcdn.com/w40/bo.png" alt="Bolívia" title="Bolívia" class="desenho-bandeira">
-        <img src="https://flagcdn.com/w40/br.png" alt="Brasil" title="Brasil" class="desenho-bandeira">
-        <img src="https://flagcdn.com/w40/cl.png" alt="Chile" title="Chile" class="desenho-bandeira">
-        <img src="https://flagcdn.com/w40/co.png" alt="Colômbia" title="Colômbia" class="desenho-bandeira">
-        <img src="https://flagcdn.com/w40/ec.png" alt="Equador" title="Equador" class="desenho-bandeira">
-        <img src="https://flagcdn.com/w40/gy.png" alt="Guiana" title="Guiana" class="desenho-bandeira">
-        <img src="https://flagcdn.com/w40/py.png" alt="Paraguai" title="Paraguai" class="desenho-bandeira">
-        <img src="https://flagcdn.com/w40/pe.png" alt="Peru" title="Peru" class="desenho-bandeira">
-        <img src="https://flagcdn.com/w40/sr.png" alt="Suriname" title="Suriname" class="desenho-bandeira">
-        <img src="https://flagcdn.com/w40/uy.png" alt="Uruguai" title="Uruguai" class="desenho-bandeira">
-        <img src="https://flagcdn.com/w40/ve.png" alt="Venezuela" title="Venezuela" class="desenho-bandeira">
-    </div>
-</nav>
-
-<script>
-    function toggleBandeiras() {
-        var fileira = document.getElementById("fileiraPaises");
-        fileira.classList.toggle("escondido");
-    }
-</script>
+    <nav class="barra-abas">
+        <div class="icone-mapa" title="América do Sul">🦋</div>
+        
+        <button class="botao-acao-navegar" onclick="toggleBandeiras()">Navegar 👉🏾</button>
+        
+        <div id="fileiraPaises" class="fileira-bandeiras escondido">
+            <img src="https://flagcdn.com/w40/ar.png" alt="Argentina" title="Argentina" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/bo.png" alt="Bolívia" title="Bolívia" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/br.png" alt="Brasil" title="Brasil" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/cl.png" alt="Chile" title="Chile" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/co.png" alt="Colômbia" title="Colômbia" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/ec.png" alt="Equador" title="Equador" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/gy.png" alt="Guiana" title="Guiana" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/py.png" alt="Paraguai" title="Paraguai" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/pe.png" alt="Peru" title="Peru" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/sr.png" alt="Suriname" title="Suriname" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/uy.png" alt="Uruguai" title="Uruguai" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/ve.png" alt="Venezuela" title="Venezuela" class="desenho-bandeira">
+        </div>
+    </nav>
 
     <div class="divisao-layout">
         
@@ -64,6 +57,13 @@
         </main>
 
     </div>
+
+    <script>
+        function toggleBandeiras() {
+            var fileira = document.getElementById("fileiraPaises");
+            fileira.classList.toggle("escondido");
+        }
+    </script>
 
 </body>
 </html>
