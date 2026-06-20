@@ -3,71 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Se Aventure na América do Sul</title>
-</head>
+    <title>Aventure-se nestas terras ricas</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    </head>
 <body>
 
-    <header>
-        <h1>Se Aventure na América do Sul</h1>
-        
-        <a href="index.html">Página Inicial</a>
+    <header class="cabecalho-tropical">
+        <div class="header-conteudo">
+            <h1 class="titulo-principal">Aventure-se nestas terras ricas</h1>
+            
+            <div class="area-azul-reserva"></div>
+        </div>
     </header>
 
-    <hr> <nav>
-        <p><strong>Escolha um país para explorar:</strong></p>
-        
-        <button title="Argentina">🇦🇷 Argentina</button>
-        <button title="Bolívia">🇧🇴 Bolívia</button>
-        <button title="Brasil">🇧🇷 Brasil</button>
-        <button title="Chile">🇨🇱 Chile</button>
-        <button title="Colômbia">🇨🇴 Colômbia</button>
-        <button title="Equador">🇪🇨 Equador</button>
-        <button title="Guiana">🇬🇾 Guiana</button>
-        <button title="Paraguai">🇵🇾 Paraguai</button>
-        <button title="Peru">🇵🇪 Peru</button>
-        <button title="Suriname">🇸🇷 Suriname</button>
-        <button title="Uruguai">🇺🇾 Uruguai</button>
-        <button title="Venezuela">🇻🇪 Venezuela</button>
+    <nav class="barra-pinterest">
+        <div class="logo-mapa" title="Mapa da América do Sul">
+            <span role="img" aria-label="Mini mapa da América do Sul">🗺️</span>
+        </div>
+
+        <div class="menu-navegar">
+            <button class="btn-navegar">Navegar 👇</button>
+            
+            <div class="grade-paises">
+                <button title="Argentina">🇦🇷</button>
+                <button title="Bolívia">🇧🇴</button>
+                <button title="Brasil">🇧🇷</button>
+                <button title="Chile">🇨🇱</button>
+                <button title="Colômbia">🇨🇴</button>
+                <button title="Equador">🇪🇨</button>
+                <button title="Guiana">🇬🇾</button>
+                <button title="Paraguai">🇵🇾</button>
+                <button title="Peru">🇵🇪</button>
+                <button title="Suriname">🇸🇷</button>
+                <button title="Uruguai">🇺🇾</button>
+                <button title="Venezuela">🇻🇪</button>
+            </div>
+        </div>
     </nav>
 
-    <hr>
-
-    <main style="display: flex; gap: 40px;">
-
-        <aside>
-            <p><strong>Categorias:</strong></p>
-            
-            <div>
-                <a href="gastronomia.html"><button title="Gastronomia" style="font-size: 24px;">🍽️</button></a>
-            </div>
-            <div>
-                <a href="destinos.html"><button title="Destinos Turísticos" style="font-size: 24px;">✈️</button></a>
-            </div>
-            <div>
-                <a href="festas.html"><button title="Festas Populares" style="font-size: 24px;">🎉</button></a>
-            </div>
-            <div>
-                <a href="musica.html"><button title="Ritmo e Música" style="font-size: 24px;">🎵</button></a>
-            </div>
-            <div>
-                <a href="historia.html"><button title="História e Cultura" style="font-size: 24px;">🗿</button></a>
-            </div>
+    <main class="corpo-plataforma">
+        
+        <aside class="menu-lateral-icones">
+            <a href="index.html" aria-label="Página Inicial">
+                <button class="btn-categoria" title="Página Inicial">🏠</button>
+            </a>
+            <a href="gastronomia.html" aria-label="Gastronomia">
+                <button class="btn-categoria" title="Gastronomia">🌮</button>
+            </a>
+            <a href="destinos.html" aria-label="Destinos">
+                <button class="btn-categoria" title="Destinos">✈️</button>
+            </a>
+            <a href="festas.html" aria-label="Festas Populares">
+                <button class="btn-categoria" title="Festas Populares">🎉</button>
+            </a>
+            <a href="musica.html" aria-label="Ritmo e Música">
+                <button class="btn-categoria" title="Ritmo e Música">🎵</button>
+            </a>
+            <a href="historia.html" aria-label="História e Cultura">
+                <button class="btn-categoria" title="História e Cultura">🗿</button>
+            </a>
         </aside>
 
-        <section>
-            <h2>Bem-vindo ao Guia Cultural!</h2>
-            <p>Esta é a página inicial do site. Aqui embaixo vai aparecer a informação que o usuário escolher quando clicar em um país e em uma das categorias ao lado.</p>
-            
-            <p><em>[Espaço reservado para os textos e conteúdos do blog]</em></p>
+        <section class="conteudo-central">
+            <h2>Área de Exibição</h2>
+            <p>O esqueleto está montado. Quando clicarmos nos botões, os textos serão carregados aqui.</p>
         </section>
 
     </main>
-
-    <hr>
-
-    <footer>
-        <p>&copy; 2026 - Se Aventure na América do Sul. Desenvolvido por Ashley.</p>
-    </footer>
 
 </body>
 </html>
