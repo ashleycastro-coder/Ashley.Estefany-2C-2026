@@ -34,7 +34,7 @@ h1, h2, .botao-acao-navegar {
 }
 
 .titulo-esboco {
-    color: #000000;
+    color: #ffffff;
     font-size: 38px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Proteção invisível para ler a fonte clara */
 }
