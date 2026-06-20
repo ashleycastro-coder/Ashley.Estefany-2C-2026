@@ -35,8 +35,18 @@ h1, h2, .botao-acao-navegar {
 
 .titulo-esboco {
     color: #ffffff;
-    font-size: 38px;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Proteção invisível para ler a fonte clara */
+    font-size: 46px; /* Aumentamos o tamanho do título principal */
+    line-height: 1.2; /* Dá um espaço respirável entre as duas linhas */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Nova regra profissional para o subtítulo */
+.subtitulo-continente {
+    font-size: 26px; /* Letra menor para o "América do Sul" */
+    font-weight: 600; /* Um pouco menos grossa que o título principal */
+    color: #ffe600; /* Que tal um tom amarelo tropical para destacar? Se preferir branco, mude para #ffffff */
+    display: inline-block;
+    margin-top: 8px; /* Afasta um pouquinho da linha de cima */
 }
 
 .lado-direito-limpo {
