@@ -56,40 +56,78 @@ h1, h2, .botao-acao-navegar {
 /* ==========================================================================
    2. BARRA HORIZONTAL (ESTILO ABAS DO CADERNO)
    ========================================================================== */
+
+
+/* ==========================================================================
+   2. BARRA HORIZONTAL (MAIOR E INTERATIVA)
+   ========================================================================== */
 .barra-abas {
     width: 100%;
-    background-color: #f0f0f0; /* Cinza claro limpo de fundo */
-    padding: 10px 40px;
+    background-color: #f0f0f0; 
+    padding: 20px 40px; /* Aumentamos de 10px para 20px para dar mais comprimento e espaço */
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     border-bottom: 2px solid #e0e0e0;
 }
 
 .icone-mapa {
-    font-size: 30px;
+    font-size: 35px; /* Deixamos o mapa um pouco maior também */
 }
 
 .botao-acao-navegar {
     background-color: #e60023;
     color: #ffffff;
     border: none;
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 20px;
+    padding: 12px 28px; /* Botão ligeiramente maior e mais elegante */
+    font-size: 16px;
+    border-radius: 24px;
     cursor: pointer;
+    transition: background 0.2s;
+}
+
+.botao-acao-navegar:hover {
+    background-color: #b8001a;
 }
 
 .fileira-bandeiras {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     align-items: center;
+    transition: opacity 0.3s ease; /* Efeito suave para não aparecer de golpe */
 }
 
 .fileira-bandeiras span {
-    font-size: 24px;
+    font-size: 30px; /* Bandeiras maiores para facilitar o clique */
     cursor: pointer;
+    transition: transform 0.2s;
 }
+
+.fileira-bandeiras span:hover {
+    transform: scale(1.25);
+}
+
+/* REGRA DE EXPERT: Esta classe esconde as bandeiras completamente */
+.escondido {
+    display: none !important;
+} /* <-- A CHAVE QUE FALTA ESTÁ AQUI! */
+
+/* Estilização profissional para os desenhos das bandeiras */
+.desenho-bandeira {
+    width: 42px;          /* Largura padrão para todas */
+    height: auto;         /* Mantém a proporção correta da altura */
+    border-radius: 4px;   /* Arredonda os cantinhos de cada bandeira */
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15); /* Sombra suave de fundo */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Efeito de crescer levemente quando o usuário passar o mouse por cima */
+.desenho-bandeira:hover {
+    transform: scale(1.2);
+}
+
+
 
 /* ==========================================================================
    3. CORPO E COLUNA VERTICAL ESQUERDA
