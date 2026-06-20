@@ -23,8 +23,8 @@ h1, h2, .botao-acao-navegar {
 .topo-imagem {
     width: 100%;
     height: 200px;
-    /* Avisamos ao CSS que ele deve entrar na pasta IMAGENS primeiro */
-    background-image: url('TAP illustrations - Luciano cian (2).jpg');
+    /* Adicionamos a pasta IMAGENS/ e o ponto (.) antes do topo-imagem lá em cima */
+    background-image: url('IMAGENS/TAP illustrations - Luciano cian (2).jpg');
     background-size: cover;
     background-position: center;
     display: flex;
