@@ -79,7 +79,7 @@ h1, h2, .botao-acao-navegar {
     background-color: #469e63;
     color: #ffffff;
     border: none;
-    padding: 12px 28px; /* Botão ligeiramente maior e mais elegante */
+    padding: 12px 40px; /* Botão ligeiramente maior e mais elegante */
     font-size: 16px;
     border-radius: 24px;
     cursor: pointer;
