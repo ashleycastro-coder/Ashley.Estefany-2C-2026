@@ -1,4 +1,4 @@
-/* RESET GLOBAL */
+/* RESET DE MÁRGENS */
 * {
     margin: 0;
     padding: 0;
@@ -6,136 +6,121 @@
 }
 
 body {
-    font-family: 'Belleza', sans-serif; /* Fonte do texto limpo */
-    background-color: #f4f4f4;
-    color: #333333;
+    font-family: 'Belleza', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
 }
 
-/* Estilização dos Títulos imitando a More Sugar */
-h1, h2, .botao-navegar {
-    font-family: 'Fredoka', 'Comic Sans MS', sans-serif;
+/* Aplicação da fonte More Sugar nos títulos */
+h1, h2, .botao-acao-navegar {
+    font-family: 'Fredoka', sans-serif;
     font-weight: 700;
 }
 
-/* 1. CABEÇALHO (HEADER TROPICAL) */
-.cabecalho-tropical {
+/* ==========================================================================
+   1. LAYOUT DO TOPOCABEÇALHO
+   ========================================================================== */
+.topo-imagem {
     width: 100%;
-    height: 220px;
-    background-image: url('TAP illustrations - Luciano Cian.jpg'); /* Sua foto da banana */
+    height: 200px;
+    background-image: url('TAP illustrations - Luciano Cian.jpg');
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
 }
 
-.titulo-blog {
+.titulo-esboco {
     color: #ffffff;
-    font-size: 42px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Sombra leve para garantir leitura sem precisar de tarja preta */
+    font-size: 38px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Proteção invisível para ler a fonte clara */
 }
 
-.espaco-azul-reserva {
-    width: 30%;
-    height: 100px;
+.lado-direito-limpo {
+    width: 35%;
 }
 
-/* 2. BARRA PINTEREST (NAV) */
-.barra-navegacao {
+/* ==========================================================================
+   2. BARRA HORIZONTAL (ESTILO ABAS DO CADERNO)
+   ========================================================================== */
+.barra-abas {
     width: 100%;
-    background-color: #ffffff;
-    padding: 12px 40px;
+    background-color: #f0f0f0; /* Cinza claro limpo de fundo */
+    padding: 10px 40px;
     display: flex;
     align-items: center;
-    gap: 20px;
-    border-bottom: 1px solid #e0e0e0;
+    gap: 15px;
+    border-bottom: 2px solid #e0e0e0;
 }
 
-.logo-mapa {
-    font-size: 35px;
-    cursor: pointer;
+.icone-mapa {
+    font-size: 30px;
 }
 
-.container-menu {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.botao-navegar {
-    background-color: #e60023; /* Vermelho Pinterest */
+.botao-acao-navegar {
+    background-color: #e60023;
     color: #ffffff;
     border: none;
-    padding: 10px 24px;
-    font-size: 16px;
+    padding: 8px 20px;
+    font-size: 14px;
     border-radius: 20px;
     cursor: pointer;
-    transition: background 0.2s;
 }
 
-.botao-navegar:hover {
-    background-color: #b8001a;
-}
-
-/* Lista de Bandeiras Alinhadas */
-.lista-bandeiras {
+.fileira-bandeiras {
     display: flex;
-    gap: 12px;
+    gap: 10px;
+    align-items: center;
 }
 
-.lista-bandeiras span {
-    font-size: 26px;
+.fileira-bandeiras span {
+    font-size: 24px;
     cursor: pointer;
-    transition: transform 0.2s;
 }
 
-.lista-bandeiras span:hover {
-    transform: scale(1.3); /* Efeito de crescer ao passar o mouse */
-}
-
-/* 3. ESTRUTURA PRINCIPAL (CORPO DO SITE) */
-.estrutura-principal {
+/* ==========================================================================
+   3. CORPO E COLUNA VERTICAL ESQUERDA
+   ========================================================================== */
+.divisao-layout {
     display: flex;
-    min-height: calc(100vh - 300px);
+    min-height: calc(100vh - 252px);
 }
 
-/* Menu Lateral Vertical baseado no seu desenho */
-.menu-lateral {
-    width: 90px;
-    background-color: #ffffff;
+/* Coluna vertical cinza sutil exatamente à esquerda */
+.coluna-botoes {
+    width: 85px;
+    background-color: #fafafa;
     border-right: 1px solid #e0e0e0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 30px;
-    gap: 20px;
+    padding-top: 25px;
+    gap: 15px;
 }
 
-/* Botões em formato de Círculos Perfeitos */
-.circulo-icone {
-    width: 55px;
-    height: 55px;
+/* Círculos perfeitos para os emojis */
+.botao-circulo {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: none;
-    background-color: #eeeeee;
-    font-size: 24px;
+    background-color: #e0e0e0; /* Fundo cinza do rascunho */
+    font-size: 22px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s;
 }
 
-.circulo-icone:hover {
-    background-color: #e60023; /* Fica vermelho ao passar o mouse */
-    color: white;
-    transform: translateY(-2px); /* Sobe um pouquinho */
+.botao-circulo:hover {
+    background-color: #cbd5e1;
 }
 
-/* Painel de Conteúdo na Direita */
-.painel-conteudo {
+/* Área central limpa */
+.espaco-leitura {
     flex: 1;
     padding: 40px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
