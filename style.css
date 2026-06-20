@@ -1,6 +1,4 @@
-/* ==========================================================================
-   CONFIGURAÇÕES DE FONTES E ACESSIBILIDADE
-   ========================================================================== */
+/* RESET GLOBAL */
 * {
     margin: 0;
     padding: 0;
@@ -8,142 +6,136 @@
 }
 
 body {
-    font-family: 'Belleza', sans-serif; /* Fonte dos textos gerais */
-    background-color: #f7f7f7;
-    color: #111111;
+    font-family: 'Belleza', sans-serif; /* Fonte do texto limpo */
+    background-color: #f4f4f4;
+    color: #333333;
 }
 
-/* Simulação da More Sugar: Força letras arredondadas, grossas e muito legíveis */
-h1, h2, .btn-navegar {
-    font-family: 'Comic Sans MS', 'Impact', sans-serif; 
-    font-weight: bold;
-    letter-spacing: 0.5px;
+/* Estilização dos Títulos imitando a More Sugar */
+h1, h2, .botao-navegar {
+    font-family: 'Fredoka', 'Comic Sans MS', sans-serif;
+    font-weight: 700;
 }
 
-/* ==========================================================================
-   1. HEADER (Horizontal, adaptado para a imagem tropical)
-   ========================================================================== */
+/* 1. CABEÇALHO (HEADER TROPICAL) */
 .cabecalho-tropical {
     width: 100%;
-    height: 180px;
-    /* Substitua pelo link real da imagem da banana quando fizer o upload */
-    background-image: url('TAP illustrations - Luciano Cian.jpg'); 
+    height: 220px;
+    background-image: url('TAP illustrations - Luciano Cian.jpg'); /* Sua foto da banana */
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
-    border-bottom: 4px solid #e60023;
+    padding: 0 40px;
 }
 
-.header-conteudo {
-    display: flex;
-    width: 100%;
-    justify-content: space-between; /* Título na esquerda, espaço azul na direita */
-    align-items: center;
-}
-
-.titulo-principal {
-    font-size: 32px;
+.titulo-blog {
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.75); /* Fundo escuro atrás do texto garante leitura perfeita para baixa visão */
-    padding: 10px 20px;
-    border-radius: 8px;
-    max-width: 60%;
+    font-size: 42px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Sombra leve para garantir leitura sem precisar de tarja preta */
 }
 
-.area-azul-reserva {
+.espaco-azul-reserva {
     width: 30%;
-    height: 80px;
-    /* Reservado para upgrades futuros conforme seu plano */
+    height: 100px;
 }
 
-/* ==========================================================================
-   2. BARRA ESTILO PINTEREST (Nav Horizontal)
-   ========================================================================== */
-.barra-pinterest {
+/* 2. BARRA PINTEREST (NAV) */
+.barra-navegacao {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 12px 40px;
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 15px 30px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .logo-mapa {
-    font-size: 32px;
+    font-size: 35px;
     cursor: pointer;
 }
 
-.menu-navegar {
+.container-menu {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
-.btn-navegar {
-    padding: 10px 20px;
-    background-color: #e60023;
-    color: white;
+.botao-navegar {
+    background-color: #e60023; /* Vermelho Pinterest */
+    color: #ffffff;
     border: none;
-    border-radius: 24px;
+    padding: 10px 24px;
     font-size: 16px;
+    border-radius: 20px;
     cursor: pointer;
+    transition: background 0.2s;
 }
 
-.grade-paises {
+.botao-navegar:hover {
+    background-color: #b8001a;
+}
+
+/* Lista de Bandeiras Alinhadas */
+.lista-bandeiras {
     display: flex;
-    gap: 10px;
+    gap: 12px;
 }
 
-.grade-paises button {
-    font-size: 24px;
-    background: none;
-    border: none;
+.lista-bandeiras span {
+    font-size: 26px;
     cursor: pointer;
-    transition: transform 0.1s;
+    transition: transform 0.2s;
 }
 
-.grade-paises button:hover {
-    transform: scale(1.2); /* Sutil efeito ao passar o mouse */
+.lista-bandeiras span:hover {
+    transform: scale(1.3); /* Efeito de crescer ao passar o mouse */
 }
 
-/* ==========================================================================
-   3. CORPO DA PLATAFORMA (Menu Vertical Esquerdo + Conteúdo)
-   ========================================================================== */
-.corpo-plataforma {
+/* 3. ESTRUTURA PRINCIPAL (CORPO DO SITE) */
+.estrutura-principal {
     display: flex;
-    min-height: calc(100vh - 250px);
+    min-height: calc(100vh - 300px);
 }
 
-/* Menu Vertical estrito à esquerda */
-.menu-lateral-icones {
-    width: 80px;
+/* Menu Lateral Vertical baseado no seu desenho */
+.menu-lateral {
+    width: 90px;
     background-color: #ffffff;
-    border-right: 1px solid #e1e1e1;
+    border-right: 1px solid #e0e0e0;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 30px;
-    gap: 25px;
+    gap: 20px;
 }
 
-.btn-categoria {
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
+/* Botões em formato de Círculos Perfeitos */
+.circulo-icone {
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    transition: background-color 0.2s;
+    border: none;
+    background-color: #eeeeee;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
 }
 
-.btn-categoria:hover {
-    background-color: #f0f0f0; /* Feedback visual simples ao passar o mouse */
+.circulo-icone:hover {
+    background-color: #e60023; /* Fica vermelho ao passar o mouse */
+    color: white;
+    transform: translateY(-2px); /* Sobe um pouquinho */
 }
 
-/* Área de informações na direita */
-.conteudo-central {
+/* Painel de Conteúdo na Direita */
+.painel-conteudo {
     flex: 1;
     padding: 40px;
+    background-color: #f9f9f9;
 }
