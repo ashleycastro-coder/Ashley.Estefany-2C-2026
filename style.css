@@ -64,7 +64,7 @@ h1, h2, .botao-acao-navegar {
 .barra-abas {
     width: 100%;
     background-color: #f0f0f0; 
-    padding: 20px 40px; /* Aumentamos de 10px para 20px para dar mais comprimento e espaço */
+    padding: 20px 50px; /* Aumentamos de 10px para 20px para dar mais comprimento e espaço */
     display: flex;
     align-items: center;
     gap: 20px;
@@ -76,7 +76,7 @@ h1, h2, .botao-acao-navegar {
 }
 
 .botao-acao-navegar {
-    background-color: #a43562;
+    background-color: #35a465;
     color: #ffffff;
     border: none;
     padding: 12px 28px; /* Botão ligeiramente maior e mais elegante */
@@ -87,7 +87,7 @@ h1, h2, .botao-acao-navegar {
 }
 
 .botao-acao-navegar:hover {
-    background-color: #b8001a;
+    background-color: #9d2e60;
 }
 
 .fileira-bandeiras {
