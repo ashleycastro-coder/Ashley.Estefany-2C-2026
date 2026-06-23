@@ -246,3 +246,47 @@ h1, h2, .botao-acao-navegar {
     font-size: 18px;
     color: #9d2e60; /* O tom vinho/roxo elegante para fechar com energia */
 }
+/* Isso alinha a barra de botões e o conteúdo lado a lado */
+.divisao-layout {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+}
+
+/* Estilo da sua barra vertical fixa */
+.coluna-botoes {
+    width: 90px;
+    min-width: 90px; /* Garante que ela não vai esmagar ou sumir */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    gap: 20px;
+    height: 100vh; /* Faz ela acompanhar a altura da tela */
+}
+
+.botao-circulo {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f0f0f0;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.botao-circulo:hover {
+    background-color: #35a465; /* O verde lindo que você escolheu */
+    transform: scale(1.1);
+}
+
+/* Ajuste para o espaço de leitura não empurrar os botões */
+.espaco-leitura {
+    flex-grow: 1; /* Faz o texto ocupar todo o resto do espaço direito */
+    padding: 30px;
+}
