@@ -486,7 +486,7 @@ h1, h2, .botao-acao-navegar {
     width: 100%;
     height: 100%; /* Obriga o fundo branco e a borda verde a irem até o final */
     max-width: 850px;
-    background-color: #e9ede7; 
+    background-color: #fefefe; 
     border: 3px solid #35a465;
     border-radius: 16px;
     padding: 35px;
