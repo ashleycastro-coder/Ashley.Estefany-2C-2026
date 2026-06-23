@@ -172,3 +172,77 @@ h1, h2, .botao-acao-navegar {
     padding: 40px;
     background-color: #ffffff;
 }
+/* ==========================================================================
+   4. ESTILIZAÇÃO DA PÁGINA INICIAL (MANIFESTO)
+   ========================================================================== */
+
+/* Títulos com cores vivas e tipografia bonita */
+.titulo-manifesto {
+    font-family: 'Fredoka', sans-serif;
+    color: #e60023; /* Vermelho vibrante para o título principal */
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.subtitulo-manifesto {
+    font-size: 18px;
+    color: #555555;
+    font-style: italic;
+    margin-bottom: 35px;
+    line-height: 1.4;
+}
+
+/* Criando o layout de duas colunas (Imagens na esquerda, Texto na direita) */
+.conteudo-manifesto {
+    display: flex;
+    gap: 40px; /* Espaço generoso entre as fotos e o texto */
+    align-items: flex-start;
+}
+
+/* Coluna das Imagens (Esquerda) */
+.coluna-imagens-manifesto {
+    display: flex;
+    flex-direction: column; /* Coloca uma foto embaixo da outra */
+    gap: 20px;
+    width: 35%; /* Ocupa uma parte equilibrada da tela */
+}
+
+.foto-manifesto {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* Recorta a imagem perfeitamente sem distorcer */
+    border-radius: 16px; /* Bordas arredondadas estilo Pinterest */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.foto-manifesto:hover {
+    transform: translateY(-5px); /* Detalhe profissional: a foto sobe levemente no hover */
+}
+
+/* Coluna do Texto (Direita) */
+.coluna-texto-manifesto {
+    width: 65%;
+    font-size: 17px;
+    line-height: 1.7; /* Espaçamento de linhas perfeito para leitura confortável */
+    color: #222222;   /* Tom quase preto para leitura super nítida */
+}
+
+.coluna-texto-manifesto p {
+    margin-bottom: 20px;
+}
+
+/* Uma frase em destaque no meio do texto com cor vibrante */
+.frase-destaque {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 20px;
+    color: #35a465; /* O mesmo verde vivo que você usou no seu botão */
+    border-left: 4px solid #35a465;
+    padding-left: 15px;
+    margin: 25px 0;
+}
+
+.final-impactante {
+    font-size: 18px;
+    color: #9d2e60; /* O tom vinho/roxo elegante para fechar com energia */
+}
