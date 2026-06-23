@@ -290,3 +290,56 @@ h1, h2, .botao-acao-navegar {
     flex-grow: 1; /* Faz o texto ocupar todo o resto do espaço direito */
     padding: 30px;
 }
+/* ==========================================================================
+   ESTILO DO MANIFESTO COM BORDA (SEM IMAGENS)
+   ========================================================================== */
+
+/* A caixa que envolve todo o texto e ganha a borda estilizada */
+.caixa-manifesto {
+    background-color: #ffffff; /* Fundo branco para leitura confortável */
+    border: 3px solid #35a465; /* Borda com o verde vivo do seu botão! */
+    border-radius: 16px;       /* Bordas arredondadas estilo Pinterest */
+    padding: 35px;             /* Espaço confortável entre o texto e a borda */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra bem suave */
+    max-width: 800px;          /* Evita que o texto estique demais em telas grandes */
+}
+
+/* Títulos e textos internos */
+.titulo-manifesto {
+    font-family: 'Fredoka', sans-serif;
+    color: #e60023; /* Vermelho vibrante */
+    font-size: 32px;
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+.subtitulo-manifesto {
+    font-size: 18px;
+    color: #666666;
+    font-style: italic;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.texto-manifesto p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #222222;
+    margin-bottom: 18px;
+}
+
+/* Linha de destaque interna */
+.frase-destaque {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 19px;
+    color: #35a465;
+    border-left: 4px solid #e60023; /* Detalhe em vermelho na lateral da frase */
+    padding-left: 15px;
+    margin: 25px 0;
+    font-style: normal;
+}
+
+.final-impactante {
+    font-size: 18px;
+    color: #9d2e60; /* Tom vinho/roxo com energia */
+}
