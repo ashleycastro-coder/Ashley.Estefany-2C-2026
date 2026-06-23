@@ -427,7 +427,7 @@ h1, h2, .botao-acao-navegar {
     gap: 20px;
     width: 320px;       /* Imagens maiores! Antes eram 250px */
     min-width: 320px;
-    background-color: #fdf5f0; /* Um fundo areia/terracota super suave e vivo */
+    background-color: #639f67; /* Um fundo areia/terracota super suave e vivo */
     padding: 20px;
     border-radius: 16px;
     box-sizing: border-box;
@@ -451,6 +451,42 @@ h1, h2, .botao-acao-navegar {
     width: 100%;
     max-width: 850px;
     background-color: #ffffff; /* Fundo totalmente branco para leitura confortável */
+    border: 3px solid #35a465;
+    border-radius: 16px;
+    padding: 35px;
+    box-sizing: border-box;
+}
+/* FORÇAR IMAGENS E TEXTO A TERMINAREM JUNTOS NO FINAL */
+
+.divisao-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100%;
+    align-items: stretch !important; /* A mágica está aqui! Estica as duas colunas até o final */
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+/* Coluna das imagens mantendo o tamanho grande */
+.coluna-imagens-meio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui as fotos igualmente do topo ao fundo */
+    gap: 20px;
+    width: 320px;       
+    min-width: 320px;
+    background-color: #fdf5f0; 
+    padding: 20px;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+/* Deixa a caixa de texto com a altura total para colar no final junto com o bloco ao lado */
+.caixa-manifesto {
+    width: 100%;
+    height: 100%; /* Obriga o fundo branco e a borda verde a irem até o final */
+    max-width: 850px;
+    background-color: #ffffff; 
     border: 3px solid #35a465;
     border-radius: 16px;
     padding: 35px;
