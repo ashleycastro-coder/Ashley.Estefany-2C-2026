@@ -475,7 +475,7 @@ h1, h2, .botao-acao-navegar {
     gap: 20px;
     width: 320px;       
     min-width: 320px;
-    background-color: #fdf5f0; 
+    background-color: #9eccaa; 
     padding: 20px;
     border-radius: 16px;
     box-sizing: border-box;
@@ -486,7 +486,7 @@ h1, h2, .botao-acao-navegar {
     width: 100%;
     height: 100%; /* Obriga o fundo branco e a borda verde a irem até o final */
     max-width: 850px;
-    background-color: #7ea866; 
+    background-color: #e9ede7; 
     border: 3px solid #35a465;
     border-radius: 16px;
     padding: 35px;
