@@ -343,3 +343,29 @@ h1, h2, .botao-acao-navegar {
     font-size: 18px;
     color: #9d2e60; /* Tom vinho/roxo com energia */
 }
+/* FORÇAR ALINHAMENTO LADO A LADO */
+
+.divisao-layout {
+    display: flex !important; /* Força os botões e o texto a ficarem na mesma linha */
+    flex-direction: row !important;
+    width: 100%;
+    align-items: flex-start;
+    gap: 10px; /* Espaço entre a barra de botões e a caixa do texto */
+}
+
+.coluna-botoes {
+    width: 90px;
+    min-width: 90px; /* Garante que a barra não vai esmagar */
+}
+
+.espaco-leitura {
+    flex: 1 !important; /* Faz o texto ocupar todo o resto do espaço direito */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.caixa-manifesto {
+    width: 100%; /* Faz a caixa se ajustar perfeitamente ao espaço da direita */
+    max-width: 800px;
+    box-sizing: border-box;
+}
