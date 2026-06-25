@@ -563,3 +563,83 @@ h1, h2, .botao-acao-navegar {
 .final-impactante {
     font-size: 23px; /* O parágrafo de fechamento fica grandão e imponente */
 }
+/* TELA DE ABERTURA ANIMADA */
+
+#tela-boas-vindas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2e5138; /* Um verde floresta lindo para o fundo da intro */
+    z-index: 9999; /* Garante que fica na frente de TUDO no começo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Letras centrais */
+.conteudo-central-intro {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.texto-boas-vindas {
+    font-size: 55px;
+    margin-bottom: 10px;
+    animation: pulsar 2s infinite alternate;
+}
+
+.subtexto-intro {
+    font-size: 24px;
+    color: #fdf5f0;
+    font-style: italic;
+}
+
+/* Plantas fixas nos cantos da tela */
+.planta-fixa {
+    position: absolute;
+    font-size: 80px; /* Tamanho do emoji provisório */
+}
+.topo-esquerda   { top: 20px; left: 20px; }
+.topo-direita    { top: 20px; right: 20px; }
+.baixo-esquerda  { bottom: 20px; left: 20px; }
+.baixo-direita   { bottom: 20px; right: 20px; }
+
+/* Animação dos Pássaros Cruzando a Tela */
+.passaro-voando {
+    position: absolute;
+    font-size: 50px;
+    z-index: 10000;
+}
+
+.arara {
+    top: 30%;
+    left: -100px;
+    animation: voarDireita 3.5s linear infinite;
+}
+
+.tucano {
+    top: 60%;
+    right: -100px;
+    animation: voarEsquerda 4s linear infinite;
+}
+
+/* REGRAS DAS ANIMAÇÕES (KEYFRAMES) */
+
+@keyframes voarDireita {
+    0% { left: -100px; transform: scaleX(1); }
+    100% { left: 105vw; transform: scaleX(1); }
+}
+
+@keyframes voarEsquerda {
+    0% { right: -100px; transform: scaleX(-1); } /* Inverte o lado do passaro */
+    100% { right: 105vw; transform: scaleX(-1); }
+}
+
+@keyframes pulsar {
+    0% { transform: scale(0.95); }
+    100% { transform: scale(1.05); }
+}
