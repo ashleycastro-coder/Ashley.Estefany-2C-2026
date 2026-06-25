@@ -526,3 +526,24 @@ h1, h2, .botao-acao-navegar {
     font-size: 20px; /* O fechamento ficou maior e mais forte */
     color: #9d2e60; 
 }
+/* EFEITO DE CLIQUE / ZOOM PARA AMPLIAR AS IMAGENS */
+
+.foto-bloco {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    
+    /* Prepara a imagem para crescer de forma suave e macia */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: zoom-in; /* Transforma a setinha do mouse em uma lupa de zoom! */
+}
+
+/* Quando o usuário clica e segura o clique na imagem (Active) */
+.foto-bloco:active {
+    transform: scale(1.3); /* Amplia a imagem em 30% do tamanho dela */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Deixa a sombra mais forte para parecer que subiu */
+    z-index: 10; /* Garante que ela vai ficar por cima do texto e das outras fotos ao crescer */
+    position: relative;
+}
