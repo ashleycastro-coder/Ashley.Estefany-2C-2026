@@ -541,3 +541,25 @@ h1, h2, .botao-acao-navegar {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: zoom-in;
 }
+/* AJUSTE FINAL PARA PREENCHER TOTALMENTE O QUADRANTE DO TEXTO */
+
+.texto-manifesto p {
+    font-size: 21px; /* Letras maiores e super fáceis de ler */
+    line-height: 1.9; /* Abre mais o espaço entre as linhas do texto */
+    margin-bottom: 35px; /* Deixa um espaço maior entre um parágrafo e outro */
+}
+
+.subtitulo-manifesto {
+    font-size: 23px; /* Aumenta o resumo logo abaixo do título */
+    margin-bottom: 40px;
+}
+
+.frase-destaque {
+    font-size: 24px; /* A frase em destaque ganha mais corpo */
+    margin: 45px 0;
+    padding-left: 25px;
+}
+
+.final-impactante {
+    font-size: 23px; /* O parágrafo de fechamento fica grandão e imponente */
+}
