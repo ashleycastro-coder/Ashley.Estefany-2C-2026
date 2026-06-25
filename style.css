@@ -376,66 +376,33 @@ h1, h2, .botao-acao-navegar {
     box-sizing: border-box;
 }
 
-/* Configuração da Coluna do Meio (Imagens) */
-.coluna-imagens-meio {
-    display: flex;
-    flex-direction: column; /* Faz as fotos ficarem uma embaixo da outra */
-    gap: 15px; /* Espaço entre as fotos */
-    width: 250px; /* Largura fixa para as imagens não esmagarem o texto */
-    min-width: 250px;
-}
-
-.foto-bloco {
-    width: 100%;
-    height: 180px; /* Altura controlada para as 3 fotos caberem sem esticar demais */
-    object-fit: cover;
-    border-radius: 12px; /* Bordas arredondadas combinando com a caixa de texto */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-/* Garante que a caixa de texto ocupe todo o resto da direita */
-.espaco-leitura {
-    flex: 1 !important;
-    padding: 0px 10px !important;
-}
-
-.caixa-manifesto {
-    width: 100%;
-    max-width: 850px;
-    box-sizing: border-box;
-}
-/* AJUSTE FINAL: IMAGENS MAIORES E CORES DE FUNDO DIFERENTES */
-
-.divisao-layout {
-    display: flex !important;
-    flex-direction: row !important;
-    width: 100%;
-    align-items: flex-start !important;
-    gap: 20px;
-    box-sizing: border-box;
-}
-
-/* Coluna do Meio (Imagens) com o fundo especial que você ideou */
+/* COLUNA DE IMAGENS AINDA MAIOR PARA PREENCHER O ESPAÇO RESTANTE */
 .coluna-imagens-meio {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 20px;
-    width: 320px;       /* Imagens maiores! Antes eram 250px */
-    min-width: 320px;
-    background-color: #639f67; /* Um fundo areia/terracota super suave e vivo */
-    padding: 20px;
+    
+    /* Aumentamos para 440px para engolir o espaço que sobrou no costado! */
+    width: 440px;       
+    min-width: 440px;
+    
+    background-color: #fdf5f0; 
+    padding: 24px; /* Aumentamos um pouquinho o espaço interno para acompanhar */
     border-radius: 16px;
     box-sizing: border-box;
 }
 
+/* Ajuste na altura das fotos para que elas fiquem bem grandonas e imponentes */
 .foto-bloco {
     width: 100%;
-    height: 240px;      /* Altura maior para destacar bem as fotos */
+    height: 290px; /* Fotos mais altas para manter a proporção linda */
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: zoom-in;
 }
-
 /* Coluna da Direita (Texto) limpo */
 .espaco-leitura {
     flex: 1 !important;
