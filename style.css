@@ -563,7 +563,7 @@ h1, h2, .botao-acao-navegar {
 .final-impactante {
     font-size: 23px; /* O parágrafo de fechamento fica grandão e imponente */
 }
-/* TELA DE ABERTURA ANIMADA */
+/* TELA DE ABERTURA - VERSÃO COM 6 AVES E MOLDURAS ESPECÍFICAS */
 
 #tela-boas-vindas {
     position: fixed;
@@ -571,8 +571,8 @@ h1, h2, .botao-acao-navegar {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #2e5138; /* Um verde floresta lindo para o fundo da intro */
-    z-index: 9999; /* Garante que fica na frente de TUDO no começo */
+    background-color: #2e5138; /* Fundo verde floresta */
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -584,6 +584,7 @@ h1, h2, .botao-acao-navegar {
     text-align: center;
     color: #ffffff;
     font-family: 'Fredoka', sans-serif;
+    z-index: 10005; /* Fica na frente das aves e plantas */
 }
 
 .texto-boas-vindas {
@@ -598,44 +599,111 @@ h1, h2, .botao-acao-navegar {
     font-style: italic;
 }
 
-/* Plantas fixas nos cantos da tela */
+/* POSICIONAMENTO DAS SUAS PLANTAS (Fotos 6, 7, 8 e 13) */
 .planta-fixa {
     position: absolute;
-    font-size: 80px; /* Tamanho do emoji provisório */
+    pointer-events: none;
+    z-index: 10001;
 }
-.topo-esquerda   { top: 20px; left: 20px; }
-.topo-direita    { top: 20px; right: 20px; }
-.baixo-esquerda  { bottom: 20px; left: 20px; }
-.baixo-direita   { bottom: 20px; right: 20px; }
 
-/* Animação dos Pássaros Cruzando a Tela */
+.planta-topo-horizontal {
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ocupa o topo inteiro */
+    height: auto;
+}
+
+.planta-baixo-horizontal {
+    bottom: 0;
+    left: 0;
+    width: 100vw; /* Ocupa a parte de baixo inteira */
+    height: auto;
+}
+
+.planta-esquerda-vertical {
+    top: 0;
+    left: 0;
+    height: 100vh; /* Ocupa a lateral esquerda inteira */
+    width: auto;
+}
+
+.planta-esquina-direita {
+    bottom: 0;
+    right: 0;
+    width: 250px; /* Encaixa bem na quina inferior direita */
+    height: auto;
+}
+
+/* CONFIGURAÇÃO GERAL DAS AVES */
 .passaro-voando {
     position: absolute;
-    font-size: 50px;
-    z-index: 10000;
+    height: auto;
+    z-index: 10002;
+    pointer-events: none;
 }
 
-.arara {
-    top: 30%;
-    left: -100px;
+/* ANIMAÇÃO INDIVIDUAL PARA CADA UMA DAS 6 AVES */
+
+/* foto4: Arara 1 (Voa na parte de cima, rápida) */
+.arara-1 {
+    width: 140px;
+    top: 15%;
+    left: -150px;
     animation: voarDireita 3.5s linear infinite;
 }
 
-.tucano {
-    top: 60%;
-    right: -100px;
+/* foto11: Arara 2 (Voa mais no meio, um pouco mais lenta) */
+.arara-2 {
+    width: 150px;
+    top: 45%;
+    left: -150px;
+    animation: voarDireita 4.5s linear infinite;
+    animation-delay: 1s; /* Começa 1 segundo depois */
+}
+
+/* foto5: Ave Laranja (Vem do lado oposto, bem alto) */
+.ave-laranja {
+    width: 120px;
+    top: 25%;
+    right: -150px;
     animation: voarEsquerda 4s linear infinite;
 }
 
-/* REGRAS DAS ANIMAÇÕES (KEYFRAMES) */
+/* foto10: Ave Vermelha (Vem do lado oposto, mais abaixo) */
+.ave-vermelha {
+    width: 110px;
+    top: 55%;
+    right: -150px;
+    animation: voarEsquerda 5s linear infinite;
+    animation-delay: 0.5s;
+}
+
+/* foto12: Tucano (Grande, voa firme bem baixo) */
+.tucano {
+    width: 160px;
+    top: 70%;
+    left: -180px;
+    animation: voarDireita 5.5s linear infinite;
+}
+
+/* foto9: Ave Pequena (Super rápida cruzando o meio da tela) */
+.ave-pequena {
+    width: 80px;
+    top: 35%;
+    left: -100px;
+    animation: voarDireita 2.5s linear infinite;
+    animation-delay: 1.5s;
+}
+
+/* REGRAS DE MOVIMENTO */
 
 @keyframes voarDireita {
-    0% { left: -100px; transform: scaleX(1); }
-    100% { left: 105vw; transform: scaleX(1); }
+    0% { left: -180px; }
+    100% { left: 105vw; }
 }
 
 @keyframes voarEsquerda {
-    0% { right: -100px; transform: scaleX(-1); } /* Inverte o lado do passaro */
+    0% { right: -180px; transform: scaleX(-1); } /* Inverte a foto para ela olhar para a esquerda */
     100% { right: 105vw; transform: scaleX(-1); }
 }
 
