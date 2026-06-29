@@ -76,3 +76,13 @@
                 
                 <div class="texto-manifesto">
                     <p>Já sentiu o chão tremer com o ritmo de um tambor que parece bater no mesmo compasso que o seu coração? Já fechou os olhos e se deixou levar pelo aroma de um tempero que conta histórias de sé
+                        // Exemplo para a tela sumir mais rápido (Total de 3 segundos)
+        setTimeout(function() {
+            var telaIntro = document.getElementById("tela-boas-vindas");
+            telaIntro.style.opacity = "0";
+            telaIntro.style.transition = "opacity 800ms ease"; /* Tempo sumindo */
+            
+            setTimeout(function() {
+                telaIntro.style.display = "none";
+            }, 800);
+        }, 2200); /* Altere aqui! 2200 significa 2.2 segundos fixa */
