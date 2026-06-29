@@ -12,7 +12,7 @@
 </head>
 <body>
 
-   <div id="tela-boas-vindas">
+    <div id="tela-boas-vindas">
         <img src="IMAGENS/foto13.jpg" alt="Plantas Cima" class="planta-fixa planta-topo-horizontal">
         <img src="IMAGENS/foto6.jpg" alt="Plantas Baixo" class="planta-fixa planta-baixo-horizontal">
         <img src="IMAGENS/foto7.jpg" alt="Planta Esquerda" class="planta-fixa planta-esquerda-vertical">
@@ -75,8 +75,30 @@
                 <p class="subtitulo-manifesto">Muito além dos mapas: uma viagem de arrepiar pelos sabores, ritmos e cores do continente mais vivo do planeta.</p>
                 
                 <div class="texto-manifesto">
-                    <p>Já sentiu o chão tremer com o ritmo de um tambor que parece bater no mesmo compasso que o seu coração? Já fechou os olhos e se deixou levar pelo aroma de um tempero que conta histórias de sé
-                        // Exemplo para a tela sumir mais rápido (Total de 3 segundos)
+                    <p>Já sentiu o chão tremer com o ritmo de um tambor que parece bater no mesmo compasso que o seu coração? Já fechou os olhos e se deixou levar pelo aroma de um tempero que conta histórias de séculos atrás?</p>
+                    
+                    <p>A América do Sul não é apenas um lugar no mapa. É uma explosão de vida. É a força de um povo que transforma luta em festa, que coloca poesia na mesa e que dança como se o amanhã não existisse. Das cordilheiras gigantescas às praias que parecem não ter fim, nosso continente respira diversidade.</p>
+                    
+                    <p>Aqui, a gastronomia é um abraço quente, as festas populares são rituais de pura energia, o turismo é uma descoberta de nós mesmos e os ritmos... bem, os ritmos são o que nos movem.</p>
+                    
+                    <blockquote class="frase-destaque">
+                        Esqueça os clichês e os textos frios de livros didáticos. Conecte-se com a nossa essência.
+                    </blockquote>
+                    
+                    <p class="final-impactante">Prepare o seu coração, porque a sua viagem pelo lado mais vibrante do planeta começa agora. <strong>Sinta a força. Viva a América do Sul.</strong></p>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script>
+        function toggleBandeiras() {
+            var fileira = document.getElementById("fileiraPaises");
+            fileira.classList.toggle("escondido");
+        }
+
+        // Script configurado para sumir bem mais rápido (3 segundos no total)
         setTimeout(function() {
             var telaIntro = document.getElementById("tela-boas-vindas");
             telaIntro.style.opacity = "0";
@@ -85,4 +107,8 @@
             setTimeout(function() {
                 telaIntro.style.display = "none";
             }, 800);
-        }, 2200); /* Altere aqui! 2200 significa 2.2 segundos fixa */
+        }, 2200); /* 2.2 segundos travada na tela */
+    </script>
+
+</body>
+</html>
