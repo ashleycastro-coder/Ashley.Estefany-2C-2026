@@ -102,16 +102,21 @@
         }
 
         // 2 segundos fixa + 1 segundo sumindo = 3 segundos no total
-        setTimeout(function() {
-            var telaIntro = document.getElementById("tela-boas-vindas");
-            telaIntro.style.opacity = "0";
-            telaIntro.style.transition = "opacity 1000ms ease";
-            
-            setTimeout(function() {
-                telaIntro.style.display = "none";
-            }, 1000);
-        }, 4000);
-    </script>
+        <div id="tela-boas-vindas">
+        <img src="IMAGENS/foto13.jpg" alt="Plantas Cima" class="planta-fixa planta-topo-horizontal">
+        <img src="IMAGENS/foto6.jpg" alt="Plantas Baixo" class="planta-fixa planta-baixo-horizontal">
+        <img src="IMAGENS/foto7.jpg" alt="Planta Esquerda" class="planta-fixa planta-esquerda-vertical">
+        <img src="IMAGENS/foto8.jpg" alt="Planta Esquina Direita" class="planta-fixa planta-esquina-direita">
 
-</body>
-</html>
+        <div class="conteudo-central-intro">
+            <h1 class="texto-boas-vindas">Seja Bem-vindo</h1>
+            <p class="subtexto-intro">À vibrante América do Sul...</p>
+        </div>
+
+        <img src="IMAGENS/foto4.jpg" alt="Arara" class="passaro-voando arara-1">
+        <img src="IMAGENS/foto11.jpg" alt="Arara Azul" class="passaro-voando arara-2">
+        <img src="IMAGENS/foto5.jpg" alt="Ave Laranja" class="passaro-voando ave-laranja">
+        <img src="IMAGENS/foto10.jpg" alt="Ave Vermelha" class="passaro-voando ave-vermelha">
+        <img src="IMAGENS/foto12.jpg" alt="Tucano" class="passaro-voando tucano">
+        <img src="IMAGENS/foto9.jpg" alt="Ave Pequena" class="passaro-voando ave-pequena">
+    </div>
