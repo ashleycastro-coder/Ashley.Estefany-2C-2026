@@ -9,60 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
-    <style>
-        /* CSS Adicional para criar o Quadrante Colorido com Texto e Imagem Lado a Lado */
-        .quadrante-conteudo {
-            background-color: rgba(255, 255, 255, 0.1); /* Fundo colorido sutil (ajuste a cor se quiser) */
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Classe que vai controlar cada bloco de conteúdo (Feijoada, Pão de Queijo, etc) */
-        .bloco-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 20px;
-        }
-
-        .bloco-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 0;
-        }
-
-        /* O texto ocupa o espaço restante */
-        .bloco-texto {
-            flex: 1;
-        }
-
-        /* A imagem dentro do quadrante */
-        .bloco-img-interna {
-            width: 200px; /* Tamanho controlado para a ilustração */
-            height: auto;
-            border-radius: 10px;
-            object-fit: cover;
-            /* Se as imagens tiverem fundo branco puro, o filtro abaixo faz mágica */
-            mix-blend-mode: multiply; 
-        }
-
-        /* Responsivo: se a tela for pequena, a imagem vai para baixo do texto */
-        @media (max-width: 768px) {
-            .bloco-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .bloco-img-interna {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -117,7 +63,7 @@
             <button class="botao-circulo" title="Ritmo e Música" onclick="mudarCategoria('musica')">🎵</button>
         </aside>
 
-        <main class="espaco-leitura" style="width: 100%;">
+        <main class="espaco-leitura">
             <div class="caixa-manifesto">
                 <h2 class="titulo-manifesto" id="titulo-pagina">O Coração Pulsante do Mundo</h2>
                 <p class="subtitulo-manifesto" id="subtitulo-pagina">Muito além dos mapas: uma viagem de arrepiar pelos sabores, ritmos e cores do continente mais vivo do planeta.</p>
@@ -162,82 +108,96 @@
                 inicio: {
                     titulo: "🇧🇷 Segura essa marra: É o Brasil!",
                     subtitulo: '"Papo reto? Tu vai se apaixonar. Aqui o povo é sem tempo para o desânimo e o nosso ritmo é outra parada!"',
-                    texto: "<p>Prepare o seu coração, porque entrar no Brasil é aceitar o convite para uma viagem onde a realidade ganha cores muito mais vivas. Este não é apenas um lugar no mapa; é um estado de espírito que se move na batida de um tambor e se renova a cada sorriso.</p><p>Nesta jornada pelas páginas brasileiras, nós vamos desvendar os segredos de um país que transforma tudo em festa e poesia. Clique nas abas laterais para navegar pelos nossos segredos!</p>"
+                    texto: "<p>Prepare o seu coração, because entrar no Brasil é aceitar o convite para uma viagem onde a realidade ganha cores muito mais vivas. Este não é apenas um lugar no mapa; é um estado de espírito que se move na batida de um tambor e se renova a cada sorriso.</p><p>Nesta jornada pelas páginas brasileiras, nós vamos desvendar os segredos de um país que transforma tudo em festa e poesia. Clique nas abas laterais para navegar pelos nossos segredos!</p>"
                 },
                 gastronomia: {
                     titulo: "🍲 Gastronomia: O Sabor que Conta Histórias",
                     subtitulo: "Como a criatividade e a história se fundiram em panelas de barro para criar pratos que são rituais de afeto.",
-                    texto: "<div class='quadrante-conteudo'>" +
-                                "<div class='bloco-item'>" +
-                                    "<div class='bloco-texto'>" +
-                                        "<h3>A Feijoada</h3><p>Se o Brasil tivesse um sabor oficial, ele seria cozido lentamente em uma panela de barro. A feijoada é o prato que reúne as famílias brasileiras ao redor da mesa, especialmente aos sábados. A história real mostra que ela é uma evolução sofisticada do cozido europeu, adaptada com o feijão preto nativo da América do Sul e enriquecida pela tradição afro-brasileira.</p>" +
-                                        "<p><strong>Ingredientes principais:</strong> Feijão preto, carnes suínas variadas, alho, louro e cachaça.<br><strong>Importância:</strong> É considerada o prato nacional por excelência.</p>" +
+                    texto: "<div class='quadrante-container'>" +
+                                "<div class='quadrante-item'>" +
+                                    "<div class='quadrante-texto'>" +
+                                        "<h3>A Feijoada</h3><p>Se o Brasil tivesse um sabor oficial, ele seria cozido lentamente em uma panela de barro. A feijoada é o prato que reúne as famílias brasileiras ao redor da mesa. A história real mostra que ela é uma evolução sofisticada do cozido europeu, adaptada com o feijão preto nativo da América do Sul e enriquecida pela tradição afro-brasileira.</p>" +
+                                        "<p><strong>Ingredientes principais:</strong> Feijão preto, carnes suínas variadas, alho, louro e cachaça.</p>" +
                                     "</div>" +
-                                    "<img src='IMAGENS/foto14.jpg' class='bloco-img-interna' alt='Feijoada'>" +
+                                    "<div class='quadrante-bloco-img'>" +
+                                        "<img src='IMAGENS/foto14.jpg' alt='Feijoada'>" +
+                                    "</div>" +
                                 "</div>" +
-                                "<div class='bloco-item'>" +
-                                    "<div class='bloco-texto'>" +
+                                "<div class='quadrante-item'>" +
+                                    "<div class='quadrante-texto'>" +
                                         "<h3>O Pão de Queijo</h3><p>Para entender a hospitalidade brasileira, você precisa experimentar um pão de queijo quentinho saindo do forno. Nascido em Minas Gerais no período colonial, usa o polvilho misturado com as sobras de queijo endurecido das fazendas. O resultado é uma massa elástica, dourada por fora e macia por dentro.</p>" +
-                                        "<p><strong>Ingredientes principais:</strong> Polvilho, queijo ralado, ovos, leite e óleo.<br><strong>Importância:</strong> Maior embaixador da culinária mineira.</p>" +
+                                        "<p><strong>Ingredientes principais:</strong> Polvilho, queijo ralado, ovos, leite e óleo.</p>" +
                                     "</div>" +
-                                    "<img src='IMAGENS/foto15.jpg' class='bloco-img-interna' alt='Pão de Queijo'>" +
+                                    "<div class='quadrante-bloco-img'>" +
+                                        "<img src='IMAGENS/foto15.jpg' alt='Pão de Queijo'>" +
+                                    "</div>" +
                                 "</div>" +
                            "</div>"
                 },
                 destinos: {
                     titulo: "🗺️ Turismo: Três Destinos, Três Mundos",
                     subtitulo: "Caminhar por ladeiras coloniais, subir montanhas misteriosas e sentir a força de lendas indígenas.",
-                    texto: "<div class='quadrante-conteudo'>" +
-                                "<div class='bloco-item'>" +
-                                    "<div class='bloco-texto'>" +
+                    texto: "<div class='quadrante-container'>" +
+                                "<div class='quadrante-item'>" +
+                                    "<div class='quadrante-texto'>" +
                                         "<h3>O Rio de Janeiro e o Cristo Redentor</h3><p>Inaugurado em 1931, o monumento de 38 metros em estilo Art Déco foi feito inteiramente com doações do próprio povo. A estátua é revestida por pequenos triângulos de pedra-sabão, colados por mulheres que escreviam segredos de amor no verso.</p>" +
                                     "</div>" +
-                                    "<img src='IMAGENS/foto16.jpg' class='bloco-img-interna' alt='Cristo Redentor'>" +
+                                    "<div class='quadrante-bloco-img'>" +
+                                        "<img src='IMAGENS/foto16.jpg' alt='Cristo Redentor'>" +
+                                    "</div>" +
                                 "</div>" +
-                                "<div class='bloco-item'>" +
-                                    "<div class='bloco-texto'>" +
+                                "<div class='quadrante-item'>" +
+                                    "<div class='quadrante-texto'>" +
                                         "<h3>Salvador e o Centro Histórico do Pelourinho</h3><p>O coração da primeira capital do país pulsa no Pelourinho. O local ressignificou um passado doloroso, tornando-se o maior símbolo de resistência e celebração da cultura afro-brasileira, onde ecoam os tambores do Olodum.</p>" +
                                     "</div>" +
-                                    "<img src='IMAGENS/foto17.jpg' class='bloco-img-interna' alt='Pelourinho'>" +
+                                    "<div class='quadrante-bloco-img'>" +
+                                        "<img src='IMAGENS/foto17.jpg' alt='Pelourinho'>" +
+                                    "</div>" +
                                 "</div>" +
-                                "<div class='bloco-item'>" +
-                                    "<div class='bloco-texto'>" +
+                                "<div class='quadrante-item'>" +
+                                    "<div class='quadrante-texto'>" +
                                         "<h3>As Cataratas do Iguaçu</h3><p>São 275 quedas d’água brutais e lindas. O nome vem do guarani e significa 'Água Grande'. Segundo a lenda, o deus-serpente M’Boi fendeu a terra criando o desfiladeiro para condenar os amantes Naipi e Tarobá.</p>" +
                                     "</div>" +
-                                    "<img src='IMAGENS/foto18.jpg' class='bloco-img-interna' alt='Cataratas'>" +
+                                    "<div class='quadrante-bloco-img'>" +
+                                        "<img src='IMAGENS/foto18.jpg' alt='Cataratas'>" +
+                                    "</div>" +
                                 "</div>" +
                            "</div>"
                 },
                 festas: {
                     titulo: "💃 Festa Popular: A Catarse das Ruas",
                     subtitulo: "Mergulhe na maior catarse coletiva do planeta, onde as regras do cotidiano dão lugar à fantasia.",
-                    texto: "<div class='quadrante-conteudo'>" +
-                                "<div class='bloco-item'>" +
-                                    "<div class='bloco-texto'>" +
+                    texto: "<div class='quadrante-container'>" +
+                                "<div class='quadrante-item'>" +
+                                    "<div class='quadrante-texto'>" +
                                         "<h3>O Carnaval</h3><p>O Carnaval é o momento em que o Brasil suspende a realidade para viver a fantasia. Criado a partir do entrudo colonial, o povo negro incorporou os batuques e criou as Escolas de Samba. Viver o Carnaval é ver as divisões sociais desaparecerem na passarela.</p>" +
-                                        "<p><strong>Quando acontece:</strong> Quatro dias antes da Quarta-feira de Cinzas.<br><strong>Importância:</strong> Palco de manifestação artística e crítica social.</p>" +
+                                        "<p><strong>Quando acontece:</strong> Quatro dias antes da Quarta-feira de Cenzas.</p>" +
                                     "</div>" +
-                                    "<img src='IMAGENS/foto19.jpg' class='bloco-img-interna' alt='Carnaval'>" +
+                                    "<div class='quadrante-bloco-img'>" +
+                                        "<img src='IMAGENS/foto19.jpg' alt='Carnaval'>" +
+                                    "</div>" +
                                 "</div>" +
                            "</div>"
                 },
                 musica: {
                     titulo: "🎵 Música e Dança: A Alma em Movimento",
                     subtitulo: "A história de um povo escrita através de passos sagrados e canções que viraram hinos mundiais.",
-                    texto: "<div class='quadrante-conteudo'>" +
-                                "<div class='bloco-item'>" +
-                                    "<div class='bloco-texto'>" +
+                    texto: "<div class='quadrante-container'>" +
+                                "<div class='quadrante-item'>" +
+                                    "<div class='quadrante-texto'>" +
                                         "<h3>MÚSICA: 'Aquarela do Brasil'</h3><p>Inaugurou o gênero 'Samba-Exaltação' em 1939. A letra faz uma pintura poética e fluida do país de todas as cores, mostrando que a cultura é uma mistura alegre de raças e tradições.</p>" +
-                                        "<p><strong>Instrumentos:</strong> Pandeiro, violão, flauta e sopro.<br><strong>Importância:</strong> Segunda música brasileira mais regravada no mundo.</p>" +
                                     "</div>" +
-                                    "<img src='IMAGENS/foto20.jpg' class='bloco-img-interna' alt='Músico'>" +
+                                    "<div class='quadrante-bloco-img'>" +
+                                        "<img src='IMAGENS/foto20.jpg' alt='Músico'>" +
+                                    "</div>" +
                                 "</div>" +
-                                "<div class='bloco-item'>" +
-                                    "<div class='bloco-texto'>" +
+                                "<div class='quadrante-item'>" +
+                                    "<div class='quadrante-texto'>" +
                                         "<h3>DANÇA: O Samba de Roda</h3><p>Nascido no Recôncavo Baiano, foi criado por africanos escravizados para preservação cultural. Em círculo, batendo palmas, o auge é a umbigada: o convite festivo para o próximo entrar na roda.</p>" +
-                                        "<p><strong>Importância:</strong> Patrimônio Oral e Imaterial da Humanidade pela UNESCO.</p>" +
                                     "</div>" +
-                                    "<img src='IMAGENS/foto21.jpg' class='bloco-img-interna' alt='Samba de Roda'>" +
+                                    "<div class='quadrante-bloco-img'>" +
+                                        "<img src='IMAGENS/foto21.jpg' alt='Samba de Roda'>" +
+                                    "</div>" +
                                 "</div>" +
                            "</div>"
                 }

@@ -641,3 +641,68 @@ h1, h2, .botao-acao-navegar {
     0% { transform: scale(0.95); }
     100% { transform: scale(1.05); }
 }
+/* ==========================================================================
+   NOVOS ESTILOS: QUADRANTE DE TEXTO E IMAGEM LADO A LADO (DESENHO GREEN)
+   ========================================================================== */
+
+/* Container que envolve todos os quadrantes da página */
+.quadrante-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* O Quadrante/Caixa Fechada com fundo colorido translúcido */
+.quadrante-item {
+    display: flex;
+    align-items: stretch; /* Faz as duas metades terem a mesma altura */
+    background-color: rgba(255, 255, 255, 0.08); /* Fundo colorido suave */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda sutil */
+    border-radius: 16px;
+    overflow: hidden; /* Garante que nada saia do quadrante */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Lado Esquerdo: Onde fica o texto bonito */
+.quadrante-texto {
+    flex: 1;
+    padding: 25px;
+}
+
+/* Lado Direito: O bloco destacado para a imagem */
+.quadrante-bloco-img {
+    width: 220px; /* Largura fixa para o bloco da foto */
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo um pouco mais escuro para destacar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo da imagem interna */
+.quadrante-bloco-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    mix-blend-mode: multiply; /* Mescla fundos brancos puros se houver */
+}
+
+/* Responsivo: Se abrir no celular, o texto fica em cima e a imagem embaixo */
+@media (max-width: 768px) {
+    .quadrante-item {
+        flex-direction: column;
+    }
+    .quadrante-bloco-img {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px;
+    }
+    .quadrante-bloco-img img {
+        max-width: 200px;
+    }
+}
