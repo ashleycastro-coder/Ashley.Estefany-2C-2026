@@ -642,184 +642,138 @@ h1, h2, .botao-acao-navegar {
     100% { transform: scale(1.05); }
 }
 /* ==========================================================================
-   NOVOS ESTILOS: QUADRANTE DE TEXTO E IMAGEM LADO A LADO (DESENHO GREEN)
+   ESTRUTURA DE QUADRANTES CORRIGIDA E ADAPTADA
    ========================================================================== */
 
-/* Container que envolve todos os quadrantes da página */
-.quadrante-container {
+/* Layout Especial e Grande para as Imagens da Página Inicial */
+.bloco-pagina-inicial {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    margin-top: 20px;
-    width: 100%;
 }
 
-/* O Quadrante/Caixa Fechada com fundo colorido translúcido */
-.quadrante-item {
+.texto-inicial p {
+    font-family: 'Belleza', sans-serif !important;
+    font-size: 1.35rem !important;
+    line-height: 1.6;
+    color: #ffffff !important;
+    margin-bottom: 15px;
+}
+
+.imagens-iniciais-grid {
     display: flex;
-    align-items: stretch; /* Faz as duas metades terem a mesma altura */
-    background-color: rgba(255, 255, 255, 0.08); /* Fundo colorido suave */
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda sutil */
-    border-radius: 16px;
-    overflow: hidden; /* Garante que nada saia do quadrante */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    gap: 15px;
+    justify-content: space-between;
+    margin-top: 15px;
 }
 
-/* Lado Esquerdo: Onde fica o texto bonito */
-.quadrante-texto {
-    flex: 1;
-    padding: 25px;
-}
-
-/* Lado Direito: O bloco destacado para a imagem */
-.quadrante-bloco-img {
-    width: 220px; /* Largura fixa para o bloco da foto */
-    background-color: rgba(0, 0, 0, 0.2); /* Fundo um pouco mais escuro para destacar */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Estilo da imagem interna */
-.quadrante-bloco-img img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+.imagens-iniciais-grid img {
+    width: 31%;
+    height: 200px;
     object-fit: cover;
-    mix-blend-mode: multiply; /* Mescla fundos brancos puros se houver */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* Responsivo: Se abrir no celular, o texto fica em cima e a imagem embaixo */
-@media (max-width: 768px) {
-    .quadrante-item {
-        flex-direction: column;
-    }
-    .quadrante-bloco-img {
-        width: 100%;
-        border-left: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 20px;
-    }
-    .quadrante-bloco-img img {
-        max-width: 200px;
-    }
-}/* ==========================================================================
-   MELHORIAS VISUAIS: TIPOGRAFIA AMPLIADA E CORES PASTÉIS VIVAS
-   ========================================================================== */
-
-/* Destacando o título principal com a fonte Fredoka */
+/* Títulos e Subtítulos em Destaque */
 .titulo-manifesto {
     font-family: 'Fredoka', sans-serif !important;
-    font-size: 2.3rem !important; /* Título maior e com mais presença */
-    color: #ffffff;
+    font-size: 2.5rem !important; /* Ganha destaque total */
+    color: #ffffff !important;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
-/* Subtítulo ajustado */
 .subtitulo-manifesto {
     font-family: 'Fredoka', sans-serif !important;
-    font-size: 1.3rem !important;
-    color: #a3e635; /* Destaque em tom verde vibrante */
-    margin-bottom: 25px;
+    font-size: 1.4rem !important;
+    color: #ffffff !important; /* Cor branca padrão para não colorir as letras */
+    opacity: 0.9;
+    margin-bottom: 30px;
 }
 
-/* Container dos Quadrantes */
+/* Container que organiza as caixas */
 .quadrante-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    margin-top: 20px;
+    gap: 35px;
+    margin-top: 10px;
     width: 100%;
 }
 
-/* O Quadrante com tamanho interno expandido para eliminar espaço em branco */
+/* Caixa Fechada do Quadrante */
 .quadrante-item {
     display: flex;
     align-items: stretch;
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Texto interno expandido usando a fonte Belleza */
+.item-simples {
+    display: block;
+}
+
+/* Lado Esquerdo: Texto Bonito e Grande (Elimina espaços em branco) */
 .quadrante-texto {
     flex: 1;
-    padding: 35px; /* Mais preenchimento para preencher o vazio */
-    font-family: 'Belleza', sans-serif !important;
+    padding: 35px;
 }
 
 .quadrante-texto h3 {
     font-family: 'Fredoka', sans-serif !important;
-    font-size: 1.6rem;
-    margin-bottom: 12px;
-    color: #ffffff;
+    font-size: 1.75rem !important;
+    color: #ffffff !important;
+    margin-bottom: 15px;
 }
 
 .quadrante-texto p {
-    font-size: 1.25rem !important; /* Letras maiores para leitura confortável */
+    font-family: 'Belleza', sans-serif !important;
+    font-size: 1.35rem !important; /* Ampliado para ocupar bem o espaço */
     line-height: 1.6 !important;
-    color: #e2e8f0;
-    margin-bottom: 10px;
+    color: #ffffff !important; /* Letras totalmente limpas e claras */
 }
 
-/* O Bloco das Imagens */
+/* Lado Direito: Apenas Moldura de Fundo (Sem filtro cobrindo a foto) */
 .quadrante-bloco-img {
-    width: 260px; /* Um pouco maior para equilibrar o texto */
+    width: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 25px;
 }
 
+/* Fotos Limpas com cores originais */
 .quadrante-bloco-img img {
     width: 100%;
     height: auto;
     border-radius: 12px;
     object-fit: cover;
-    mix-blend-mode: multiply;
-}
-
-/* Pequeno ajuste para empilhar as fotos da página inicial */
-.carrossel-inicial img {
-    max-height: 100px;
-    object-fit: contain;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 /* --------------------------------------------------------------------------
-   CORES DE FUNDO: PASTÉIS VIVAS DISTINTAS PARA CADA CATEGORIA
+   MOLDURAS PASTÉIS LEVES E INSPIRADAS NA NATUREZA (APENAS NO FUNDO)
    -------------------------------------------------------------------------- */
 
-/* Cor da Página Inicial: Azul Pastel Vivo */
-.cor-inicial {
-    background-color: #7dd3fc !important; 
+/* Tom areia/terra suave */
+.bg-areia {
+    background-color: #f5eae0 !important; 
 }
 
-/* Cor da Gastronomia: Coral/Laranja Pastel Vivo */
-.cor-gastronomia {
-    background-color: #fda4af !important; 
+/* Tom verde menta/folha leve */
+.bg-menta {
+    background-color: #e2f0d9 !important; 
 }
 
-/* Cor do Turismo: Verde Água/Menta Pastel Vivo */
-.cor-turismo {
-    background-color: #86efac !important; 
+/* Tom azul céu bem claro */
+.bg-ceu {
+    background-color: #e6f2ff !important; 
 }
 
-/* Cor das Festas: Amarelo Sol Pastel Vivo */
-.cor-festas {
-    background-color: #fef08a !important; 
-}
-
-/* Cor da Música: Roxo/Lavanda Pastel Vivo */
-.cor-musica {
-    background-color: #c084fc !important; 
-}
-
-/* Responsividade para Celulares */
+/* Responsividade para Telas Menores */
 @media (max-width: 768px) {
     .quadrante-item {
         flex-direction: column;
@@ -828,7 +782,11 @@ h1, h2, .botao-acao-navegar {
         width: 100%;
         padding: 20px;
     }
-    .quadrante-bloco-img img {
-        max-width: 180px;
+    .imagens-iniciais-grid {
+        flex-direction: column;
+    }
+    .imagens-iniciais-grid img {
+        width: 100%;
+        height: 160px;
     }
 }
