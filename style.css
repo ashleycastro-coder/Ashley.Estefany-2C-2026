@@ -705,4 +705,130 @@ h1, h2, .botao-acao-navegar {
     .quadrante-bloco-img img {
         max-width: 200px;
     }
+}/* ==========================================================================
+   MELHORIAS VISUAIS: TIPOGRAFIA AMPLIADA E CORES PASTÉIS VIVAS
+   ========================================================================== */
+
+/* Destacando o título principal com a fonte Fredoka */
+.titulo-manifesto {
+    font-family: 'Fredoka', sans-serif !important;
+    font-size: 2.3rem !important; /* Título maior e com mais presença */
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Subtítulo ajustado */
+.subtitulo-manifesto {
+    font-family: 'Fredoka', sans-serif !important;
+    font-size: 1.3rem !important;
+    color: #a3e635; /* Destaque em tom verde vibrante */
+    margin-bottom: 25px;
+}
+
+/* Container dos Quadrantes */
+.quadrante-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* O Quadrante com tamanho interno expandido para eliminar espaço em branco */
+.quadrante-item {
+    display: flex;
+    align-items: stretch;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Texto interno expandido usando a fonte Belleza */
+.quadrante-texto {
+    flex: 1;
+    padding: 35px; /* Mais preenchimento para preencher o vazio */
+    font-family: 'Belleza', sans-serif !important;
+}
+
+.quadrante-texto h3 {
+    font-family: 'Fredoka', sans-serif !important;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.quadrante-texto p {
+    font-size: 1.25rem !important; /* Letras maiores para leitura confortável */
+    line-height: 1.6 !important;
+    color: #e2e8f0;
+    margin-bottom: 10px;
+}
+
+/* O Bloco das Imagens */
+.quadrante-bloco-img {
+    width: 260px; /* Um pouco maior para equilibrar o texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.quadrante-bloco-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+}
+
+/* Pequeno ajuste para empilhar as fotos da página inicial */
+.carrossel-inicial img {
+    max-height: 100px;
+    object-fit: contain;
+}
+
+/* --------------------------------------------------------------------------
+   CORES DE FUNDO: PASTÉIS VIVAS DISTINTAS PARA CADA CATEGORIA
+   -------------------------------------------------------------------------- */
+
+/* Cor da Página Inicial: Azul Pastel Vivo */
+.cor-inicial {
+    background-color: #7dd3fc !important; 
+}
+
+/* Cor da Gastronomia: Coral/Laranja Pastel Vivo */
+.cor-gastronomia {
+    background-color: #fda4af !important; 
+}
+
+/* Cor do Turismo: Verde Água/Menta Pastel Vivo */
+.cor-turismo {
+    background-color: #86efac !important; 
+}
+
+/* Cor das Festas: Amarelo Sol Pastel Vivo */
+.cor-festas {
+    background-color: #fef08a !important; 
+}
+
+/* Cor da Música: Roxo/Lavanda Pastel Vivo */
+.cor-musica {
+    background-color: #c084fc !important; 
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .quadrante-item {
+        flex-direction: column;
+    }
+    .quadrante-bloco-img {
+        width: 100%;
+        padding: 20px;
+    }
+    .quadrante-bloco-img img {
+        max-width: 180px;
+    }
 }
