@@ -642,81 +642,61 @@ h1, h2, .botao-acao-navegar {
     100% { transform: scale(1.05); }
 }
 /* ==========================================================================
-   ESTRUTURA DE QUADRANTES CORRIGIDA E ADAPTADA
+   MÓDULO DE QUADRANTES PROFISSIONAIS - REGRAS DE LAYOUT E CORES
    ========================================================================== */
 
-/* Layout Especial e Grande para as Imagens da Página Inicial */
+/* Configuração Geral da Página Inicial */
 .bloco-pagina-inicial {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
 
 .texto-inicial p {
     font-family: 'Belleza', sans-serif !important;
     font-size: 1.35rem !important;
     line-height: 1.6;
-    color: #ffffff !important;
-    margin-bottom: 15px;
+    color: #ffffff !important; /* Texto do manifesto geral permanece claro */
 }
 
 .imagens-iniciais-grid {
     display: flex;
     gap: 15px;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .imagens-iniciais-grid img {
-    width: 31%;
-    height: 200px;
+    width: 32%;
+    height: 240px; /* Mantém o tamanho grande e imponente das fotos */
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* Títulos e Subtítulos em Destaque */
-.titulo-manifesto {
-    font-family: 'Fredoka', sans-serif !important;
-    font-size: 2.5rem !important; /* Ganha destaque total */
-    color: #ffffff !important;
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.subtitulo-manifesto {
-    font-family: 'Fredoka', sans-serif !important;
-    font-size: 1.4rem !important;
-    color: #ffffff !important; /* Cor branca padrão para não colorir as letras */
-    opacity: 0.9;
-    margin-bottom: 30px;
-}
-
-/* Container que organiza as caixas */
+/* Container de Organização */
 .quadrante-container {
     display: flex;
     flex-direction: column;
-    gap: 35px;
-    margin-top: 10px;
+    gap: 30px;
     width: 100%;
+    margin-top: 15px;
 }
 
-/* Caixa Fechada do Quadrante */
+/* A estrutura física do Quadrante */
 .quadrante-item {
     display: flex;
     align-items: stretch;
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 18px;
+    background-color: #ffffff; /* Fundo do quadrante sólido para legibilidade */
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .item-simples {
     display: block;
 }
 
-/* Lado Esquerdo: Texto Bonito e Grande (Elimina espaços em branco) */
+/* Lado Esquerdo: Textos Grandes com Letra estritamente Preta */
 .quadrante-texto {
     flex: 1;
     padding: 35px;
@@ -724,69 +704,64 @@ h1, h2, .botao-acao-navegar {
 
 .quadrante-texto h3 {
     font-family: 'Fredoka', sans-serif !important;
-    font-size: 1.75rem !important;
-    color: #ffffff !important;
-    margin-bottom: 15px;
+    font-size: 1.8rem !important;
+    color: #000000 !important; /* FORÇA COR PRETA */
+    margin-bottom: 12px;
+    font-weight: 700;
 }
 
-.quadrante-texto p {
+.quadrante-texto p, 
+.quadrante-texto strong {
     font-family: 'Belleza', sans-serif !important;
-    font-size: 1.35rem !important; /* Ampliado para ocupar bem o espaço */
+    font-size: 1.35rem !important;
     line-height: 1.6 !important;
-    color: #ffffff !important; /* Letras totalmente limpas e claras */
+    color: #000000 !important; /* FORÇA COR PRETA */
 }
 
-/* Lado Direito: Apenas Moldura de Fundo (Sem filtro cobrindo a foto) */
+/* Lado Direito: A moldura colorida atrás da foto */
 .quadrante-bloco-img {
-    width: 250px;
+    width: 260px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 25px;
+    padding: 20px;
 }
 
-/* Fotos Limpas com cores originais */
+/* Foto Limpa sem nenhuma interferência de filtros */
 .quadrante-bloco-img img {
     width: 100%;
     height: auto;
-    border-radius: 12px;
+    border-radius: 10px;
     object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 /* --------------------------------------------------------------------------
-   MOLDURAS PASTÉIS LEVES E INSPIRADAS NA NATUREZA (APENAS NO FUNDO)
+   MOLDURAS PASTÉIS SUAVES DA NATUREZA (APENAS DE FUNDO)
    -------------------------------------------------------------------------- */
-
-/* Tom areia/terra suave */
 .bg-areia {
-    background-color: #f5eae0 !important; 
+    background-color: #f4eae1 !important; /* Tom terra/areia leve */
 }
 
-/* Tom verde menta/folha leve */
 .bg-menta {
-    background-color: #e2f0d9 !important; 
+    background-color: #e3f0db !important; /* Tom folha/clorofila suave */
 }
 
-/* Tom azul céu bem claro */
 .bg-ceu {
-    background-color: #e6f2ff !important; 
+    background-color: #e7f1fb !important; /* Tom céu límpido claro */
 }
 
-/* Responsividade para Telas Menores */
+/* Responsividade Mobile */
 @media (max-width: 768px) {
     .quadrante-item {
         flex-direction: column;
     }
     .quadrante-bloco-img {
         width: 100%;
-        padding: 20px;
     }
     .imagens-iniciais-grid {
         flex-direction: column;
     }
     .imagens-iniciais-grid img {
         width: 100%;
-        height: 160px;
     }
 }
