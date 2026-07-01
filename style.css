@@ -765,3 +765,107 @@ h1, h2, .botao-acao-navegar {
         width: 100%;
     }
 }
+/* ==========================================================================
+   ADICIONAL: SUPORTE AOS QUADRANTES INTERNOS DOS PAÍSES (AGRINHO 2026)
+   ========================================================================== */
+
+/* Mantém os parágrafos originais da home intocados (com a fonte original e cor branca) */
+#corpo-texto > p {
+    font-family: 'Belleza', sans-serif;
+    color: #ffffff;
+}
+
+/* Container de Organização dos Quadrantes */
+.quadrante-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Caixa Fechada Alinhada com fundo Branco para contraste das letras pretas */
+.quadrante-item {
+    display: flex;
+    align-items: stretch;
+    background-color: #ffffff !important; /* Caixa branca sólida */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para telas simples dos países */
+.item-simples-brasil {
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+}
+.item-simples-brasil p {
+    font-family: 'Belleza', sans-serif !important;
+    font-size: 1.35rem !important;
+    color: #ffffff !important;
+}
+
+/* Lado Esquerdo: Textos Grandes com Letra estritamente Preta */
+.quadrante-texto {
+    flex: 1;
+    padding: 35px;
+}
+
+.quadrante-texto h3 {
+    font-family: 'Fredoka', sans-serif !important;
+    font-size: 1.8rem !important;
+    color: #000000 !important; /* LETRAS PRETAS */
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.quadrante-texto p, 
+.quadrante-texto strong {
+    font-family: 'Belleza', sans-serif !important;
+    font-size: 1.35rem !important;
+    line-height: 1.6 !important;
+    color: #000000 !important; /* LETRAS PRETAS */
+}
+
+/* Lado Direito: A moldura colorida pastel atrás da foto */
+.quadrante-bloco-img {
+    width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Foto Limpa sem nenhuma interferência de filtros */
+.quadrante-bloco-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   MOLDURAS PASTÉIS SUAVES INSPIRADAS NA NATUREZA (APENAS DE FUNDO)
+   -------------------------------------------------------------------------- */
+.bg-areia {
+    background-color: #f4eae1 !important; /* Tom terra/areia suave */
+}
+
+.bg-menta {
+    background-color: #e3f0db !important; /* Tom folha/clorofila suave */
+}
+
+.bg-ceu {
+    background-color: #e7f1fb !important; /* Tom céu límpido claro */
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .quadrante-item {
+        flex-direction: column;
+    }
+    .quadrante-bloco-img {
+        width: 100%;
+    }
+}
