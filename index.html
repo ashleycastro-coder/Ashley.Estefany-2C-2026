@@ -38,54 +38,40 @@
         <button class="botao-acao-navegar" onclick="toggleBandeiras()">Navegar 👉🏾</button>
         
         <div id="fileiraPaises" class="fileira-bandeiras escondido">
+            <img src="https://flagcdn.com/w40/br.png" alt="Brasil" title="Brasil" class="desenho-bandeira" onclick="selecionarPais('brasil')">
             <img src="https://flagcdn.com/w40/ar.png" alt="Argentina" title="Argentina" class="desenho-bandeira">
             <img src="https://flagcdn.com/w40/bo.png" alt="Bolívia" title="Bolívia" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/br.png" alt="Brasil" title="Brasil" class="desenho-bandeira">
             <img src="https://flagcdn.com/w40/cl.png" alt="Chile" title="Chile" class="desenho-bandeira">
             <img src="https://flagcdn.com/w40/co.png" alt="Colômbia" title="Colômbia" class="desenho-bandeira">
             <img src="https://flagcdn.com/w40/ec.png" alt="Equador" title="Equador" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/gy.png" alt="Guiana" title="Guiana" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/py.png" alt="Paraguai" title="Paraguai" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/pe.png" alt="Peru" title="Peru" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/sr.png" alt="Suriname" title="Suriname" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/uy.png" alt="Uruguai" title="Uruguai" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/ve.png" alt="Venezuela" title="Venezuela" class="desenho-bandeira">
         </div>
     </nav>
 
     <div class="divisao-layout">
         
         <aside class="coluna-botoes">
-            <a href="index.html" title="Página Inicial"><button class="botao-circulo">🏠</button></a>
-            <a href="gastronomia.html" title="Gastronomia"><button class="botao-circulo">🌮</button></a>
-            <a href="destinos.html" title="Destinos"><button class="botao-circulo">✈️</button></a>
-            <a href="festas.html" title="Festas Populares"><button class="botao-circulo">🎉</button></a>
-            <a href="musica.html" title="Ritmo e Música"><button class="botao-circulo">🎵</button></a>
+            <button class="botao-circulo" title="Página Inicial" onclick="mudarCategoria('inicio')">🏠</button>
+            <button class="botao-circulo" title="Gastronomia" onclick="mudarCategoria('gastronomia')">🌮</button>
+            <button class="botao-circulo" title="Destinos" onclick="mudarCategoria('destinos')">✈️</button>
+            <button class="botao-circulo" title="Festas Populares" onclick="mudarCategoria('festas')">🎉</button>
+            <button class="botao-circulo" title="Ritmo e Música" onclick="mudarCategoria('musica')">🎵</button>
         </aside>
 
         <div class="coluna-imagens-meio">
-            <img src="IMAGENS/foto1.jpg" alt="Sabores da América do Sul" class="foto-bloco">
-            <img src="IMAGENS/foto2.jpg" alt="Ritmos da América do Sul" class="foto-bloco">
-            <img src="IMAGENS/foto3.jpg" alt="Cores da América do Sul" class="foto-bloco">
+            <img src="IMAGENS/foto1.jpg" id="img-bloco-1" alt="Imagem 1" class="foto-bloco">
+            <img src="IMAGENS/foto2.jpg" id="img-bloco-2" alt="Imagem 2" class="foto-bloco">
+            <img src="IMAGENS/foto3.jpg" id="img-bloco-3" alt="Imagem 3" class="foto-bloco">
         </div>
 
         <main class="espaco-leitura">
             <div class="caixa-manifesto">
-                <h2 class="titulo-manifesto">O Coração Pulsante do Mundo</h2>
-                <p class="subtitulo-manifesto">Muito além dos mapas: uma viagem de arrepiar pelos sabores, ritmos e cores do continente mais vivo do planeta.</p>
+                <h2 class="titulo-manifesto" id="titulo-pagina">O Coração Pulsante do Mundo</h2>
+                <p class="subtitulo-manifesto" id="subtitulo-pagina">Muito além dos mapas: uma viagem de arrepiar pelos sabores, ritmos e cores do continente mais vivo do planeta.</p>
                 
-                <div class="texto-manifesto">
+                <div class="texto-manifesto" id="corpo-texto">
                     <p>Já sentiu o chão tremer com o ritmo de um tambor que parece bater no mesmo compasso que o seu coração? Já fechou os olhos e se deixou levar pelo aroma de um tempero que conta histórias de séculos atrás?</p>
-                    
                     <p>A América do Sul não é apenas um lugar no mapa. É uma explosão de vida. É a força de um povo que transforma luta em festa, que coloca poesia na mesa e que dança como se o amanhã não existisse. Das cordilheiras gigantescas às praias que parecem não ter fim, nosso continente respira diversidade.</p>
-                    
-                    <p>Aqui, a gastronomia é um abraço quente, as festas populares são rituais de pura energia, o turismo é uma descoberta de nós mesmos e os ritmos... bem, os ritmos são o que nos movem.</p>
-                    
-                    <blockquote class="frase-destaque">
-                        Esqueça os clichês e os textos frios de livros didáticos. Conecte-se com a nossa essência.
-                    </blockquote>
-                    
-                    <p class="final-impactante">Prepare o seu coração, porque a sua viagem pelo lado mais vibrante do planeta começa agora. <strong>Sinta a força. Viva a América do Sul.</strong></p>
+                    <p>Prepare o seu coração, porque a sua viagem pelo lado mais vibrante do planeta começa agora. <strong>Sinta a força. Viva a América do Sul.</strong></p>
                 </div>
             </div>
         </main>
@@ -98,16 +84,97 @@
             fileira.classList.toggle("escondido");
         }
 
-        // Script configurado para sumir bem mais rápido (3 segundos no total)
         setTimeout(function() {
             var telaIntro = document.getElementById("tela-boas-vindas");
             telaIntro.style.opacity = "0";
-            telaIntro.style.transition = "opacity 800ms ease"; /* Tempo sumindo */
-            
+            telaIntro.style.transition = "opacity 800ms ease";
             setTimeout(function() {
                 telaIntro.style.display = "none";
             }, 800);
-        }, 2200); /* 2.2 segundos travada na tela */
+        }, 2200);
+
+        // Armazena qual país está ativo na navegação
+        var paisSelecionado = "geral";
+
+        // Conteúdo padrão da página (Antes de clicar em qualquer bandeira)
+        var conteudoGeral = {
+            inicio: {
+                titulo: "O Coração Pulsante do Mundo",
+                subtitulo: "Muito além dos mapas: uma viagem de arrepiar pelos sabores, ritmos e cores do continente mais vivo do planeta.",
+                texto: "<p>Já sentiu o chão tremer com o ritmo de um tambor que parece bater no mesmo compasso que o seu coração? Já fechou os olhos e se deixou levar pelo aroma de um tempero que conta histórias de séculos atrás?</p><p>A América do Sul não é apenas um lugar no mapa. É uma explosão de vida. É a força de um povo que transforma luta em festa, que coloca poesia na mesa e que dança como se o amanhã não existisse.</p><p>Prepare o seu coração, porque a sua viagem pelo lado mais vibrante do planeta começa agora. <strong>Sinta a força. Viva a América do Sul.</strong></p>",
+                img1: "IMAGENS/foto1.jpg",
+                img2: "IMAGENS/foto2.jpg",
+                img3: "IMAGENS/foto3.jpg"
+            }
+        };
+
+        // Banco de Dados oficial do Brasil com seus textos e descrições estruturados
+        var dadosPaises = {
+            brasil: {
+                inicio: {
+                    titulo: "🇧🇷 Segura essa marra: É o Brasil!",
+                    subtitulo: '"Papo reto? Tu vai se apaixonar. Aqui o povo é sem tempo para o desânimo e o nosso ritmo é outra parada!"',
+                    texto: "<p>Prepare o seu coração, porque entrar no Brasil é aceitar o convite para uma viagem onde a realidade ganha cores muito mais vivas. Este não é apenas um lugar no mapa; é um estado de espírito que se move na batida de um tambor e se renova a cada sorriso.</p><p>Nesta jornada pelas páginas brasileiras, nós vamos desvendar os segredos de um país que transforma tudo em festa e poesia. Clique nas abas laterais para navegar pelos nossos segredos!</p>",
+                    img1: "IMAGENS/foto1.jpg", 
+                    img2: "IMAGENS/foto2.jpg",
+                    img3: "IMAGENS/foto3.jpg"
+                },
+                gastronomia: {
+                    titulo: "🍲 Gastronomia: O Sabor que Conta Histórias",
+                    subtitulo: "Como a criatividade e a história se fundiram em panelas de barro para criar pratos que são rituais de afeto.",
+                    texto: "<h3>A Feijoada</h3><p>Se o Brasil tivesse um sabor oficial, ele seria cozido lentamente em uma panela de barro. A feijoada é o prato que reúne as famílias brasileiras ao redor da mesa. A história real mostra que ela é uma evolução sofisticada do cozido europeu, adaptada com o feijão preto nativo da América do Sul e enriquecida pela tradição afro-brasileira. Comer feijoada no Brasil é um ritual acompanhado por arroz clarinho, farofa bem temperada, couve refogada no alho e gomos de laranja fresca.</p><p><strong>Ingredientes principais:</strong> Feijão preto, carnes suínas variadas (linguiça, paio, bacon, lombo), alho, louro e cachaça.<br><strong>Importância:</strong> É considerada o prato nacional por excelência, simbolizando a mistura de culturas que moldou a identidade do país.</p><hr><h3>O Pão de Queijo</h3><p>Nascido em Minas Gerais durante o período colonial por pura necessidade e criatividade. Na época, a farinha de trigo que vinha da Europa era rara e caríssima. As cozinheiras mineiras resolveram usar o polvilho misturado com as sobras de queijo endurecido das fazendas. O resultado foi uma massa elástica, dourada por fora e macia por dentro. É o sinônimo perfeito do 'café da tarde' brasileiro.</p><p><strong>Ingredientes principais:</strong> Polvilho (doce ou azedo), queijo ralado (geralmente minas ou canastra), ovos, leite e óleo.<br><strong>Importância:</strong> É o maior embaixador da culinária mineira e um dos petiscos mais amados e exportados do Brasil.</p>",
+                    img1: "IMAGENS/foto1.jpg",
+                    img2: "IMAGENS/foto2.jpg",
+                    img3: "IMAGENS/foto3.jpg"
+                },
+                destinos: {
+                    titulo: "🗺️ Turismo: Três Destinos, Três Mundos",
+                    subtitulo: "Caminhar por ladeiras coloniais, subir montanhas misteriosas e sentir a força de lendas indígenas.",
+                    texto: "<h3>O Rio de Janeiro e o Cristo Redentor</h3><p>Inaugurado em 1931, o monumento de 38 metros em estilo Art Déco foi feito inteiramente com doações do próprio povo. A estátua é revestida por pequenos triângulos de pedra-sabão, colados um a um por mulheres da sociedade que escreviam os nomes de seus namorados e familiares no verso. O Cristo guarda, literalmente, milhares de segredos de amor em seu manto.</p><hr><h3>Salvador e o Centro Histórico do Pelourinho</h3><p>O coração da primeira capital do país pulsa no Pelourinho. O local, que antigamente carregava um passado doloroso onde escravizados eram castigados, hoje ressignificou totalmente o seu espaço, tornando-se o maior símbolo de resistência e celebração da cultura afro-brasileira. Ali ecoam os tambores do Olodum e fica a Igreja de São Francisco, revestida com quase uma tonelada de ouro.</p><hr><h3>As Cataratas do Iguaçu</h3><p>São 275 quedas d’água brutais e lindas. O nome vem do guarani e significa 'Água Grande'. Segundo a lenda indígena, o deus-serpente M’Boi fendeu a terra criando o desfiladeiro para condenar os amantes Naipi e Tarobá a uma queda eterna por terem fugido de canoa.</p>",
+                    img1: "IMAGENS/foto1.jpg",
+                    img2: "IMAGENS/foto2.jpg",
+                    img3: "IMAGENS/foto3.jpg"
+                },
+                festas: {
+                    titulo: "💃 Festa Popular: A Catarse das Ruas",
+                    subtitulo: "Mergulhe na maior catarse coletiva do planeta, onde as regras do cotidiano dão lugar à fantasia.",
+                    texto: "<h3>O Carnaval</h3><p>O Carnaval é o momento em que o Brasil suspende a realidade para viver a fantasia. A festa começou séculos atrás com o entrudo colonial trazido pelos portugueses. Com o tempo, o povo negro incorporou os batuques, os cordões e os ranchos, criando na década de 1920 as primeiras Escolas de Samba.</p><p>Viver o Carnaval é ver as divisões sociais desaparecerem: o trabalhador vira rei e a avenida vira passarela. Seja na Marquês de Sapucaí ou atrás de um trio elétrico em Salvador, o Carnaval é a maior prova da paixão do povo brasileiro pela vida.</p><p><strong>Quando acontece:</strong> Quatro dias antes da Quarta-feira de Cinzas.<br><strong>Importância:</strong> Movimenta bilhões na economia, gera milhares de empregos e serve como o maior palco de manifestação artística e crítica social do país.</p>",
+                    img1: "IMAGENS/foto1.jpg",
+                    img2: "IMAGENS/foto2.jpg",
+                    img3: "IMAGENS/foto3.jpg"
+                },
+                musica: {
+                    titulo: "🎵 Música e Dança: A Alma em Movimento",
+                    subtitulo: "A história de um povo escrita através de passos sagrados e canções que viraram hinos mundiais.",
+                    texto: "<h3>MÚSICA: 'Aquarela do Brasil' (Ary Barroso)</h3><p>Gravada originalmente em 1939, inaugurou o gênero 'Samba-Exaltação'. A letra faz uma pintura poética do país, exaltando o Brasil de todas as cores, o batuque, as palmeiras e a simpatia do povo misturado. Mostra que a nossa cultura é uma mistura fluida onde diferentes raças se fundiram para criar um quadro único.</p><p><strong>Instrumentos:</strong> Pandeiro, violão, flauta e naipes de sopro.<br><strong>Importância:</strong> É considerada o segundo hino nacional e a música brasileira mais regravada internacionalmente.</p><hr><h3>DANÇA: O Samba de Roda</h3><p>Nascido no Recôncavo Baiano por volta do século XVII, foi criado pelos africanos escravizados como forma de preservação cultural e ancestralidade. A dança acontece em círculo, batendo palmas. Uma mulher vai ao centro com movimentos rápidos e dá a 'umbigada' (um toque festivo) para convidar a próxima pessoa. Significa comunidade e a vitória da alegria sobre a opressão.</p><p><strong>Importância:</strong> Declarado Patrimônio Oral e Imaterial da Humanidade pela UNESCO.</p>",
+                    img1: "IMAGENS/foto1.jpg",
+                    img2: "IMAGENS/foto2.jpg",
+                    img3: "IMAGENS/foto3.jpg"
+                }
+            }
+        };
+
+        function selecionarPais(pais) {
+            paisSelecionado = pais;
+            mudarCategoria('inicio');
+        }
+
+        function mudarCategoria(categoria) {
+            var dados;
+            if (paisSelecionado === "geral") {
+                dados = conteudoGeral['inicio'];
+            } else {
+                dados = dadosPaises[paisSelecionado][categoria];
+            }
+
+            document.getElementById("titulo-pagina").innerHTML = dados.titulo;
+            document.getElementById("subtitulo-pagina").innerHTML = dados.subtitulo;
+            document.getElementById("corpo-texto").innerHTML = dados.texto;
+
+            document.getElementById("img-bloco-1").src = dados.img1;
+            document.getElementById("img-bloco-2").src = dados.img2;
+            document.getElementById("img-bloco-3").src = dados.img3;
+        }
     </script>
 
 </body>
