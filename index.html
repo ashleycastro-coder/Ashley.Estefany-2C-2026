@@ -9,6 +9,60 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* CSS Adicional para criar o Quadrante Colorido com Texto e Imagem Lado a Lado */
+        .quadrante-conteudo {
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo colorido sutil (ajuste a cor se quiser) */
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Classe que vai controlar cada bloco de conteúdo (Feijoada, Pão de Queijo, etc) */
+        .bloco-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+        }
+
+        .bloco-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        /* O texto ocupa o espaço restante */
+        .bloco-texto {
+            flex: 1;
+        }
+
+        /* A imagem dentro do quadrante */
+        .bloco-img-interna {
+            width: 200px; /* Tamanho controlado para a ilustração */
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            /* Se as imagens tiverem fundo branco puro, o filtro abaixo faz mágica */
+            mix-blend-mode: multiply; 
+        }
+
+        /* Responsivo: se a tela for pequena, a imagem vai para baixo do texto */
+        @media (max-width: 768px) {
+            .bloco-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .bloco-img-interna {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -63,18 +117,12 @@
             <button class="botao-circulo" title="Ritmo e Música" onclick="mudarCategoria('musica')">🎵</button>
         </aside>
 
-        <div class="coluna-imagens-meio" id="bloco-imagens-container">
-            <img src="IMAGENS/foto1.jpg" id="img-bloco-1" alt="Imagem 1" class="foto-bloco">
-            <img src="IMAGENS/foto2.jpg" id="img-bloco-2" alt="Imagem 2" class="foto-bloco">
-            <img src="IMAGENS/foto3.jpg" id="img-bloco-3" alt="Imagem 3" class="foto-bloco">
-        </div>
-
-        <main class="espaco-leitura">
+        <main class="espaco-leitura" style="width: 100%;">
             <div class="caixa-manifesto">
                 <h2 class="titulo-manifesto" id="titulo-pagina">O Coração Pulsante do Mundo</h2>
                 <p class="subtitulo-manifesto" id="subtitulo-pagina">Muito além dos mapas: uma viagem de arrepiar pelos sabores, ritmos e cores do continente mais vivo do planeta.</p>
                 
-                <div class="texto-manifesto" id="corpo-texto">
+                <div id="corpo-texto">
                     <p>Já sentiu o chão tremer com o ritmo de um tambor que parece bater no mesmo compasso que o seu coração? Já fechou os olhos e se deixou levar pelo aroma de um tempero que conta histórias de séculos atrás?</p>
                     <p>A América do Sul não é apenas um lugar no mapa. É uma explosão de vida. É a força de um povo que transforma luta em festa, que coloca poesia na mesa e que dança como se o amanhã não existisse. Das cordilheiras gigantescas às praias que parecem não ter fim, nosso continente respira diversidade.</p>
                     <p>Prepare o seu coração, porque a sua viagem pelo lado mais vibrante do planeta começa agora. <strong>Sinta a força. Viva a América do Sul.</strong></p>
@@ -105,11 +153,7 @@
             inicio: {
                 titulo: "O Coração Pulsante do Mundo",
                 subtitulo: "Muito além dos mapas: uma viagem de arrepiar pelos sabores, ritmos e cores do continente mais vivo do planeta.",
-                texto: "<p>Já sentiu o chão tremer com o ritmo de um tambor que parece bater no mesmo compasso que o seu coração? Já fechou os olhos e se deixou levar pelo aroma de um tempero que conta histórias de séculos atrás?</p><p>A América do Sul não é apenas um lugar no mapa. É uma explosão de vida. É a força de um povo que transforma luta em festa, que coloca poesia na mesa e que dança como se o amanhã não existisse.</p><p>Prepare o seu coração, porque a sua viagem pelo lado mais vibrante do planeta começa agora. <strong>Sinta a força. Viva a América do Sul.</strong></p>",
-                img1: "IMAGENS/foto1.jpg",
-                img2: "IMAGENS/foto2.jpg",
-                img3: "IMAGENS/foto3.jpg",
-                layout_full: false
+                texto: "<p>Já sentiu o chão tremer com o ritmo de um tambor que parece bater no mesmo compasso que o seu coração? Já fechou os olhos e se deixou levar pelo aroma de um tempero que conta histórias de séculos atrás?</p><p>A América do Sul não é apenas um lugar no mapa. É uma explosão de vida. É a força de um povo que transforma luta em festa, que coloca poesia na mesa e que dança como se o amanhã não existisse.</p><p>Prepare o seu coração, porque a sua viagem pelo lado mais vibrante do planeta começa agora. <strong>Sinta a força. Viva a América do Sul.</strong></p>"
             }
         };
 
@@ -118,44 +162,84 @@
                 inicio: {
                     titulo: "🇧🇷 Segura essa marra: É o Brasil!",
                     subtitulo: '"Papo reto? Tu vai se apaixonar. Aqui o povo é sem tempo para o desânimo e o nosso ritmo é outra parada!"',
-                    texto: "<p>Prepare o seu coração, porque entrar no Brasil é aceitar o convite para uma viagem onde a realidade ganha cores muito mais vivas. Este não é apenas um lugar no mapa; é um estado de espírito que se move na batida de um tambor e se renova a cada sorriso.</p><p>Nesta jornada pelas páginas brasileiras, nós vamos desvendar os segredos de um país que transforma tudo em festa e poesia. Clique nas abas laterais para navegar pelos nossos segredos!</p>",
-                    layout_full: true
+                    texto: "<p>Prepare o seu coração, porque entrar no Brasil é aceitar o convite para uma viagem onde a realidade ganha cores muito mais vivas. Este não é apenas um lugar no mapa; é um estado de espírito que se move na batida de um tambor e se renova a cada sorriso.</p><p>Nesta jornada pelas páginas brasileiras, nós vamos desvendar os segredos de um país que transforma tudo em festa e poesia. Clique nas abas laterais para navegar pelos nossos segredos!</p>"
                 },
                 gastronomia: {
                     titulo: "🍲 Gastronomia: O Sabor que Conta Histórias",
                     subtitulo: "Como a criatividade e a história se fundiram em panelas de barro para criar pratos que são rituais de afeto.",
-                    texto: "<h3>A Feijoada</h3><p>Se o Brasil tivesse um sabor oficial, ele seria cozido lentamente em uma panela de barro. A feijoada é o prato que reúne as famílias brasileiras ao redor da mesa, especialmente aos sábados. Durante muito tempo, contou-se a lenda de que ela teria nascido nas senzalas, criada pelos escravizados que aproveitavam as frestas e restos de carne rejeitados pelos senhores de engenho. A história real, porém, mostra que ela é uma evolução sofisticada do cozido europeu (como o cassoulet francês ou a paella espanhola), adaptada com o feijão preto nativo da América do Sul e enriquecida pela tradição afro-brasileira. Comer feijoada no Brasil não é apenas almoçar; é um ritual que exige tempo, pede uma rodada de conversa e é sempre acompanhado por arroz clarinho, farofa bem temperada, couve refogada no alho e gomos de laranja fresca para quebrar a gordura.</p><p><strong>Ingredientes principais:</strong> Feijão preto, carnes suínas variadas (linguiça, paio, bacon, lombo), alho, louro e cachaça.<br><strong>Importância:</strong> É considerada o prato nacional por excelência, simbolizando a mistura de culturas que moldou a identidade e o paladar do país.</p><hr><h3>O Pão de Queijo</h3><p>Para entender a hospitalidade brasileira, você precisa experimentar um pão de queijo quentinho saindo do forno. Nascido no estado de Minas Gerais durante o período colonial, o prato surgiu por pura necessidade e criatividade. Na época, a farinha de trigo branca que vinha da Europa era rara e caríssima. As cozinheiras mineiras resolveram então usar o polvilho (um derivado da mandioca, raiz abundante e cultivada pelos indígenas) misturado com as sobras de queijo endurecido que sobravam das fazendas. O resultado foi uma massa elástica, dourada por fora e incrivelmente macia por dentro. Hoje, o pão de queijo está em cada esquina, rodoviária, aeroporto e casa do Brasil. Ele é o sinônimo perfeito do 'café da tarde' brasileiro, um convite irrecusável para puxar uma cadeira e jogar conversa fora enquanto o queijo derrete na boca.</p><p><strong>Ingredientes principais:</strong> Polvilho (doce ou azedo), queijo ralado (geralmente queijo minas ou canastra), ovos, leite e óleo.<br><strong>Importância:</strong> É o maior embaixador da culinária mineira e um dos petiscos mais amados e exportados do Brasil para o mundo.</p>",
-                    img1: "IMAGENS/foto14.jpg",
-                    img2: "IMAGENS/foto15.jpg",
-                    img3: "",
-                    layout_full: false
+                    texto: "<div class='quadrante-conteudo'>" +
+                                "<div class='bloco-item'>" +
+                                    "<div class='bloco-texto'>" +
+                                        "<h3>A Feijoada</h3><p>Se o Brasil tivesse um sabor oficial, ele seria cozido lentamente em uma panela de barro. A feijoada é o prato que reúne as famílias brasileiras ao redor da mesa, especialmente aos sábados. A história real mostra que ela é uma evolução sofisticada do cozido europeu, adaptada com o feijão preto nativo da América do Sul e enriquecida pela tradição afro-brasileira.</p>" +
+                                        "<p><strong>Ingredientes principais:</strong> Feijão preto, carnes suínas variadas, alho, louro e cachaça.<br><strong>Importância:</strong> É considerada o prato nacional por excelência.</p>" +
+                                    "</div>" +
+                                    "<img src='IMAGENS/foto14.jpg' class='bloco-img-interna' alt='Feijoada'>" +
+                                "</div>" +
+                                "<div class='bloco-item'>" +
+                                    "<div class='bloco-texto'>" +
+                                        "<h3>O Pão de Queijo</h3><p>Para entender a hospitalidade brasileira, você precisa experimentar um pão de queijo quentinho saindo do forno. Nascido em Minas Gerais no período colonial, usa o polvilho misturado com as sobras de queijo endurecido das fazendas. O resultado é uma massa elástica, dourada por fora e macia por dentro.</p>" +
+                                        "<p><strong>Ingredientes principais:</strong> Polvilho, queijo ralado, ovos, leite e óleo.<br><strong>Importância:</strong> Maior embaixador da culinária mineira.</p>" +
+                                    "</div>" +
+                                    "<img src='IMAGENS/foto15.jpg' class='bloco-img-interna' alt='Pão de Queijo'>" +
+                                "</div>" +
+                           "</div>"
                 },
                 destinos: {
                     titulo: "🗺️ Turismo: Três Destinos, Três Mundos",
                     subtitulo: "Caminhar por ladeiras coloniais, subir montanhas misteriosas e sentir a força de lendas indígenas.",
-                    texto: "<h3>O Rio de Janeiro e o Cristo Redentor</h3><p>O Rio de Janeiro é o cartão-postal onde a natureza exuberante esculpe a cidade. Mas a verdadeira joia da Coroa está no topo do Morro do Corcovado: o Cristo Redentor. Inaugurado em 1931, o monumento de 38 metros de altura em estilo Art Déco não foi um presente da França, como muitos pensam. Ele foi desenhado pelo engenheiro brasileiro Heitor da Silva Costa e esculpido pelo francês Paul Landowski, feito inteiramente com doações do próprio povo brasileiro. A estátua é revestida por milhares de pequenos triângulos de pedra-sabão. As mulheres da sociedade carioca da época se reuniram para colá-los um a um sobre tiras de tecido. Muitas delas escreviam os nomes de seus namorados e familiares no verso das pedras, o que significa que o Cristo guarda, literalmente, milhares de segredos de amor secretos em seu manto. Ir ao Rio é entender o encontro da floresta urbana com o mar, sob os braços abertos da história.</p><hr><h3>Salvador e o Centro Histórico do Pelourinho</h3><p>Viajar para Salvador, na Bahia, é fazer uma viagem no tempo em direção às origens do Brasil. Fundada em 1549, ela foi a primeira capital do país. O coração da cidade pulsa no Pelourinho, um bairro repleto de casarões coloniais coloridos e ladeiras de paralelepípedo. O nome 'Pelourinho' carrega um passado doloroso: era o local onde os escravizados eram amarrados e castigados publicamente. Hoje, o bairro ressignificou totalmente o seu espaço, transformando-se no maior símbolo de resistência e celebração da cultura afro-brasileira. É ali que ecoam os tambores do Olodum (bloco que gravou com Michael Jackson nos anos 90) e onde fica a Igreja de São Francisco, cujo interior é revestido com quase uma tonelada de ouro legítimo, uma obra de arte barroca feita pelas mãos de artesãos que esconderam símbolos de seus próprios deuses africanos em meio aos anjos católicos.</p><hr><h3>As Cataratas do Iguaçu</h3><p>Localizadas no sul do país, na fronteira com a Argentina, as Cataratas do Iguaçu são uma demonstração brutal e linda da força da Terra. São 275 quedas d’água que despejam milhões de litros por segundo no meio de uma floresta intocada. O ponto alto da visita é a Garganta do Diabo, um abismo em forma de U onde a água cai com tanto impacto que cria uma névoa perpétua e arco-íris gigantescos. O nome 'Iguaçu' vem do idioma guarani e significa 'Água Grande'. Segundo a lenda indígena local, o deus-serpente M’Boi planejava se casar com a bela índia Naipi, mas ela fugiu em uma canoa com seu amante mortal, Tarobá. Furioso, o deus-serpente fendeu a terra, criando o imenso desfiladeiro das cataratas para condenar os amantes a uma queda eterna. Tarobá foi transformado em uma árvore na beira do abismo e Naipi em uma rocha na base das quedas, eternamente tocados pelas águas.</p>",
-                    img1: "IMAGENS/foto16.jpg",
-                    img2: "IMAGENS/foto17.jpg",
-                    img3: "IMAGENS/foto18.jpg",
-                    layout_full: false
+                    texto: "<div class='quadrante-conteudo'>" +
+                                "<div class='bloco-item'>" +
+                                    "<div class='bloco-texto'>" +
+                                        "<h3>O Rio de Janeiro e o Cristo Redentor</h3><p>Inaugurado em 1931, o monumento de 38 metros em estilo Art Déco foi feito inteiramente com doações do próprio povo. A estátua é revestida por pequenos triângulos de pedra-sabão, colados por mulheres que escreviam segredos de amor no verso.</p>" +
+                                    "</div>" +
+                                    "<img src='IMAGENS/foto16.jpg' class='bloco-img-interna' alt='Cristo Redentor'>" +
+                                "</div>" +
+                                "<div class='bloco-item'>" +
+                                    "<div class='bloco-texto'>" +
+                                        "<h3>Salvador e o Centro Histórico do Pelourinho</h3><p>O coração da primeira capital do país pulsa no Pelourinho. O local ressignificou um passado doloroso, tornando-se o maior símbolo de resistência e celebração da cultura afro-brasileira, onde ecoam os tambores do Olodum.</p>" +
+                                    "</div>" +
+                                    "<img src='IMAGENS/foto17.jpg' class='bloco-img-interna' alt='Pelourinho'>" +
+                                "</div>" +
+                                "<div class='bloco-item'>" +
+                                    "<div class='bloco-texto'>" +
+                                        "<h3>As Cataratas do Iguaçu</h3><p>São 275 quedas d’água brutais e lindas. O nome vem do guarani e significa 'Água Grande'. Segundo a lenda, o deus-serpente M’Boi fendeu a terra criando o desfiladeiro para condenar os amantes Naipi e Tarobá.</p>" +
+                                    "</div>" +
+                                    "<img src='IMAGENS/foto18.jpg' class='bloco-img-interna' alt='Cataratas'>" +
+                                "</div>" +
+                           "</div>"
                 },
                 festas: {
                     titulo: "💃 Festa Popular: A Catarse das Ruas",
                     subtitulo: "Mergulhe na maior catarse coletiva do planeta, onde as regras do cotidiano dão lugar à fantasia.",
-                    texto: "<h3>O Carnaval</h3><p>O Carnaval é o momento em que o Brasil suspende a realidade para viver a fantasia. Embora seja celebrado de norte a sul, as suas raízes mais profundas estão no Rio de Janeiro e na Bahia. A festa começou séculos atrás com o entrudo colonial, uma brincadeira de rua violenta e barulhenta trazida pelos portugueses. Com o tempo, o povo negro incorporou os batuques, os cordões e os ranchos, criando na década de 1920 as primeiras Escolas de Samba. Viver o Carnaval é ver as divisões sociais desaparecerem: o trabalhador vira rei, a avenida vira palco e o asfalto vira passarela. Seja cantando os enredos históricos na Marquês de Sapucaí ou correndo atrás de um trio elétrico nas ruas litorâneas de Salvador, o Carnaval é a maior prova da Indústria Criativa e da paixão do povo brasileiro pela vida.</p><p><strong>Quando acontece:</strong> Quatro dias antes da Quarta-feira de Cinzas (fevereiro ou março).<br><strong>Importância:</strong> Movimenta bilhões na economia nacional, gera milhares de empregos na confecção de fantasias e carros alegóricos, e serve como o maior palco de manifestação artística e crítica social do país.</p>",
-                    img1: "IMAGENS/foto19.jpg",
-                    img2: "", 
-                    img3: "",
-                    layout_full: false
+                    texto: "<div class='quadrante-conteudo'>" +
+                                "<div class='bloco-item'>" +
+                                    "<div class='bloco-texto'>" +
+                                        "<h3>O Carnaval</h3><p>O Carnaval é o momento em que o Brasil suspende a realidade para viver a fantasia. Criado a partir do entrudo colonial, o povo negro incorporou os batuques e criou as Escolas de Samba. Viver o Carnaval é ver as divisões sociais desaparecerem na passarela.</p>" +
+                                        "<p><strong>Quando acontece:</strong> Quatro dias antes da Quarta-feira de Cinzas.<br><strong>Importância:</strong> Palco de manifestação artística e crítica social.</p>" +
+                                    "</div>" +
+                                    "<img src='IMAGENS/foto19.jpg' class='bloco-img-interna' alt='Carnaval'>" +
+                                "</div>" +
+                           "</div>"
                 },
                 musica: {
                     titulo: "🎵 Música e Dança: A Alma em Movimento",
                     subtitulo: "A história de um povo escrita através de passos sagrados e canções que viraram hinos mundiais.",
-                    texto: "<h3>MÚSICA: 'Aquarela do Brasil' (Ary Barroso)</h3><p>Se você quer entender a alma e o sentimento de orgulho do país, precisa ouvir 'Aquarela do Brasil', gravada originalmente em 1939. Essa canção inaugurou o gênero do 'Samba-Exaltação', uma música de arranjos grandiosos com metais e percussão marcante. A letra faz uma pintura poética e visual do país. Ela exalta o 'Brasil de todas as cores', falando sobre o samba, o batuque, as palmeiras, a lua e a simpatia do povo misturado. O termo 'Aquarela' faz alusão a uma pintura feita com tintas diluídas em água, mostrando que a cultura brasileira é exatamente isso: uma mistura fluida onde diferentes raças e tradições se fundiram para criar um quadro único, alegre e orgulhoso de sua própria exuberância tropical.</p><p><strong>Instrumentos principais:</strong> Pandeiro, violão, flauta e naipes de sopro (trompetes e trombones).<br><strong>Importância:</strong> É considerada o segundo hino nacional do Brasil, sendo a música brasileira mais tocada e regravada internacionalmente ao longo da história.</p><hr><h3>DANÇA: O Samba de Roda</h3><p>O Samba de Roda é o cordão umbilical que gerou toda a cultura musical urbana do Brasil. Nascido no Recôncavo Baiano por volta do século XVII, ele foi criado pelos africanos escravizados como uma forma de preservação cultural, culto aos seus ancestrais e diversão após os dias exaustivos de trabalho forçado nos engenhos de açúcar. A dança acontece em um círculo (a roda), onde as pessoas batem palmas e cantam em coro, enquanto os músicos tocam a percussão. O verdadeiro significado está no centro da roda: uma mulher entra no meio e começa a sambar com passos rápidos de calcanhar e movimentos ondulantes. O momento auge é a umbigada (um toque de umbigo com umbigo), que é o convite sagrado e festivo para que outra pessoa entre na roda e continue a linhagem da dança. O Samba de Roda significa comunidade, respeito aos mais velhos, ancestralidade e a vitória da alegria sobre a opressão.</p><p><strong>Instrumentos principais:</strong> Pandeiro, atabaque, agogô, viola de chocalho e palmas ritmadas.<br><strong>Importância:</strong> Declarado Obra-Prima do Patrimônio Oral e Imaterial da Humanidade pela UNESCO, ele é o pai de todas as variações modernas do samba brasileiro.</p>",
-                    img1: "IMAGENS/foto20.jpg",
-                    img2: "IMAGENS/foto21.jpg",
-                    img3: "",
-                    layout_full: false
+                    texto: "<div class='quadrante-conteudo'>" +
+                                "<div class='bloco-item'>" +
+                                    "<div class='bloco-texto'>" +
+                                        "<h3>MÚSICA: 'Aquarela do Brasil'</h3><p>Inaugurou o gênero 'Samba-Exaltação' em 1939. A letra faz uma pintura poética e fluida do país de todas as cores, mostrando que a cultura é uma mistura alegre de raças e tradições.</p>" +
+                                        "<p><strong>Instrumentos:</strong> Pandeiro, violão, flauta e sopro.<br><strong>Importância:</strong> Segunda música brasileira mais regravada no mundo.</p>" +
+                                    "</div>" +
+                                    "<img src='IMAGENS/foto20.jpg' class='bloco-img-interna' alt='Músico'>" +
+                                "</div>" +
+                                "<div class='bloco-item'>" +
+                                    "<div class='bloco-texto'>" +
+                                        "<h3>DANÇA: O Samba de Roda</h3><p>Nascido no Recôncavo Baiano, foi criado por africanos escravizados para preservação cultural. Em círculo, batendo palmas, o auge é a umbigada: o convite festivo para o próximo entrar na roda.</p>" +
+                                        "<p><strong>Importância:</strong> Patrimônio Oral e Imaterial da Humanidade pela UNESCO.</p>" +
+                                    "</div>" +
+                                    "<img src='IMAGENS/foto21.jpg' class='bloco-img-interna' alt='Samba de Roda'>" +
+                                "</div>" +
+                           "</div>"
                 }
             }
         };
@@ -167,55 +251,17 @@
 
         function mudarCategoria(categoria) {
             var dados;
-            var containerImagens = document.getElementById("bloco-imagens-container");
-            var espacoLeitura = document.querySelector(".espaco-leitura");
-
             if (paisSelecionado === "geral") {
                 dados = conteudoGeral['inicio'];
             } else {
                 dados = dadosPaises[paisSelecionado][categoria];
             }
 
-            // Atualiza os textos na tela
             document.getElementById("titulo-pagina").innerHTML = dados.titulo;
             document.getElementById("subtitulo-pagina").innerHTML = dados.subtitulo;
             document.getElementById("corpo-texto").innerHTML = dados.texto;
-
-            // Controle das Imagens
-            if (dados.layout_full) {
-                containerImagens.style.display = "none";
-                espacoLeitura.style.width = "100%";
-            } else {
-                containerImagens.style.display = "block";
-                espacoLeitura.style.width = ""; 
-
-                var img1 = document.getElementById("img-bloco-1");
-                var img2 = document.getElementById("img-bloco-2");
-                var img3 = document.getElementById("img-bloco-3");
-
-                if (dados.img1 && dados.img1 !== "") { 
-                    img1.src = dados.img1; 
-                    img1.style.display = "block"; 
-                } else { 
-                    img1.style.display = "none"; 
-                }
-
-                if (dados.img2 && dados.img2 !== "") { 
-                    img2.src = dados.img2; 
-                    img2.style.display = "block"; 
-                } else { 
-                    img2.style.display = "none"; 
-                }
-
-                if (dados.img3 && dados.img3 !== "") { 
-                    img3.src = dados.img3; 
-                    img3.style.display = "block"; 
-                } else { 
-                    img3.style.display = "none"; 
-                }
-            }
         }
     </script>
 
 </body>
-</html>swdef
+</html>
