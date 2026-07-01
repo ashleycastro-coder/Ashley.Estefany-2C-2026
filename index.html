@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>América do Sul</title>
+    <title>A Força e o Sabor da América do Sul</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,26 +92,37 @@
 
         var paisSelecionado = "geral";
 
-        // MANTÉM O SEU TEXTO E LAYOUT ORIGINAL DA PÁGINA INICIAL SEM ALTERAR AS LETRAS BRANCAS
+        // CONTEÚDO DA PÁGINA INICIAL COM FOTOS CORRIGIDAS E GRANDES
         var conteudoGeral = {
             inicio: {
                 titulo: "O Coração Pulsante do Mundo",
                 subtitulo: "Muito além dos mapas: uma viagem de arrepiar pelos sabores, ritmos e cores do continente mais vivo do planeta.",
-                texto: "<p>Já sentiu o chão tremer com o ritmo de um tambor que parece bater no mesmo compasso que o seu coração? Já fechou os olhos e se deixou levar pelo aroma de um tempero que conta histórias de séculos atrás?</p>" +
-                       "<p>A América do Sul não é apenas um lugar no mapa. É uma explosão de vida. É a força de um povo que transforma luta em festa, que coloca poesia na mesa e que dança como se o amanhã não existisse. Das cordilheiras gigantescas às praias que parecem não ter fim, nosso continente respira diversidade.</p>" +
-                       "<p>Prepare o seu coração, porque a sua viagem pelo lado mais vibrante do planeta começa agora. <strong>Sinta a força. Viva a América do Sul.</strong></p>"
+                texto: "<div class='bloco-pagina-inicial'>" +
+                            "<div class='texto-inicial'>" +
+                                "<p>Já sentiu o chão tremer com o ritmo de um tambor que parece bater no mesmo compasso que o seu coração? Já fechou os olhos e se deixou levar pelo aroma de um tempero que conta histórias de séculos atrás?</p>" +
+                                "<p>A América do Sul não é apenas um lugar no mapa. É uma explosão de vida. É a força de um povo que transforma luta em festa, que coloca poesia na mesa e que dança como se o amanhã não existisse. Das cordilheiras gigantescas às praias que parecem não ter fim, nosso continente respira diversidade.</p>" +
+                                "<p>Prepare o seu coração, porque a sua viagem pelo lado mais vibrante do planeta começa agora. <strong>Sinta a força. Viva a América do Sul.</strong></p>" +
+                            "</div>" +
+                            "<div class='imagens-iniciais-grid'>" +
+                                "<img src='IMAGENS/foto1.jpg' alt='Sul 1'>" +
+                                "<img src='IMAGENS/foto2.jpg' alt='Sul 2'>" +
+                                "<img src='IMAGENS/foto3.jpg' alt='Sul 3'>" +
+                            "</div>" +
+                       "</div>"
             }
         };
 
-        // ADICIONA OS QUADRANTES COMPATÍVEIS APENAS NAS PÁGINAS INTERNAS DOS PAÍSES
+        // CONTEÚDO DOS PAÍSES (QUADRANTES COM IMAGENS E FUNDO PASTEL)
         var dadosPaises = {
             brasil: {
                 inicio: {
                     titulo: "🇧🇷 Segura essa marra: É o Brasil!",
                     subtitulo: '"Papo reto? Tu vai se apaixonar. Aqui o povo é sem tempo para o desânimo e o nosso ritmo é outra parada!"',
                     texto: "<div class='quadrante-container'>" +
-                                "<div class='quadrante-item item-simples-brasil'>" +
-                                    "<p>Prepare o seu coração, porque entrar no Brasil é aceitar o convite para uma viagem onde a realidade ganha cores muito mais vivas. Este não é apenas um lugar no mapa; é um estado de espírito que se move na batida de um tambor e se renova a cada sorriso.</p><p>Nesta jornada pelas páginas brasileiras, nós vamos desvendar os segredos de um país que transforma tudo em festa e poesia. Clique nas abas laterais para navegar pelos nossos segredos!</p>" +
+                                "<div class='quadrante-item item-simples'>" +
+                                    "<div class='quadrante-texto'>" +
+                                        "<p>Prepare o seu coração, porque entrar no Brasil é aceitar o convite para uma viagem onde a realidade ganha cores muito mais vivas. Este não é apenas um lugar no mapa; é um estado de espírito que se move na batida de um tambor e se renova a cada sorriso.</p><p>Nesta jornada pelas páginas brasileiras, nós vamos desvendar os segredos de um país que transforma tudo em festa e poesia. Clique nas abas laterais para navegar pelos nossos segredos!</p>" +
+                                    "</div>" +
                                 "</div>" +
                            "</div>"
                 },
@@ -145,7 +156,7 @@
                     texto: "<div class='quadrante-container'>" +
                                 "<div class='quadrante-item'>" +
                                     "<div class='quadrante-texto'>" +
-                                        "<h3>O Rio de Janeiro e o Cristo Redentor</h3><p>Inaugurado in 1931, o monumento de 38 metros em estilo Art Déco foi feito inteiramente com doações do próprio povo. A estátua é revestida por pequenos triângulos de pedra-sabão, colados por mulheres que escreviam segredos de amor no verso.</p>" +
+                                        "<h3>O Rio de Janeiro e o Cristo Redentor</h3><p>Inaugurado em 1931, o monumento de 38 metros em estilo Art Déco foi feito inteiramente com doações do próprio povo. A estátua é revestida por pequenos triângulos de pedra-sabão, colados por mulheres que escreviam segredos de amor no verso.</p>" +
                                     "</div>" +
                                     "<div class='quadrante-bloco-img bg-menta'>" +
                                         "<img src='IMAGENS/foto16.jpg' alt='Cristo Redentor'>" +
@@ -176,7 +187,7 @@
                                 "<div class='quadrante-item'>" +
                                     "<div class='quadrante-texto'>" +
                                         "<h3>O Carnaval</h3><p>O Carnaval é o momento em que o Brasil suspende a realidade para viver a fantasia. Criado a partir do entrudo colonial, o povo negro incorporou os batuques e criou as Escolas de Samba. Viver o Carnaval é ver as divisões sociais desaparecerem na passarela.</p>" +
-                                        "<p><strong>Quando acontece:</strong> Quatro dias antes da Quarta-feira de Cinzas.</p>" +
+                                        "<p><strong>Quando acontece:</strong> Quatro dias antes da Quarta-feira de Cenzas.</p>" +
                                     "</div>" +
                                     "<div class='quadrante-bloco-img bg-ceu'>" +
                                         "<img src='IMAGENS/foto19.jpg' alt='Carnaval'>" +
@@ -231,6 +242,5 @@
             mudarCategoria('inicio');
         };
     </script>
-
 </body>
 </html>
