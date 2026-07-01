@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. CONFIGURAÇÕES BASE E TELA DE ABERTURA
+   ESTILOS ORIGINAIS DO SITE
    ========================================================================== */
 * {
     margin: 0;
@@ -8,8 +8,8 @@
 }
 
 body {
-    background-color: #141c16; /* Fundo escuro elegante do site */
-    color: #000000;
+    background-color: #141c16;
+    color: #ffffff;
     overflow-x: hidden;
 }
 
@@ -53,9 +53,6 @@ body {
     color: #a3e635;
 }
 
-/* ==========================================================================
-   2. HEADER E COMPONENTES DE NAVEGAÇÃO
-   ========================================================================== */
 .topo-imagem {
     width: 100%;
     height: 180px;
@@ -120,9 +117,6 @@ body {
     display: none;
 }
 
-/* ==========================================================================
-   3. DISPOSIÇÃO DO LAYOUT (COLUNAS)
-   ========================================================================== */
 .divisao-layout {
     display: flex;
     padding: 30px;
@@ -157,140 +151,28 @@ body {
     flex: 1;
 }
 
-/* ==========================================================================
-   4. PAINEL DO MANIFESTO E CAIXA DE TEXTOS
-   ========================================================================== */
 .caixa-manifesto {
-    background-color: #ffffff; /* Fundo branco fixo para contraste com letras pretas */
-    border-radius: 24px;
-    padding: 45px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    padding: 20px;
 }
 
 .titulo-manifesto {
-    font-family: 'Fredoka', sans-serif !important;
-    font-size: 2.6rem !important;
-    color: #000000 !important; /* LETRAS PRETAS */
-    margin-bottom: 8px;
-    font-weight: 700;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
 }
 
 .subtitulo-manifesto {
-    font-family: 'Fredoka', sans-serif !important;
-    font-size: 1.35rem !important;
-    color: #4a5568 !important; /* Grafite escuro legível */
-    margin-bottom: 35px;
-    line-height: 1.4;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.2rem;
+    color: #a3e635;
+    margin-bottom: 20px;
 }
 
-/* ==========================================================================
-   5. TEXTOS E GRADES DA PÁGINA INICIAL
-   ========================================================================== */
-.bloco-pagina-inicial {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.texto-inicial p {
-    font-family: 'Belleza', sans-serif !important;
-    font-size: 1.4rem !important; /* Textos maiores */
+#corpo-texto p {
+    font-family: 'Belleza', sans-serif;
+    font-size: 1.2rem;
     line-height: 1.6;
-    color: #000000 !important; /* LETRAS PRETAS */
+    color: #ffffff;
     margin-bottom: 15px;
-}
-
-.texto-inicial strong {
-    color: #000000 !important;
-}
-
-.imagens-iniciais-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-.imagens-iniciais-grid img {
-    width: 31.5%;
-    height: 250px; /* Imagens bem grandes e visíveis */
-    object-fit: cover;
-    border-radius: 14px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* ==========================================================================
-   6. CONFIGURAÇÃO DOS QUADRANTES (PÁGINAS INTERNAS DOS PAÍSES)
-   ========================================================================== */
-.quadrante-container {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
-
-.quadrante-item {
-    display: flex;
-    align-items: stretch;
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.item-simples {
-    display: block;
-}
-
-.quadrante-texto {
-    flex: 1;
-    padding: 40px; /* Preenche o espaço branco */
-}
-
-.quadrante-texto h3 {
-    font-family: 'Fredoka', sans-serif !important;
-    font-size: 1.8rem !important;
-    color: #000000 !important; /* LETRAS PRETAS */
-    margin-bottom: 12px;
-}
-
-.quadrante-texto p,
-.quadrante-texto strong {
-    font-family: 'Belleza', sans-serif !important;
-    font-size: 1.35rem !important;
-    line-height: 1.6;
-    color: #000000 !important; /* LETRAS PRETAS */
-}
-
-/* Espaço da foto com moldura no fundo */
-.quadrante-bloco-img {
-    width: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
-}
-
-.quadrante-bloco-img img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    object-fit: cover;
-}
-
-/* --------------------------------------------------------------------------
-   MOLDURAS PASTÉIS SUAVES DA NATUREZA (APENAS DE FUNDO)
-   -------------------------------------------------------------------------- */
-.bg-areia { background-color: #e2be9d !important; }
-.bg-menta { background-color: #b0d39a !important; }
-.bg-ceu { background-color: #a9d2ff !important; }
-
-/* ==========================================================================
-   7. RESPONSIVIDADE (ADAPTAÇÃO PARA CELULARES)
-   ========================================================================== */
-@media (max-width: 768px) {
-    .divisao-layout { flex-direction: column; padding: 15px; }
-    .coluna-botoes { flex-direction: row; justify-content: center; }
-    .imagens-iniciais-grid { flex-direction: column; }
-    .imagens-iniciais-grid img { width: 100%; height: 200px; }
-    .quadrante-item { flex-direction: column; }
-    .quadrante-bloco-img { width: 100%; }
 }
