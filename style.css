@@ -703,7 +703,9 @@ h1, h2, .botao-acao-navegar {
     border: 2px solid #000000;
     display: inline-block;
     transition: transform 0.2s; /* Efeito suave ao passar o mouse */
+    margin-top: 20px; /* ISSO VAI EMPURRAR O BOTÃO PARA BAIXO E DESGRUDAR DOS LOGOS */
 }
+
 
 /* Pequeno efeito para quando passar o mouse no botão do GitHub */
 .links-tecnicos .link-externo:hover {
