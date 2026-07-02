@@ -38,9 +38,9 @@
         <button class="botao-acao-navegar" onclick="toggleBandeiras()">Navegar 👉🏾</button>
         
         <div id="fileiraPaises" class="fileira-bandeiras escondido">
-            <img src="https://flagcdn.com/w40/br.png" alt="Brasil" title="Brasil" class="desenho-bandeira" onclick="selecionarPais('brasil')">
-            <img src="https://flagcdn.com/w40/ar.png" alt="Argentina" title="Argentina" class="desenho-bandeira" onclick="selecionarPais('argentina')">
+            <img src="https://flagcdn.com/w40/ar.png" alt="Argentina" title="Argentina" class="desenho-bandeira">
             <img src="https://flagcdn.com/w40/bo.png" alt="Bolívia" title="Bolívia" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/br.png" alt="Brasil" title="Brasil" class="desenho-bandeira">
             <img src="https://flagcdn.com/w40/cl.png" alt="Chile" title="Chile" class="desenho-bandeira">
             <img src="https://flagcdn.com/w40/co.png" alt="Colômbia" title="Colômbia" class="desenho-bandeira">
             <img src="https://flagcdn.com/w40/ec.png" alt="Equador" title="Equador" class="desenho-bandeira">
@@ -56,20 +56,37 @@
     <div class="divisao-layout">
         
         <aside class="coluna-botoes">
-            <button class="botao-circulo" title="Página Inicial" onclick="mudarCategoria('inicio')">🏠</button>
-            <button class="botao-circulo" title="Gastronomia" onclick="mudarCategoria('gastronomia')">🌮</button>
-            <button class="botao-circulo" title="Destinos" onclick="mudarCategoria('destinos')">✈️</button>
-            <button class="botao-circulo" title="Festas Populares" onclick="mudarCategoria('festas')">🎉</button>
-            <button class="botao-circulo" title="Ritmo e Música" onclick="mudarCategoria('musica')">🎵</button>
+            <a href="index.html" title="Página Inicial"><button class="botao-circulo">🏠</button></a>
+            <a href="gastronomia.html" title="Gastronomia"><button class="botao-circulo">🌮</button></a>
+            <a href="destinos.html" title="Destinos"><button class="botao-circulo">✈️</button></a>
+            <a href="festas.html" title="Festas Populares"><button class="botao-circulo">🎉</button></a>
+            <a href="musica.html" title="Ritmo e Música"><button class="botao-circulo">🎵</button></a>
         </aside>
+
+        <div class="coluna-imagens-meio">
+            <img src="IMAGENS/foto1.jpg" alt="Sabores da América do Sul" class="foto-bloco">
+            <img src="IMAGENS/foto2.jpg" alt="Ritmos da América do Sul" class="foto-bloco">
+            <img src="IMAGENS/foto3.jpg" alt="Cores da América do Sul" class="foto-bloco">
+        </div>
 
         <main class="espaco-leitura">
             <div class="caixa-manifesto">
-                <h2 class="titulo-manifesto" id="titulo-pagina">O Coração Pulsante do Mundo</h2>
-                <p class="subtitulo-manifesto" id="subtitulo-pagina">Muito além dos mapas: uma viagem de arrepiar pelos sabores, ritmos e cores do continente mais vivo do planeta.</p>
+                <h2 class="titulo-manifesto">O Coração Pulsante do Mundo</h2>
+                <p class="subtitulo-manifesto">Muito além dos mapas: uma viagem de arrepiar pelos sabores, ritmos e cores do continente mais vivo do planeta.</p>
                 
-                <div id="corpo-texto">
-                    </div>
+                <div class="texto-manifesto">
+                    <p>Já sentiu o chão tremer com o ritmo de um tambor que parece bater no mesmo compasso que o seu coração? Já fechou os olhos e se deixou levar pelo aroma de um tempero que conta histórias de séculos atrás?</p>
+                    
+                    <p>A América do Sul não é apenas um lugar no mapa. É uma explosão de vida. É a força de um povo que transforma luta em festa, que coloca poesia na mesa e que dança como se o amanhã não existisse. Das cordilheiras gigantescas às praias que parecem não ter fim, nosso continente respira diversidade.</p>
+                    
+                    <p>Aqui, a gastronomia é um abraço quente, as festas populares são rituais de pura energia, o turismo é uma descoberta de nós mesmos e os ritmos... bem, os ritmos são o que nos movem.</p>
+                    
+                    <blockquote class="frase-destaque">
+                        Esqueça os clichês e os textos frios de livros didáticos. Conecte-se com a nossa essência.
+                    </blockquote>
+                    
+                    <p class="final-impactante">Prepare o seu coração, porque a sua viagem pelo lado mais vibrante do planeta começa agora. <strong>Sinta a força. Viva a América do Sul.</strong></p>
+                </div>
             </div>
         </main>
 
@@ -81,49 +98,16 @@
             fileira.classList.toggle("escondido");
         }
 
+        // Script configurado para sumir bem mais rápido (3 segundos no total)
         setTimeout(function() {
             var telaIntro = document.getElementById("tela-boas-vindas");
             telaIntro.style.opacity = "0";
-            telaIntro.style.transition = "opacity 800ms ease";
+            telaIntro.style.transition = "opacity 800ms ease"; /* Tempo sumindo */
+            
             setTimeout(function() {
                 telaIntro.style.display = "none";
             }, 800);
-        }, 2200);
-
-        var paisSelecionado = "geral";
-
-        var conteudoGeral = {
-            inicio: {
-                titulo: "O Coração Pulsante do Mundo",
-                subtitulo: "Muito além dos mapas: uma viagem de arrepiar pelos sabores, ritmos e cores do continente mais vivo do planeta.",
-                texto: "<p>Já sentiu o chão tremer com o ritmo de um tambor que parece bater no mesmo compasso que o seu coração? Já fechou os olhos e se deixou levar pelo aroma de um tempero que conta histórias de séculos atrás?</p>" +
-                       "<p>A América do Sul não é apenas um lugar no mapa. É uma explosão de vida. É a força de um povo que transforma luta em festa, que coloca poesia na mesa e que dança como se o amanhã não existisse. Das cordilheiras gigantescas às praias que parecem não ter fim, nosso continente respira diversidade.</p>" +
-                       "<p>Prepare o seu coração, porque a sua viagem pelo lado mais vibrante do planeta começa agora. <strong>Sinta a força. Viva a América do Sul.</strong></p>"
-            }
-        };
-
-        function selecionarPais(pais) {
-            paisSelecionado = pais;
-            mudarCategoria('inicio');
-        }
-
-        function mudarCategoria(categoria) {
-            var dados;
-            if (paisSelecionado === "geral") {
-                dados = conteudoGeral['inicio'];
-            } else {
-                // Prevenção caso clique em abas vazias antes de programar os países
-                dados = { titulo: "Em construção", subtitulo: "Conteúdo em breve...", texto: "" };
-            }
-
-            document.getElementById("titulo-pagina").innerHTML = dados.titulo;
-            document.getElementById("subtitulo-pagina").innerHTML = dados.subtitulo;
-            document.getElementById("corpo-texto").innerHTML = dados.texto;
-        }
-
-        window.onload = function() {
-            mudarCategoria('inicio');
-        };
+        }, 2200); /* 2.2 segundos travada na tela */
     </script>
 
 </body>
