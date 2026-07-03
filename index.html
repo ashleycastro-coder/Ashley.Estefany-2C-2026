@@ -128,22 +128,73 @@
 
     </div>
 
-    <script>
+<script>
+        // "Banco de dados" definitivo: é só colocar o texto e a foto de cada país aqui!
+        const dadosPaises = {
+            "secao-argentina": {
+                titulo: "Argentina: A Paixão na Brasa e o Sentimento que Dança",
+                texto: "Prepare-se para cruzar as fronteiras e desembarcar em uma terra onde o drama vira poesia e cada esquina tem uma história para contar. A Argentina é um espetáculo de diversidade: vai do calor das peñas do interior ao frio das geleiras da Patagônia, tudo embalado pelo orgulho de um povo que vive suas tradições com intensidade máxima. Papo reto: você vai se encantar com esse solo que transborda herança e identidade!",
+                foto: "IMAGENS/foto14.jpg"
+            }
+            // Depois adicionamos os outros países aqui com o mesmo modelo!
+        };
+
+        // Função para abrir/fechar as bandeiras
         function toggleBandeiras() {
             var fileira = document.getElementById("fileiraPaises");
             fileira.classList.toggle("escondido");
         }
 
-        // Script configurado para sumir bem mais rápido (3 segundos no total)
+        // COMANDO AUTOMÁTICO: Ele intercepta os cliques e troca o conteúdo!
+        document.addEventListener("click", function(evento) {
+            // Se clicou em uma bandeira
+            var linkBandeira = evento.target.closest(".fileira-bandeiras a");
+            if (linkBandeira) {
+                evento.preventDefault(); // Impede a página de rolar para baixo
+                var idPais = linkBandeira.getAttribute("href").substring(1); // Pega o id do país (ex: secao-argentina)
+                
+                if (dadosPaises[idPais]) {
+                    // Esconde o manifesto e as imagens do meio
+                    document.getElementById("imagens-iniciais").style.display = "none";
+                    document.getElementById("conteudo-manifesto").style.display = "none";
+                    
+                    // Coloca as informações do país no palco dinâmico
+                    document.getElementById("dinamico-titulo").innerText = dadosPaises[idPais].titulo;
+                    document.getElementById("dinamico-texto").innerText = dadosPaises[idPais].texto;
+                    document.getElementById("dinamico-foto").src = dadosPaises[idPais].foto;
+                    
+                    // Mostra o palco dinâmico
+                    document.getElementById("container-paises-dinamico").style.display = "block";
+                } else {
+                    alert("Informações deste país ainda estão sendo preparadas!");
+                }
+            }
+
+            // Se clicou no botão da casinha (🏠)
+            var botaoCasa = evento.target.closest(".coluna-botoes a[title='Página Inicial']");
+            if (botaoCasa) {
+                evento.preventDefault(); // Impede de recarregar a página do zero
+                
+                // Esconde o palco dinâmico
+                document.getElementById("container-paises-dinamico").style.display = "none";
+                
+                // Traz de volta o manifesto e as imagens do meio originais
+                document.getElementById("imagens-iniciais").style.display = "block";
+                document.getElementById("conteudo-manifesto").style.display = "block";
+            }
+        });
+
+        // Script da tela de boas-vindas
         setTimeout(function() {
             var telaIntro = document.getElementById("tela-boas-vindas");
-            telaIntro.style.opacity = "0";
-            telaIntro.style.transition = "opacity 800ms ease"; /* Tempo sumindo */
-            
-            setTimeout(function() {
-                telaIntro.style.display = "none";
-            }, 800);
-        }, 2200); /* 2.2 segundos travada na tela */
+            if(telaIntro) {
+                telaIntro.style.opacity = "0";
+                telaIntro.style.transition = "opacity 800ms ease";
+                setTimeout(function() {
+                    telaIntro.style.display = "none";
+                }, 800);
+            }
+        }, 2200);
     </script>
 
 </body>
