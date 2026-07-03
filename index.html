@@ -38,44 +38,44 @@
         <button class="botao-acao-navegar" onclick="toggleBandeiras()">Navegar 👉🏾</button>
         
         <div id="fileiraPaises" class="fileira-bandeiras escondido">
-    <a href="#secao-argentina">
+    <a href="javascript:void(0);" onclick="mudarPais('argentina')">
         <img src="https://flagcdn.com/w40/ar.png" alt="Argentina" title="Argentina" class="desenho-bandeira">
     </a>
-    <a href="#secao-bolivia">
+    <a href="javascript:void(0);" onclick="mudarPais('bolivia')">
         <img src="https://flagcdn.com/w40/bo.png" alt="Bolívia" title="Bolívia" class="desenho-bandeira">
     </a>
-    <a href="#secao-brasil">
+    <a href="javascript:void(0);" onclick="mudarPais('brasil')">
         <img src="https://flagcdn.com/w40/br.png" alt="Brasil" title="Brasil" class="desenho-bandeira">
     </a>
-    <a href="#secao-chile">
+    <a href="javascript:void(0);" onclick="mudarPais('chile')">
+        <img src="javascript:void(0);" onclick="mudarPais('chile')">
         <img src="https://flagcdn.com/w40/cl.png" alt="Chile" title="Chile" class="desenho-bandeira">
     </a>
-    <a href="#secao-colombia">
+    <a href="javascript:void(0);" onclick="mudarPais('colombia')">
         <img src="https://flagcdn.com/w40/co.png" alt="Colômbia" title="Colômbia" class="desenho-bandeira">
     </a>
-    <a href="#secao-equador">
+    <a href="javascript:void(0);" onclick="mudarPais('equador')">
         <img src="https://flagcdn.com/w40/ec.png" alt="Equador" title="Equador" class="desenho-bandeira">
     </a>
-    <a href="#secao-guiana">
+    <a href="javascript:void(0);" onclick="mudarPais('guiana')">
         <img src="https://flagcdn.com/w40/gy.png" alt="Guiana" title="Guiana" class="desenho-bandeira">
     </a>
-    <a href="#secao-paraguai">
+    <a href="javascript:void(0);" onclick="mudarPais('paraguai')">
         <img src="https://flagcdn.com/w40/py.png" alt="Paraguai" title="Paraguai" class="desenho-bandeira">
     </a>
-    <a href="#secao-peru">
+    <a href="javascript:void(0);" onclick="mudarPais('peru')">
         <img src="https://flagcdn.com/w40/pe.png" alt="Peru" title="Peru" class="desenho-bandeira">
     </a>
-    <a href="#secao-suriname">
+    <a href="javascript:void(0);" onclick="mudarPais('suriname')">
         <img src="https://flagcdn.com/w40/sr.png" alt="Suriname" title="Suriname" class="desenho-bandeira">
     </a>
-    <a href="#secao-uruguai">
+    <a href="javascript:void(0);" onclick="mudarPais('uruguai')">
         <img src="https://flagcdn.com/w40/uy.png" alt="Uruguai" title="Uruguai" class="desenho-bandeira">
     </a>
-    <a href="#secao-venezuela">
+    <a href="javascript:void(0);" onclick="mudarPais('venezuela')">
         <img src="https://flagcdn.com/w40/ve.png" alt="Venezuela" title="Venezuela" class="desenho-bandeira">
     </a>
 </div>
-    </nav>
 
     <div class="divisao-layout">
         
@@ -115,48 +115,89 @@
         </main>
 
     </div>
+<script>
+        // Guarda qual é o país ativo no momento (começa nenhum)
+        let paisAtual = "";
 
-    <script>
+        // "Banco de dados" onde só precisamos ir guardando as informações de cada país
+        const dadosPaises = {
+            argentina: {
+                titulo: "Argentina: A Paixão na Brasa e o Sentimento que Dança",
+                texto: "Prepare-se para cruzar as fronteiras e desembarcar em uma terra onde o drama vira poesia e cada esquina tem uma história para contar. A Argentina é um espetáculo de diversidade: vai do calor das peñas do interior ao frio das geleiras da Patagônia, tudo embalado pelo orgulho de um povo que vive suas tradições com intensidade máxima. Papo reto: você vai se encantar com esse solo que transborda herança e identidade!",
+                foto: "IMAGENS/foto14.jpg"
+            },
+            brasil: {
+                titulo: "Brasil: O Gigante das Cores e da Biodiversidade",
+                texto: "Aqui colocaremos a introdução do Brasil quando você quiser...",
+                foto: "IMAGENS/foto_brasil.jpg"
+            }
+        };
+
+        // Função para abrir/fechar a barra de bandeiras
         function toggleBandeiras() {
             var fileira = document.getElementById("fileiraPaises");
             fileira.classList.toggle("escondido");
         }
 
-        // Script configurado para sumir bem mais rápido (3 segundos no total)
+        // Função definitiva para mudar o país
+        function mudarPais(nomePais) {
+            paisAtual = nomePais;
+
+            if (dadosPaises[nomePais]) {
+                document.getElementById("imagens-iniciais").style.display = "none";
+                document.getElementById("conteudo-manifesto").style.display = "none";
+                
+                document.getElementById("dinamico-titulo").innerText = dadosPaises[nomePais].titulo;
+                document.getElementById("dinamico-texto").innerText = dadosPaises[nomePais].texto;
+                document.getElementById("dinamico-foto").src = dadosPaises[nomePais].foto;
+                
+                document.getElementById("container-paises-dinamico").style.display = "block";
+            } else {
+                alert("Informações deste país ainda estão sendo preparadas!");
+            }
+        }
+
+        // Função para voltar para a tela inicial (Casinha 🏠)
+        function voltarHome() {
+            paisAtual = ""; 
+            document.getElementById("container-paises-dinamico").style.display = "none";
+            document.getElementById("imagens-iniciais").style.display = "block";
+            document.getElementById("conteudo-manifesto").style.display = "block";
+        }
+
+        // Script da tela de boas-vindas
         setTimeout(function() {
             var telaIntro = document.getElementById("tela-boas-vindas");
-            telaIntro.style.opacity = "0";
-            telaIntro.style.transition = "opacity 800ms ease"; /* Tempo sumindo */
-            
-            setTimeout(function() {
-                telaIntro.style.display = "none";
-            }, 800);
-        }, 2200); /* 2.2 segundos travada na tela */
+            if(telaIntro) {
+                telaIntro.style.opacity = "0";
+                telaIntro.style.transition = "opacity 800ms ease";
+                setTimeout(function() {
+                    telaIntro.style.display = "none";
+                }, 800);
+            }
+        }, 2200);
     </script>
 
-</body>
-</html>
-</div> <footer class="rodape-projeto">
+    <footer class="rodape-projeto">
         <p class="titulo-rodape">A Força e o Sabor da América do Sul</p>
         <p class="creditos-autoria">Desenvolvido com 💚 por Ashley | Projeto Agrinho 2026</p>
-<div class="logos-fontes">
-                <span class="tag-fonte youtube" title="YouTube">
-                    <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="Logo YouTube" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> YouTube
-                </span>
-                <span class="tag-fonte google" title="Google">
-                    <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="Logo Google" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Google
-                </span>
-                <span class="tag-fonte gemini" title="Gemini AI">
-                    <img src="https://cdn-icons-png.flaticon.com/128/16143/16143202.png" alt="Logo Gemini" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Gemini
-                </span>
-                <span class="tag-fonte spotify" title="Spotify">
-                    <img src="https://cdn-icons-png.flaticon.com/128/2111/2111624.png" alt="Logo Spotify" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Spotify
-                </span>
-                <span class="tag-fonte todamateria" title="Toda Matéria">
-                    <img src="https://cdn-icons-png.flaticon.com/128/2232/2232688.png" alt="Logo Livro" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Toda Matéria
-                </span>
-            </div>
-      </div>
+        <div class="logos-fontes">
+            <span class="tag-fonte youtube" title="YouTube">
+                <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="Logo YouTube" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> YouTube
+            </span>
+            <span class="tag-fonte google" title="Google">
+                <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="Logo Google" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Google
+            </span>
+            <span class="tag-fonte gemini" title="Gemini AI">
+                <img src="https://cdn-icons-png.flaticon.com/128/16143/16143202.png" alt="Logo Gemini" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Gemini
+            </span>
+            <span class="tag-fonte spotify" title="Spotify">
+                <img src="https://cdn-icons-png.flaticon.com/128/2111/2111624.png" alt="Logo Spotify" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Spotify
+            </span>
+            <span class="tag-fonte todamateria" title="Toda Matéria">
+                <img src="https://cdn-icons-png.flaticon.com/128/2232/2232688.png" alt="Logo Livro" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Toda Matéria
+            </span>
+        </div>
 
         <div class="links-tecnicos">
             <a href="https://github.com/ashleycastro-coder/Ashley.Estefany-2C-2026" target="_blank" class="link-externo">
