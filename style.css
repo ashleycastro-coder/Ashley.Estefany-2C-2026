@@ -711,3 +711,75 @@ h1, h2, .botao-acao-navegar {
 .links-tecnicos .link-externo:hover {
     transform: scale(1.05); /* Aumenta um pouquinho de tamanho, seguindo sua ideia de ampliar */
 }
+/* ==========================================================================
+   ESTILO DOS BLOCOS DOS PAÍSES (ARGENTINA)
+   ========================================================================== */
+
+/* Container que segura o país */
+.container-pais {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* O retângulo colorido de fundo (Estilo Natureza) */
+.retangulo-conteudo-principal {
+    background-color: #e8f8f5; /* Um verde bem clarinho e suave de fundo */
+    border: 2px solid #000000; /* Borda preta fina para marcar o design */
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap; /* Para funcionar direitinho no celular */
+}
+
+/* Organização dos Textos (Sempre Pretos) */
+.coluna-texto {
+    flex: 1;
+    min-width: 300px;
+}
+
+.titulo-pais {
+    font-family: 'Fredoka', sans-serif;
+    color: #000000; /* Regra de ouro: Letras Pretas */
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.texto-introducao {
+    font-family: 'Belleza', sans-serif;
+    color: #000000; /* Regra de ouro: Letras Pretas */
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+/* Área da Imagem e Efeito de Zoom */
+.coluna-imagem {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.moldura-vintage {
+    width: 100%;
+    max-width: 400px;
+    border: 3px solid #000000; /* Moldura preta combinando com o estilo */
+    border-radius: 12px;
+    overflow: hidden; /* Isso impede que a imagem saia para fora do quadrado ao aumentar */
+    box-shadow: 5px 5px 0px #000000; /* Sombra sólida estilo retrô */
+}
+
+.imagem-zoom {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease; /* Faz o efeito de engrandecer ser suave */
+}
+
+/* REGRA DE OURO: Quando passa o mouse, a imagem aumenta de tamanho! */
+.moldura-vintage:hover .imagem-zoom {
+    transform: scale(1.1); /* Amplia a imagem em 10% */
+}
