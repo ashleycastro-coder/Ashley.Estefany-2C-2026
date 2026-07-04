@@ -101,11 +101,9 @@
     </div>
 
    <script>
+    
         // ==========================================================================
-        // PASSO 3: BANCO DE DADOS ATUALIZADO COM SEU TEXTO (AGRINHO 2026)
-        // ==========================================================================
-       // ==========================================================================
-        // PASSO 3: BANCO DE DADOS ATUALIZADO (AGRINHO 2026)
+        // PASSO 3: BANCO DE DADOS COMPLETO E ALINHADO (AGRINHO 2026)
         // ==========================================================================
         const dadosPaises = {
             argentina: {
@@ -134,13 +132,34 @@
                         },
                         {
                             subtitulo: "3. 🌾 Do Campo à Mesa: O Segredo da Erva-Mate e da Uva",
-                            texto: "A engrenagem por trás da gastronomia argentina vem do cuidado com a terra. O Mate (a bebida nacional) é uma herança direta dos povos indígenas Guarani e Kaingang, que consideravam a árvore da erva-mate um presente sagrado dos deuses. Eles já sabiam que ela dava força e energia, respeitando o tempo de colheita da floresta. Hoje, o cultivo sustentável dessa planta move o norte do país. Da mesma forma, nos vales secos de Mendoza, aos pés da Cordilheira dos Andes, a combinação da água pura do degelo das montanhas com o trabalho dos produtores de Uva Malbec transformou a região em um dos maiores polos mundiais da viticultura, provando que o respeito à natureza gera frutos extraordinários.",
+                            texto: "A engrenagem por trás da gastronomia argentina vem do cuidado com a terra. O Mate (a bebida nacional) é uma herança direta dos povos indígenas Guarani e Kaingang, que consideravam a árvore da erva-mate umプレゼント sagrado dos deuses. Eles já sabiam que ela dava força e energia, respeitando o tempo de colheita da floresta. Hoje, o cultivo sustentável dessa planta move o norte do país. Da mesma forma, nos vales secos de Mendoza, aos pés da Cordilheira dos Andes, a combinação da água pura do degelo das montanhas com o trabalho dos produtores de Uva Malbec transformou a região em um dos maiores polos mundiais da viticultura, provando que o respeito à natureza gera frutos extraordinários.",
                             imagem: "IMAGENS/foto17.jpg"
                         }
                     ]
                 }
+            } // Fim da Argentina
+        }; // Fim do dadosPaises
+
+        // Outras funções de controle do seu site
+        function toggleBandeiras() {
+            var fileira = document.getElementById("fileiraPaises");
+            if (fileira) {
+                fileira.classList.toggle("escondido");
             }
-        };
+        }
+
+        // Script da tela de boas-vindas (Desbloqueador da tela)
+        setTimeout(function() {
+            var telaIntro = document.getElementById("tela-boas-vindas");
+            if (telaIntro) {
+                telaIntro.style.opacity = "0";
+                telaIntro.style.transition = "opacity 800ms ease";
+                
+                setTimeout(function() {
+                    telaIntro.style.display = "none";
+                }, 800);
+            }
+        }, 2200);
         // ==========================================================================
         // PASSO 4: FUNÇÃO PARA ALTERNAR A TELA E MOSTRAR O PAÍS SELECIONADO
         // ==========================================================================
