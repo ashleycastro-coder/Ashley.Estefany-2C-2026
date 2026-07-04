@@ -178,9 +178,17 @@
                 containerBlocos.innerHTML += estruturaBloco;
             });
 
-            // 5. A MÁGICA DA TROCA: Esconde o manifesto original e mostra o quadrante do país
+            // 5. A MÁGICA DA TROCA: Esconde o manifesto e as colunas de imagens da home
             document.querySelector(".caixa-manifesto").style.display = "none";
-            document.getElementById("container-paises-dinamico").style.display = "block";
+            
+            // Procura a coluna de imagens do meio/laterais e esconde (ajuste a classe se a sua tiver outro nome)
+            const colunaImagens = document.querySelector(".coluna-imagens-meio");
+            if (colunaImagens) {
+                colunaImagens.style.display = "none";
+            }
+
+            // Mostra o quadrante do país
+            document.getElementById("container-paises-dinamico").style.display = "block"
         }
     </script>
 
