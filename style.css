@@ -718,22 +718,23 @@ html {
    ESTILO FINAL DOS BLOCOS DOS PAÍSES (ADAPTADO AO RASCUNHO)
    ========================================================================== */
 
-/* Força o container a ignorar o 'flex-row' do pai e ocupar uma linha inteira própria */
+//* Força o container a ignorar o 'flex-row' do pai e ocupar uma linha inteira própria */
 #container-paises-dinamico {
-    margin: 20px 0;
+    margin: 30px 0;
     width: 100% !important;
-    flex: 1 1 100% !important; /* MÁGICA: Obriga o flexbox a dar 100% da largura da tela pra ele */
-    display: none; /* O motor JS vai mudar isso para 'block' ou 'inline-block' ao clicar */
+    max-width: 100% !important;
+    flex: none !important; /* Desativa qualquer ordem de virar coluna do Flexbox pai */
+    clear: both !important; /* Garante que nenhuma coluna flutue ao lado dele */
 }
 
-/* O Quadrante Principal - Agora com o fundo verde suave da natureza e letras pretas */
+/* O Quadrante Principal - Ajustado para formato horizontal de tela cheia */
 .quadrante-pais {
     width: 100%;
     padding: 35px;
-    background-color: #f4f7f5; /* Verde bem suave, cor de natureza clara */
+    background-color: #f4f7f5; /* Verde suave de natureza clara */
     border: 3px solid #000000;
     border-radius: 16px;
-    box-shadow: 8px 8px 0px #000000; /* Sombra marcante igual ao manifesto */
+    box-shadow: 8px 8px 0px #000000;
     box-sizing: border-box;
 }
 
@@ -749,10 +750,10 @@ html {
     padding-bottom: 10px;
 }
 
-/* Cada Bloco Horizontal (Texto + Imagem lado a lado igual ao seu desenho) */
+/* Cada Bloco Horizontal (Texto + Imagem lado a lado igual ao seu rascunho) */
 .bloco-conteudo-pais {
-    display: flex;
-    flex-direction: row;
+    display: flex !important;
+    flex-direction: row !important; /* Garante que texto e imagem fiquem lado a lado */
     align-items: center;
     justify-content: space-between;
     gap: 40px;
@@ -760,9 +761,9 @@ html {
     width: 100%;
 }
 
-/* Faz os blocos alternarem o lado da foto de forma elegante (opcional) */
+/* Inverte a ordem nos blocos pares para o visual ficar dinâmico */
 .bloco-conteudo-pais:nth-child(even) {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse !important;
 }
 
 /* Lado do Texto */
@@ -773,14 +774,14 @@ html {
 .bloco-texto h3 {
     font-family: 'Fredoka', sans-serif;
     font-size: 1.6rem;
-    color: #000000; /* Mantendo a regra de ouro das letras pretas */
+    color: #000000;
     margin-top: 0;
     margin-bottom: 12px;
 }
 
 .bloco-texto p {
     font-family: 'Belleza', sans-serif;
-    font-size: 1.25rem; /* Tamanho confortável para leitura */
+    font-size: 1.25rem;
     color: #000000;
     line-height: 1.8;
     text-align: justify;
@@ -789,9 +790,9 @@ html {
 
 /* Lado da Imagem com a moldura e efeito de zoom do seu projeto */
 .bloco-imagem {
-    width: 440px;      /* Mesma largura que você usou na coluna de imagens da home */
+    width: 440px;
     min-width: 440px;
-    height: 290px;     /* Mesma altura que você usou nas suas fotos da home */
+    height: 290px;
     border: 3px solid #000000;
     border-radius: 12px;
     overflow: hidden;
@@ -808,5 +809,5 @@ html {
 
 /* Efeito de zoom profissional ao passar o mouse */
 .bloco-imagem:hover img {
-    transform: scale(1.08); /* Aumenta levemente a foto dentro da moldura */
+    transform: scale(1.08);
 }
