@@ -865,3 +865,10 @@ html {
 #dinamico-foto:hover {
     transform: scale(1.05); /* Efeito de zoom sutil ao passar o mouse */
 }
+/* Container Geral do País */
+#container-paises-dinamico {
+    margin: 20px auto;
+    max-width: 750px;
+    width: 100%;
+    display: none; /* <-- ADICIONE ESTA LINHA AQUI para ele começar escondido! */
+}
