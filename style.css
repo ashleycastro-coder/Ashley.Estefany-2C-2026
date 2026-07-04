@@ -712,58 +712,81 @@ h1, h2, .botao-acao-navegar {
     transform: scale(1.05); /* Aumenta um pouquinho de tamanho, seguindo sua ideia de ampliar */
 }
 /* ==========================================================================
-   PASSO 2: ESTILO DO QUADRANTE DINÂMICO (AGRINHO 2026)
+   PASSO 2 ATUALIZADO: VISUAL TROPICAL E INTEGRADO (AGRINHO 2026)
    ========================================================================== */
-/* O Quadrante Principal - Ajustado para ser mais centralizado e elegante */
+
+/* O Quadrante Principal - Integrado perfeitamente sem espaços brancos extras */
 .quadrante-pais {
     width: 100%;
-    max-width: 900px; /* Impede que fique largo demais em telas grandes */
-    margin: 0 auto; /* Centraliza perfeitamente na tela */
-    padding: 30px;
-    background-color: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 12px;
-    box-shadow: 6px 6px 0px #000000;
     box-sizing: border-box;
-    
-    /* Animação suave para surgir na tela */
-    animation: surgirSuave 0.6s ease forwards;
+    padding: 35px;
+    background-color: #ffffff;
+    border: 3px solid #7cb342; /* Linha colorida (Verde Folha Tropical Claro) */
+    border-radius: 16px;
+    box-shadow: none; /* Sem sombra nenhuma */
+    margin-bottom: 30px;
 }
 
-/* Animação de Fade-In */
-@keyframes surgirSuave {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Títulos Principais e Secundários Coloridos */
+#dinamico-titulo {
+    font-family: 'Fredoka', sans-serif;
+    color: #2e7d32; /* Verde Natureza Vibrante */
+    font-size: 2.4rem; /* Bem grande e impactante */
+    margin-top: 0;
+    margin-bottom: 35px;
+    text-transform: uppercase;
 }
 
-/* Coluna da Imagem - O fundo colorido da natureza clara */
+.bloco-texto h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.8rem; /* Tópico maior */
+    color: #8bc34a; /* Verde Tropical Claro */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Alinhamento Lado a Lado: Texto e Imagem Maiores */
+.bloco-conteudo-pais {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Alinha perfeitamente o meio do texto com o meio da imagem */
+    justify-content: space-between;
+    gap: 40px; /* Espaço elegante entre eles */
+    width: 100%;
+}
+
+/* Coluna de Texto Robusta */
+.bloco-texto {
+    flex: 1;
+}
+
+.bloco-texto p {
+    font-family: 'Belleza', sans-serif;
+    font-size: 1.4rem; /* Letra maior para leitura confortável */
+    color: #333333;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+}
+
+/* Coluna da Imagem - O Fundo Colorido União da Natureza */
 .bloco-container-foto {
-    width: 380px; /* Reduzi um pouco para equilibrar com o texto */
-    min-width: 380px;
-    background-color: #e2ede4; /* Verde suave de natureza clara */
-    border: 2px solid #000000;
-    border-radius: 12px;
-    padding: 20px;
+    width: 460px; /* Imagem bem maior */
+    min-width: 460px;
+    height: 320px; /* Proporção robusta alinhada com o texto */
+    background-color: #f1f8e9; /* Fundo Clorofila/Tropical super suave */
+    border-radius: 20px; /* Bordas arredondadas suaves */
+    padding: 15px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* Permite que coisas dentro dele usem camadas */
 }
 
-/* A Moldura Interna da Foto - AGORA SEM CORTAR A IMAGEM */
+/* A Imagem Limpa - Sem bordas, sem linhas */
 .bloco-imagem {
     width: 100%;
-    height: 230px;
-    border: 2px solid #000000;
-    border-radius: 8px;
-    /* overflow: hidden; <-- REMOVIDO para a imagem poder sair do quadrado! */
+    height: 100%;
 }
 
 .bloco-imagem img {
@@ -771,14 +794,7 @@ h1, h2, .botao-acao-navegar {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 6px;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-}
-
-/* Efeito Específico: A imagem amplia, sai do quadrante e ganha uma sombra tridimensional */
-.bloco-imagem:hover img {
-    transform: scale(1.12); /* Amplia para fora do quadrado */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Sombra de efeito flutuante */
-    position: relative;
-    z-index: 10; /* Garante que ela fique por cima de tudo ao ampliar */
+    border-radius: 15px; /* Arredondada acompanhando o fundo */
+    border: none; /* Completamente sem bordas */
+    box-shadow: none; /* Sem sombras */
 }
