@@ -715,146 +715,89 @@ html {
     transform: scale(1.05); /* Aumenta um pouquinho de tamanho, seguindo sua ideia de ampliar */
 }
 /* ==========================================================================
-   ESTILO DOS BLOCOS DOS PAÍSES (ARGENTINA)
+   ESTILO FINAL DOS BLOCOS DOS PAÍSES (ADAPTADO AO RASCUNHO)
    ========================================================================== */
 
-/* Container que segura o país */
-.container-pais {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* O retângulo colorido de fundo (Estilo Natureza) */
-.retangulo-conteudo-principal {
-    background-color: #e8f8f5; /* Um verde bem clarinho e suave de fundo */
-    border: 2px solid #000000; /* Borda preta fina para marcar o design */
-    border-radius: 16px;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap; /* Para funcionar direitinho no celular */
-}
-
-/* Organização dos Textos (Sempre Pretos) */
-.coluna-texto {
-    flex: 1;
-    min-width: 300px;
-}
-
-.titulo-pais {
-    font-family: 'Fredoka', sans-serif;
-    color: #000000; /* Regra de ouro: Letras Pretas */
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-}
-
-.texto-introducao {
-    font-family: 'Belleza', sans-serif;
-    color: #000000; /* Regra de ouro: Letras Pretas */
-    font-size: 1.15rem;
-    line-height: 1.6;
-}
-
-/* Área da Imagem e Efeito de Zoom */
-.coluna-imagem {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    justify-content: center;
-}
-
-.moldura-vintage {
-    width: 100%;
-    max-width: 400px;
-    border: 3px solid #000000; /* Moldura preta combinando com o estilo */
-    border-radius: 12px;
-    overflow: hidden; /* Isso impede que a imagem saia para fora do quadrado ao aumentar */
-    box-shadow: 5px 5px 0px #000000; /* Sombra sólida estilo retrô */
-}
-
-.imagem-zoom {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease; /* Faz o efeito de engrandecer ser suave */
-}
-
-/* REGRA DE OURO: Quando passa o mouse, a imagem aumenta de tamanho! */
-.moldura-vintage:hover .imagem-zoom {
-    transform: scale(1.1); /* Amplia a imagem em 10% */
-}
-/* Container Geral do País */
+/* Força o container a ignorar o 'flex-row' do pai e ocupar uma linha inteira própria */
 #container-paises-dinamico {
-    margin: 20px auto;
-    max-width: 750px;
+    margin: 20px 0;
     width: 100%;
+    display: none; /* Mantém escondido até o clique */
 }
 
-/* Quadrante em formato quadrado/compacto */
+/* O Quadrante Principal - Agora com o fundo verde suave da natureza e letras pretas */
 .quadrante-pais {
-    display: flex;
-    align-items: stretch;
+    width: 100%;
+    padding: 35px;
+    background-color: #f4f7f5; /* Verde bem suave, cor de natureza clara */
     border: 3px solid #000000;
     border-radius: 16px;
-    overflow: hidden;
-    background-color: #ffffff;
-    box-shadow: 6px 6px 0px #000000;
-    min-height: 380px; /* Garante o aspecto mais quadrado */
+    box-shadow: 8px 8px 0px #000000; /* Sombra marcante igual ao manifesto */
+    box-sizing: border-box;
 }
 
-/* Lado do Texto */
-.coluna-texto-pais {
-    flex: 1;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
+/* Título principal do tema selecionado */
 #dinamico-titulo {
     font-family: 'Fredoka', sans-serif;
     color: #000000;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+    font-size: 2.2rem;
+    margin-bottom: 35px;
     margin-top: 0;
+    text-transform: uppercase;
+    border-bottom: 3px solid #000000;
+    padding-bottom: 10px;
 }
 
-#dinamico-texto {
-    font-family: 'Belleza', sans-serif;
-    color: #000000;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0;
-    text-align: justify;
-}
-
-/* Lado da Imagem com fundo cor da Natureza */
-.coluna-imagem-pais {
-    flex: 1;
-    background-color: #2e5a44; /* Verde floresta/natureza */
+/* Cada Bloco Horizontal (Texto + Imagem lado a lado igual ao seu desenho) */
+.bloco-conteudo-pais {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    padding: 25px;
-    border-left: 3px solid #000000;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 50px;
+    width: 100%;
 }
 
-/* Moldura e Foto com Zoom */
-.moldura-foto-pais {
-    width: 100%;
-    height: 100%;
-    max-height: 300px;
+/* Faz os blocos alternarem o lado da foto de forma elegante (opcional) */
+.bloco-conteudo-pais:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Lado do Texto */
+.bloco-texto {
+    flex: 1;
+}
+
+.bloco-texto h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.6rem;
+    color: #000000; /* Mantendo a regra de ouro das letras pretas */
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.bloco-texto p {
+    font-family: 'Belleza', sans-serif;
+    font-size: 1.25rem; /* Tamanho confortável para leitura */
+    color: #000000;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 0;
+}
+
+/* Lado da Imagem com a moldura e efeito de zoom do seu projeto */
+.bloco-imagem {
+    width: 440px;      /* Mesma largura que você usou na coluna de imagens da home */
+    min-width: 440px;
+    height: 290px;     /* Mesma altura que você usou nas suas fotos da home */
     border: 3px solid #000000;
     border-radius: 12px;
     overflow: hidden;
-    background: #ffffff;
-    box-shadow: 4px 4px 0px #000000;
+    box-shadow: 5px 5px 0px #000000;
 }
 
-#dinamico-foto {
+.bloco-imagem img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -862,26 +805,7 @@ html {
     transition: transform 0.5s ease;
 }
 
-#dinamico-foto:hover {
-    transform: scale(1.05); /* Efeito de zoom sutil ao passar o mouse */
-}
-/* Container Geral do País - Agora posicionado para ocupar a tela toda */
-#container-paises-dinamico {
-    margin: 20px 0;
-    width: 100%;
-    grid-column: 1 / -1; /* Se você usa Grid, isso faz ocupar todas as colunas */
-    display: none; /* Mantém escondido no início */
-}
-
-/* Quadrante ocupando 100% da largura útil */
-.quadrante-pais {
-    display: flex;
-    align-items: stretch;
-    width: 100%;
-    min-height: 480px;
-    border: 3px solid #eda3d1;
-    border-radius: 12px;
-    overflow: hidden;
-    background-color: #ffffff;
-    box-shadow: 8px 8px 0px #000000;
+/* Efeito de zoom profissional ao passar o mouse */
+.bloco-imagem:hover img {
+    transform: scale(1.08); /* Aumenta levemente a foto dentro da moldura */
 }
