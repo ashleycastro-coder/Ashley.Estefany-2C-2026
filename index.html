@@ -245,6 +245,17 @@
         }
 
         // DEIXE SEU BLOCO DE "CONTROLE DE CLIQUES" CONTINUAR LOGO ABAIXO DAQUI...
+        // Ajuste para a tela de abertura sumir mais rápido e suave
+        setTimeout(function() {
+            var telaIntro = document.getElementById("tela-boas-vindas");
+            if(telaIntro) {
+                telaIntro.style.opacity = "0";
+                telaIntro.style.transition = "opacity 400ms ease"; // Ficou o dobro mais rápido para sumir!
+                setTimeout(function() {
+                    telaIntro.style.display = "none";
+                }, 400);
+            }
+        }, 1200); // Diminuímos o tempo que ela fica parada na tela (de 2200 para 1200)
 </script>
 </body>
 </html>
