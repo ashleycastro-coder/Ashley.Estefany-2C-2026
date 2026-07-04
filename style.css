@@ -865,24 +865,23 @@ html {
 #dinamico-foto:hover {
     transform: scale(1.05); /* Efeito de zoom sutil ao passar o mouse */
 }
-/* Container Geral do País - Agora ocupando todo o espaço disponível */
+/* Container Geral do País - Agora posicionado para ocupar a tela toda */
 #container-paises-dinamico {
-    margin: 0;
+    margin: 20px 0;
     width: 100%;
+    grid-column: 1 / -1; /* Se você usa Grid, isso faz ocupar todas as colunas */
     display: none; /* Mantém escondido no início */
 }
 
-/* Quadrante com o visual integrado à página inicial */
+/* Quadrante ocupando 100% da largura útil */
 .quadrante-pais {
     display: flex;
     align-items: stretch;
     width: 100%;
-    min-height: 450px; /* Aumentamos a altura para ficar mais imponente */
-    
-    /* Aqui aplicamos o mesmo estilo de borda e sombra do seu manifesto */
-    border: 3px solid #000000;
-    border-radius: 12px; /* Ajuste para bater com as curvas do seu site */
+    min-height: 480px;
+    border: 3px solid #eda3d1;
+    border-radius: 12px;
     overflow: hidden;
     background-color: #ffffff;
-    box-shadow: 8px 8px 0px #000000; /* Sombra marcante igual ao estilo do site */
+    box-shadow: 8px 8px 0px #000000;
 }
