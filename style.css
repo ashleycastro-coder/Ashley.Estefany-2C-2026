@@ -798,3 +798,34 @@ h1, h2, .botao-acao-navegar {
     border: none; /* Completamente sem bordas */
     box-shadow: none; /* Sem sombras */
 }
+/* Efeito de clique para ampliar a imagem */
+.bloco-imagem img {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Classe que o JavaScript vai colocar na foto ao clicar */
+.foto-ampliada {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.8); /* Deixa a imagem quase duas vezes maior */
+    z-index: 9999; /* Garante que ela fique na frente de absolutamente tudo */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-radius: 12px !important;
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain !important;
+}
+
+/* Fundo escuro sutil para destacar a foto ampliada */
+.fundo-escuro-zoom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    display: none;
+}

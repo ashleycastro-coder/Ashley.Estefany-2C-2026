@@ -137,6 +137,7 @@
                 }, 800);
             }
         }, 2200); /* 2.2 segundos travada na tela */
+    
         // ==========================================================================
         // PASSO 4: FUNÇÃO PARA ALTERNAR A TELA E MOSTRAR O PAÍS SELECIONADO
         // ==========================================================================
@@ -181,14 +182,47 @@
             // 5. A MÁGICA DA TROCA: Esconde o manifesto e as colunas de imagens da home
             document.querySelector(".caixa-manifesto").style.display = "none";
             
-            // Procura a coluna de imagens do meio/laterais e esconde (ajuste a classe se a sua tiver outro nome)
+            // Procura a coluna de imagens do meio/laterais e esconde
             const colunaImagens = document.querySelector(".coluna-imagens-meio");
             if (colunaImagens) {
                 colunaImagens.style.display = "none";
             }
 
             // Mostra o quadrante do país
-            document.getElementById("container-paises-dinamico").style.display = "block"
+            document.getElementById("container-paises-dinamico").style.display = "block";
+
+            // 🔥 Ativa o sistema de zoom assim que a página do país carregar!
+            configurarZoomImagens();
+        }
+
+        // Função para ampliar a foto
+        function configurarZoomImagens() {
+            const imagens = document.querySelectorAll('.bloco-imagem img');
+            const fundo = document.getElementById('fundo-zoom');
+
+            if (!fundo) return;
+
+            imagens.forEach(img => {
+                img.addEventListener('click', function() {
+                    if (!this.classList.contains('foto-ampliada')) {
+                        this.classList.add('foto-ampliada');
+                        fundo.style.display = 'block';
+                    }
+                });
+            });
+        }
+
+        // Função para fechar a foto ampliada
+        function fecharFoto() {
+            const imgAmpliada = document.querySelector('.foto-ampliada');
+            const fundo = document.getElementById('fundo-zoom');
+            
+            if (imgAmpliada) {
+                imgAmpliada.classList.remove('foto-ampliada');
+            }
+            if (fundo) {
+                fundo.style.display = 'none';
+            }
         }
     </script>
 
