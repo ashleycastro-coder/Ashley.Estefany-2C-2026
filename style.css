@@ -768,6 +768,24 @@ h1, h2, .botao-acao-navegar {
     text-align: justify;
     margin: 0;
 }
+
+/* 🔥 AQUI ESTÁ O SEGREDO: Coluna da Imagem (Controla o tamanho máximo dela) */
+.bloco-container-foto {
+    width: 450px;          /* Largura elegante e robusta */
+    min-width: 450px;      /* Impede que o texto esmague a imagem */
+    height: 320px;         /* Altura proporcional ao texto */
+    background-color: #f1f8e9; /* Fundo verde tropical claro */
+    border-radius: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Caixinha interna que segura a imagem */
+.bloco-imagem {
+    width: 100%;
+    height: 100%;
+}
+
 /* A Imagem Limpa - Preparada para crescer suavemente */
 .bloco-imagem img {
     width: 100%;
@@ -784,6 +802,6 @@ h1, h2, .botao-acao-navegar {
 
 /* Quando passar o mouse por cima (ou clicar no celular), ela cresce um pouquinho */
 .bloco-imagem img:hover {
-    transform: scale(1.08); /* 1.08 significa que ela cresce só 8% do tamanho original */
+    transform: scale(1.08); /* Cresce só 8% de forma sutil */
     cursor: pointer;
 }
