@@ -38,7 +38,7 @@
         <button class="botao-acao-navegar" onclick="toggleBandeiras()">Navegar 👉🏾</button>
         
         <div id="fileiraPaises" class="fileira-bandeiras escondido">
-            <img src="https://flagcdn.com/w40/ar.png" alt="Argentina" title="Argentina" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/ar.png" onclick="selecionarPais('argentina')" alt="Argentina" title="Argentina" class="desenho-bandeira" style="cursor: pointer;">
             <img src="https://flagcdn.com/w40/bo.png" alt="Bolívia" title="Bolívia" class="desenho-bandeira">
             <img src="https://flagcdn.com/w40/br.png" alt="Brasil" title="Brasil" class="desenho-bandeira">
             <img src="https://flagcdn.com/w40/cl.png" alt="Chile" title="Chile" class="desenho-bandeira">
@@ -137,6 +137,51 @@
                 }, 800);
             }
         }, 2200); /* 2.2 segundos travada na tela */
+        // ==========================================================================
+        // PASSO 4: FUNÇÃO PARA ALTERNAR A TELA E MOSTRAR O PAÍS SELECIONADO
+        // ==========================================================================
+        function selecionarPais(nomePais) {
+            const pais = dadosPaises[nomePais];
+            
+            if (!pais) {
+                console.error("País não encontrado no banco de dados.");
+                return;
+            }
+
+            // 1. Buscamos as informações do estado 'inicial' do país
+            const infoInicial = pais.inicial;
+
+            // 2. Atualizamos o título principal do quadrante novo
+            document.getElementById("dinamico-titulo").innerText = infoInicial.titulo;
+
+            // 3. Limpamos qualquer conteúdo antigo que estava na caixa de blocos
+            const containerBlocos = document.getElementById("dinamico-conteudo-blocos");
+            containerBlocos.innerHTML = "";
+
+            // 4. Construímos a estrutura de Texto + Imagem exatamente como no seu rascunho
+            infoInicial.blocos.forEach(bloco => {
+                const estruturaBloco = `
+                    <div class="bloco-conteudo-pais">
+                        <div class="bloco-texto">
+                            <h3>${bloco.subtitulo}</h3>
+                            <p>${bloco.texto}</p>
+                        </div>
+                        
+                        <div class="bloco-container-foto">
+                            <div class="bloco-imagem">
+                                <img src="${bloco.imagem}" alt="${bloco.subtitulo}">
+                            </div>
+                        </div>
+                    </div>
+                `;
+                // Coloca o bloco estruturado dentro do container
+                containerBlocos.innerHTML += estruturaBloco;
+            });
+
+            // 5. A MÁGICA DA TROCA: Esconde o manifesto original e mostra o quadrante do país
+            document.querySelector(".caixa-manifesto").style.display = "none";
+            document.getElementById("container-paises-dinamico").style.display = "block";
+        }
     </script>
 
     <footer class="rodape-projeto">
