@@ -230,6 +230,125 @@
             </a>
         </div>
     </footer>
+    <script>
+        // ESTADO DO SITE: Guarda o que está selecionado na tela no momento
+        let paisAtivo = "";  // Começa sem nenhum país selecionado (mostra manifesto)
+        let temaAtivo = "inicio"; // Temas: inicio, gastronomia, destinos, festas, musica
+
+        // BANCO DE DADOS DA ARGENTINA (Dividido por categorias)
+        const bancoDados = {
+            "secao-argentina": {
+                "inicio": {
+                    titulo: "Argentina: A Paixão na Brasa e o Sentimento que Dança",
+                    texto: "Prepare-se para cruzar as fronteiras e desembarcar em uma terra onde o drama vira poesia e cada esquina tem uma história para contar. A Argentina é um espetáculo de diversidade: vai do calor das peñas do interior ao frio das geleiras da Patagônia, tudo embalado pelo orgulho de um povo que vive suas tradições com intensidade máxima. Papo reto: você vai se encantar com esse solo que transborda herança e identidade!",
+                    foto: "IMAGENS/foto14.jpg"
+                },
+                "gastronomia": {
+                    titulo: "Gastronomia – Sabores com Alma",
+                    texto: "<strong>O Asado Argentino:</strong> Dizer que o asado é apenas um churrasco é não entender nada da cultura argentina. O asado é o maior ritual de integração social do país. Ele remonta ao século XVIII e XIX, nascido nas mãos dos gaúchos nos pampas...<br><br><strong>As Empanadas Criollas:</strong> Chegaram com os colonizadores e ganharam identidade nova nas mãos das mulheres trabalhadoras, indígenas e mestiças...<br><br><strong>Do Campo à Mesa:</strong> O Mate é herança Guarani e Kaingang, enquanto a Uva Malbec prospera com o degelo dos Andes.",
+                    foto: "IMAGENS/foto15.jpg" // Você pode alternar as fotos dinamicamente depois se quiser!
+                },
+                "destinos": {
+                    titulo: "Destinos Turísticos – Histórias na Paisagem",
+                    texto: "<strong>Buenos Aires (San Telmo):</strong> O bairro residencial mais antigo, berço da cultura popular portenha, cortiços e resistência operária.<br><br><strong>Quebrada de Humahuaca (Jujuy):</strong> Vale montanhoso com mais de 10.000 anos de história, antigo Caminho do Inca e cenário de batalhas pela independência.",
+                    foto: "IMAGENS/foto18.jpg"
+                },
+                "festas": {
+                    titulo: "Festas Populares – A Voz do Povo nas Ruas",
+                    texto: "<strong>O Carnaval de Gualeguaychú:</strong> Explosão de ritmo e carros alegóricos com mensagens fortes de conscientização social e orgulho latino-americano.<br><br><strong>Festival Nacional do Folclore de Cosquín:</strong> O maior encontro folclórico da América Latina, celebrando as tradições do campo com o som do bombo legüero.",
+                    foto: "IMAGENS/foto19.jpg"
+                },
+                "musica": {
+                    titulo: "Danças e Ritmos – A Identidade em Movimento",
+                    texto: "<strong>MÚSICA: 'Solo le pido a Dios':</strong> Hino de resistência e clamor pela paz que exalta o valor da vida e do trabalhador.<br><br><strong>DANÇA: O Tango:</strong> Nascido nos subúrbios portuários, funde tambores afro-argentinos, melancolia europeia e malícia gaúcha.",
+                    foto: "IMAGENS/foto22.jpg"
+                }
+            }
+            // Quando formos fazer o Brasil, basta abrir as chaves aqui embaixo!
+        };
+
+        // Função para abrir/fechar as bandeiras (Botão Navegar)
+        function toggleBandeiras() {
+            var fileira = document.getElementById("fileiraPaises");
+            fileira.classList.toggle("escondido");
+        }
+
+        // FUNÇÃO QUE ATUALIZA A TELA BASEADO NO PAÍS E TEMA SELECIONADOS
+        function atualizarTela() {
+            // Se não tiver nenhum país ativo, volta para a tela inicial (Manifesto)
+            if (!paisAtivo) {
+                document.getElementById("container-paises-dinamico").style.display = "none";
+                document.getElementById("imagens-iniciais").style.display = "block";
+                document.getElementById("conteudo-manifesto").style.display = "block";
+                return;
+            }
+
+            // Se o país existe no banco de dados
+            if (bancoDados[paisAtivo] && bancoDados[paisAtivo][temaAtivo]) {
+                var dados = bancoDados[paisAtivo][temaAtivo];
+                
+                // Esconde a tela inicial
+                document.getElementById("imagens-iniciais").style.display = "none";
+                document.getElementById("conteudo-manifesto").style.display = "none";
+                
+                // Atualiza o Quadrante Quadrado com o conteúdo do tema
+                document.getElementById("dinamico-titulo").innerHTML = dados.titulo;
+                document.getElementById("dinamico-texto").innerHTML = dados.texto;
+                document.getElementById("dinamico-foto").src = dados.foto;
+                
+                // Mostra o quadrante
+                document.getElementById("container-paises-dinamico").style.display = "block";
+            } else {
+                alert("As informações deste tema para este país estão sendo preparadas!");
+            }
+        }
+
+        // MONITOR DE CLIQUES INTELIGENTE
+        document.addEventListener("click", function(evento) {
+            
+            // 1. Clicou em uma Bandeira
+            var linkBandeira = evento.target.closest(".fileira-bandeiras a");
+            if (linkBandeira) {
+                evento.preventDefault();
+                paisAtivo = linkBandeira.getAttribute("href").substring(1); // Define o país (ex: secao-argentina)
+                temaAtivo = "inicio"; // Sempre que clica no país, começa na introdução dele
+                atualizarTela();
+            }
+
+            // 2. Clicou nos botões da barra lateral
+            var linkBotao = evento.target.closest(".coluna-botoes a");
+            if (linkBotao) {
+                evento.preventDefault();
+                var tituloBotao = linkBotao.getAttribute("title");
+
+                if (tituloBotao === "Página Inicial") {
+                    paisAtivo = ""; // Limpa o país para voltar ao manifesto original
+                    temaAtivo = "inicio";
+                } else if (paisAtivo) { // Só muda o tema se já tiver um país selecionado!
+                    if (tituloBotao === "Gastronomia") temaAtivo = "gastronomia";
+                    if (tituloBotao === "Destinos") temaAtivo = "destinos";
+                    if (tituloBotao === "Festas Populares") temaAtivo = "festas";
+                    if (tituloBotao === "Ritmo e Música") temaAtivo = "musica";
+                } else {
+                    alert("Por favor, selecione um país nas bandeiras primeiro para ver seus temas!");
+                    return;
+                }
+                atualizarTela();
+            }
+        });
+
+        // Controle da tela de boas-vindas
+        setTimeout(function() {
+            var telaIntro = document.getElementById("tela-boas-vindas");
+            if(telaIntro) {
+                telaIntro.style.opacity = "0";
+                telaIntro.style.transition = "opacity 800ms ease";
+                setTimeout(function() {
+                    telaIntro.style.display = "none";
+                }, 800);
+            }
+        }, 2200);
+    </script>
 
 </body>
 </html>
