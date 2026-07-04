@@ -760,7 +760,7 @@ h1, h2, .botao-acao-navegar {
 .bloco-texto h3 {
     font-family: 'Fredoka', sans-serif;
     font-size: 1.5rem;
-    color: #000000;
+    color: #ae3aa8;
     margin-top: 0;
     margin-bottom: 10px;
 }
@@ -779,7 +779,7 @@ h1, h2, .botao-acao-navegar {
     width: 440px;
     min-width: 440px;
     background-color: #e2ede4; /* Verde suave de natureza clara */
-    border: 2px solid #000000; /* Linha fina ao redor do fundo */
+    border: 2px solid #9479c5; /* Linha fina ao redor do fundo */
     border-radius: 12px;
     padding: 20px; /* Espaço para o fundo colorido aparecer em volta da foto */
     box-sizing: border-box;
@@ -792,7 +792,7 @@ h1, h2, .botao-acao-navegar {
 .bloco-imagem {
     width: 100%;
     height: 250px;
-    border: 2px solid #000000; /* Linha fina na foto */
+    border: 2px solid #9479c5; /* Linha fina na foto */
     border-radius: 8px;
     overflow: hidden;
 }
