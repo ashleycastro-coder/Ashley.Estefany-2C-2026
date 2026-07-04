@@ -104,6 +104,9 @@
         // ==========================================================================
         // PASSO 3: BANCO DE DADOS ATUALIZADO COM SEU TEXTO (AGRINHO 2026)
         // ==========================================================================
+       // ==========================================================================
+        // PASSO 3: BANCO DE DADOS ATUALIZADO (AGRINHO 2026)
+        // ==========================================================================
         const dadosPaises = {
             argentina: {
                 inicial: {
@@ -115,30 +118,29 @@
                             imagem: "IMAGENS/foto14.jpg"
                         }
                     ]
+                },
+                gastronomia: {
+                    titulo: "🍳 A Gastronomia Argentina: Sabores com Raiz e Identidade",
+                    blocos: [
+                        {
+                            subtitulo: "1. O Asado Argentino",
+                            texto: "Dizer que o asado é apenas um churrasco é não entender nada da cultura argentina. O asado é o maior ritual de integração social do país. Ele remonta ao século XVIII e XIX, nascido nas mãos dos gaúchos, os trabalhadores do campo, cavaleiros livres e destemidos dos pampas. Muitos desses trabalhadores eram mestiços, descendentes de espanhóis e dos povos indígenas originários (como os Pampas e Mapuches). Eles passavam dias cavalgando e aprenderam a assar a carne ao ar livre, usando apenas estacas de madeira cravadas na terra, fogo de lenha e sal grosso. O asado é o símbolo máximo do trabalhador do campo que transformou a lida diária em patrimônio nacional.<br><br><strong>Ingredientes principais:</strong> Cortes de carne bovina selecionados (como tira de asado e vacío), lenha ou carvão de alta qualidade, sal grosso e o clássico molho chimichurri (uma mistura potente de ervas, alho, vinagre e óleo).",
+                            imagem: "IMAGENS/foto15.jpg"
+                        },
+                        {
+                            subtitulo: "2. As Empanadas Criollas",
+                            texto: "As empanadas chegaram à América do Sul com os colonizadores espanhóis, que por sua vez haviam aprendido a receita com os povos árabes. Mas na Argentina, elas ganharam uma identidade totalmente nova através da mistura cultural. Foram as mãos das mulheres trabalhadoras, indígenas e mestiças, que transformaram esse pastel assado na comida de rua mais famosa do país. Cada província argentina tem sua própria receita secreta: no norte, levam batata; em Mendoza, levam muitas azeitonas. Elas eram o alimento prático dos trabalhadores que precisavam de algo nutritivo e fácil de carregar para comer durante as longas jornadas de trabalho no campo.<br><br><strong>Ingredientes principais:</strong> Massa de farinha de trigo, recheio de carne picada à faca, cebola, cominho, pimenta-da-terra, ovo cozido e azeitonas.",
+                            imagem: "IMAGENS/foto16.jpg"
+                        },
+                        {
+                            subtitulo: "3. 🌾 Do Campo à Mesa: O Segredo da Erva-Mate e da Uva",
+                            texto: "A engrenagem por trás da gastronomia argentina vem do cuidado com a terra. O Mate (a bebida nacional) é uma herança direta dos povos indígenas Guarani e Kaingang, que consideravam a árvore da erva-mate um presente sagrado dos deuses. Eles já sabiam que ela dava força e energia, respeitando o tempo de colheita da floresta. Hoje, o cultivo sustentável dessa planta move o norte do país. Da mesma forma, nos vales secos de Mendoza, aos pés da Cordilheira dos Andes, a combinação da água pura do degelo das montanhas com o trabalho dos produtores de Uva Malbec transformou a região em um dos maiores polos mundiais da viticultura, provando que o respeito à natureza gera frutos extraordinários.",
+                            imagem: "IMAGENS/foto17.jpg"
+                        }
+                    ]
                 }
             }
         };
-
-        // Outras funções de controle do seu site
-        function toggleBandeiras() {
-            var fileira = document.getElementById("fileiraPaises");
-            fileira.classList.toggle("escondido");
-        }
-
-        // Script configurado para sumir bem mais rápido (3 segundos no total)
-        setTimeout(function() {
-            var telaIntro = document.getElementById("tela-boas-vindas");
-            if (telaIntro) {
-                telaIntro.style.opacity = "0";
-                telaIntro.style.transition = "opacity 800ms ease"; /* Tempo sumindo */
-                
-                setTimeout(function() {
-                    telaIntro.style.display = "none";
-                }, 800);
-            }
-        }, 2200); /* 2.2 segundos travada na tela */
-    
-
         // ==========================================================================
         // PASSO 4: FUNÇÃO PARA ALTERNAR A TELA E MOSTRAR O PAÍS SELECIONADO
         // ==========================================================================
