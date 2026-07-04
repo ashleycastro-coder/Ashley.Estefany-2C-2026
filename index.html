@@ -20,7 +20,7 @@
 
         <div class="conteudo-central-intro">
             <h1 class="texto-boas-vindas">Seja Bem-vindo</h1>
-            <p class="subtexto-intro">À vibrante América do Sul...</p>
+            <p class="subtexto-intro">À vibrant América do Sul...</p>
         </div>
     </div>
 
@@ -38,43 +38,19 @@
         <button class="botao-acao-navegar" onclick="toggleBandeiras()">Navegar 👉🏾</button>
         
         <div id="fileiraPaises" class="fileira-bandeiras escondido">
-    <a href="#secao-argentina">
-        <img src="https://flagcdn.com/w40/ar.png" alt="Argentina" title="Argentina" class="desenho-bandeira">
-    </a>
-    <a href="#secao-bolivia">
-        <img src="https://flagcdn.com/w40/bo.png" alt="Bolívia" title="Bolívia" class="desenho-bandeira">
-    </a>
-    <a href="#secao-brasil">
-        <img src="https://flagcdn.com/w40/br.png" alt="Brasil" title="Brasil" class="desenho-bandeira">
-    </a>
-    <a href="#secao-chile">
-        <img src="https://flagcdn.com/w40/cl.png" alt="Chile" title="Chile" class="desenho-bandeira">
-    </a>
-    <a href="#secao-colombia">
-        <img src="https://flagcdn.com/w40/co.png" alt="Colômbia" title="Colômbia" class="desenho-bandeira">
-    </a>
-    <a href="#secao-equador">
-        <img src="https://flagcdn.com/w40/ec.png" alt="Equador" title="Equador" class="desenho-bandeira">
-    </a>
-    <a href="#secao-guiana">
-        <img src="https://flagcdn.com/w40/gy.png" alt="Guiana" title="Guiana" class="desenho-bandeira">
-    </a>
-    <a href="#secao-paraguai">
-        <img src="https://flagcdn.com/w40/py.png" alt="Paraguai" title="Paraguai" class="desenho-bandeira">
-    </a>
-    <a href="#secao-peru">
-        <img src="https://flagcdn.com/w40/pe.png" alt="Peru" title="Peru" class="desenho-bandeira">
-    </a>
-    <a href="#secao-suriname">
-        <img src="https://flagcdn.com/w40/sr.png" alt="Suriname" title="Suriname" class="desenho-bandeira">
-    </a>
-    <a href="#secao-uruguai">
-        <img src="https://flagcdn.com/w40/uy.png" alt="Uruguai" title="Uruguai" class="desenho-bandeira">
-    </a>
-    <a href="#secao-venezuela">
-        <img src="https://flagcdn.com/w40/ve.png" alt="Venezuela" title="Venezuela" class="desenho-bandeira">
-    </a>
-</div>
+            <a href="#secao-argentina"><img src="https://flagcdn.com/w40/ar.png" alt="Argentina" title="Argentina" class="desenho-bandeira"></a>
+            <a href="#secao-bolivia"><img src="https://flagcdn.com/w40/bo.png" alt="Bolívia" title="Bolívia" class="desenho-bandeira"></a>
+            <a href="#secao-brasil"><img src="https://flagcdn.com/w40/br.png" alt="Brasil" title="Brasil" class="desenho-bandeira"></a>
+            <a href="#secao-chile"><img src="https://flagcdn.com/w40/cl.png" alt="Chile" title="Chile" class="desenho-bandeira"></a>
+            <a href="#secao-colombia"><img src="https://flagcdn.com/w40/co.png" alt="Colômbia" title="Colômbia" class="desenho-bandeira"></a>
+            <a href="#secao-equador"><img src="https://flagcdn.com/w40/ec.png" alt="Equador" title="Equador" class="desenho-bandeira"></a>
+            <a href="#secao-guiana"><img src="https://flagcdn.com/w40/gy.png" alt="Guiana" title="Guiana" class="desenho-bandeira"></a>
+            <a href="#secao-paraguai"><img src="https://flagcdn.com/w40/py.png" alt="Paraguai" title="Paraguai" class="desenho-bandeira"></a>
+            <a href="#secao-peru"><img src="https://flagcdn.com/w40/pe.png" alt="Peru" title="Peru" class="desenho-bandeira"></a>
+            <a href="#secao-suriname"><img src="https://flagcdn.com/w40/sr.png" alt="Suriname" title="Suriname" class="desenho-bandeira"></a>
+            <a href="#secao-uruguai"><img src="https://flagcdn.com/w40/uy.png" alt="Uruguai" title="Uruguai" class="desenho-bandeira"></a>
+            <a href="#secao-venezuela"><img src="https://flagcdn.com/w40/ve.png" alt="Venezuela" title="Venezuela" class="desenho-bandeira"></a>
+        </div>
     </nav>
 
     <div class="divisao-layout">
@@ -93,7 +69,7 @@
             <img src="IMAGENS/foto3.jpg" alt="Cores da América do Sul" class="foto-bloco">
         </div>
 
-   <main class="espaco-leitura">
+        <main class="espaco-leitura">
             
             <div id="conteudo-manifesto" class="caixa-manifesto">
                 <h2 class="titulo-manifesto">O Coração Pulsante do Mundo</h2>
@@ -110,132 +86,47 @@
                     
                     <p class="final-impactante">Prepare o seu coração, porque a sua viagem pelo lado mais vibrante do planeta começa agora. <strong>Sinta a força. Viva a América do Sul.</strong></p>
                 </div>
+            </div>
+
             <div id="container-paises-dinamico">
                 <div class="quadrante-pais">
-                    
                     <div class="coluna-texto-pais">
                         <h1 id="dinamico-titulo"></h1>
                         <p id="dinamico-texto"></p>
                     </div>
-                    
                     <div class="coluna-imagem-pais">
                         <div class="moldura-foto-pais">
                             <img src="" alt="Imagem do País" id="dinamico-foto">
                         </div>
                     </div>
-
                 </div>
             </div>
 
-        </main> </div> ```
-
+        </main>
     </div>
 
-<script>
-        // "Banco de dados" definitivo: é só colocar o texto e a foto de cada país aqui!
-        const dadosPaises = {
-            "secao-argentina": {
-                titulo: "Argentina: A Paixão na Brasa e o Sentimento que Dança",
-                texto: "Prepare-se para cruzar as fronteiras e desembarcar em uma terra onde o drama vira poesia e cada esquina tem uma história para contar. A Argentina é um espetáculo de diversidade: vai do calor das peñas do interior ao frio das geleiras da Patagônia, tudo embalado pelo orgulho de um povo que vive suas tradições com intensidade máxima. Papo reto: você vai se encantar com esse solo que transborda herança e identidade!",
-                foto: "IMAGENS/foto14.jpg"
-            }
-            // Depois adicionamos os outros países aqui com o mesmo modelo!
-        };
-
-        // Função para abrir/fechar as bandeiras
-        function toggleBandeiras() {
-            var fileira = document.getElementById("fileiraPaises");
-            fileira.classList.toggle("escondido");
-        }
-
-        // COMANDO AUTOMÁTICO: Ele intercepta os cliques e troca o conteúdo!
-        document.addEventListener("click", function(evento) {
-            // Se clicou em uma bandeira
-            var linkBandeira = evento.target.closest(".fileira-bandeiras a");
-            if (linkBandeira) {
-                evento.preventDefault(); // Impede a página de rolar para baixo
-                var idPais = linkBandeira.getAttribute("href").substring(1); // Pega o id do país (ex: secao-argentina)
-                
-                if (dadosPaises[idPais]) {
-                    // Esconde o manifesto e as imagens do meio
-                    document.getElementById("imagens-iniciais").style.display = "none";
-                    document.getElementById("conteudo-manifesto").style.display = "none";
-                    
-                    // Coloca as informações do país no palco dinâmico
-                    document.getElementById("dinamico-titulo").innerText = dadosPaises[idPais].titulo;
-                    document.getElementById("dinamico-texto").innerText = dadosPaises[idPais].texto;
-                    document.getElementById("dinamico-foto").src = dadosPaises[idPais].foto;
-                    
-                    // Mostra o palco dinâmico
-                    document.getElementById("container-paises-dinamico").style.display = "block";
-                } else {
-                    alert("Informações deste país ainda estão sendo preparadas!");
-                }
-            }
-
-            // Se clicou no botão da casinha (🏠)
-            var botaoCasa = evento.target.closest(".coluna-botoes a[title='Página Inicial']");
-            if (botaoCasa) {
-                evento.preventDefault(); // Impede de recarregar a página do zero
-                
-                // Esconde o palco dinâmico
-                document.getElementById("container-paises-dinamico").style.display = "none";
-                
-                // Traz de volta o manifesto e as imagens do meio originais
-                document.getElementById("imagens-iniciais").style.display = "block";
-                document.getElementById("conteudo-manifesto").style.display = "block";
-            }
-        });
-
-        // Script da tela de boas-vindas
-        setTimeout(function() {
-            var telaIntro = document.getElementById("tela-boas-vindas");
-            if(telaIntro) {
-                telaIntro.style.opacity = "0";
-                telaIntro.style.transition = "opacity 800ms ease";
-                setTimeout(function() {
-                    telaIntro.style.display = "none";
-                }, 800);
-            }
-        }, 2200);
-    </script>
-
-</body>
-</html>
-</div> <footer class="rodape-projeto">
+    <footer class="rodape-projeto">
         <p class="titulo-rodape">A Força e o Sabor da América do Sul</p>
         <p class="creditos-autoria">Desenvolvido com 💚 por Ashley | Projeto Agrinho 2026</p>
-<div class="logos-fontes">
-                <span class="tag-fonte youtube" title="YouTube">
-                    <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="Logo YouTube" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> YouTube
-                </span>
-                <span class="tag-fonte google" title="Google">
-                    <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="Logo Google" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Google
-                </span>
-                <span class="tag-fonte gemini" title="Gemini AI">
-                    <img src="https://cdn-icons-png.flaticon.com/128/16143/16143202.png" alt="Logo Gemini" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Gemini
-                </span>
-                <span class="tag-fonte spotify" title="Spotify">
-                    <img src="https://cdn-icons-png.flaticon.com/128/2111/2111624.png" alt="Logo Spotify" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Spotify
-                </span>
-                <span class="tag-fonte todamateria" title="Toda Matéria">
-                    <img src="https://cdn-icons-png.flaticon.com/128/2232/2232688.png" alt="Logo Livro" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Toda Matéria
-                </span>
-            </div>
-      </div>
+        
+        <div class="logos-fontes">
+            <span class="tag-fonte youtube" title="YouTube"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="Logo YouTube" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> YouTube</span>
+            <span class="tag-fonte google" title="Google"><img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="Logo Google" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Google</span>
+            <span class="tag-fonte gemini" title="Gemini AI"><img src="https://cdn-icons-png.flaticon.com/128/16143/16143202.png" alt="Logo Gemini" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Gemini</span>
+            <span class="tag-fonte spotify" title="Spotify"><img src="https://cdn-icons-png.flaticon.com/128/2111/2111624.png" alt="Logo Spotify" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Spotify</span>
+            <span class="tag-fonte todamateria" title="Toda Matéria"><img src="https://cdn-icons-png.flaticon.com/128/2232/2232688.png" alt="Logo Livro" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Toda Matéria</span>
+        </div>
 
         <div class="links-tecnicos">
-            <a href="https://github.com/ashleycastro-coder/Ashley.Estefany-2C-2026" target="_blank" class="link-externo">
-                💻 Ver Repositório no GitHub
-            </a>
+            <a href="https://github.com/ashleycastro-coder/Ashley.Estefany-2C-2026" target="_blank" class="link-externo">💻 Ver Repositório no GitHub</a>
         </div>
     </footer>
-    <script>
-        // ESTADO DO SITE: Guarda o que está selecionado na tela no momento
-        let paisAtivo = "";  // Começa sem nenhum país selecionado (mostra manifesto)
-        let temaAtivo = "inicio"; // Temas: inicio, gastronomia, destinos, festas, musica
 
-        // BANCO DE DADOS DA ARGENTINA (Dividido por categorias)
+    <script>
+        let paisAtivo = "";  
+        let temaAtivo = "inicio"; 
+
+        // Banco de dados com todos os textos e imagens que você me passou para a Argentina!
         const bancoDados = {
             "secao-argentina": {
                 "inicio": {
@@ -244,38 +135,34 @@
                     foto: "IMAGENS/foto14.jpg"
                 },
                 "gastronomia": {
-                    titulo: "Gastronomia – Sabores com Alma",
-                    texto: "<strong>O Asado Argentino:</strong> Dizer que o asado é apenas um churrasco é não entender nada da cultura argentina. O asado é o maior ritual de integração social do país. Ele remonta ao século XVIII e XIX, nascido nas mãos dos gaúchos nos pampas...<br><br><strong>As Empanadas Criollas:</strong> Chegaram com os colonizadores e ganharam identidade nova nas mãos das mulheres trabalhadoras, indígenas e mestiças...<br><br><strong>Do Campo à Mesa:</strong> O Mate é herança Guarani e Kaingang, enquanto a Uva Malbec prospera com o degelo dos Andes.",
-                    foto: "IMAGENS/foto15.jpg" // Você pode alternar as fotos dinamicamente depois se quiser!
+                    titulo: "🍲 Gastronomia – Sabores com Alma",
+                    texto: "<strong>O Asado Argentino:</strong> Dizer que o asado é apenas um churrasco é não entender nada da cultura argentina. Ele remonta ao século XVIII e XIX, nascido nas mãos dos gaúchos dos pampas, trabalhadores e descendentes de espanhóis e indígenas que transformaram a lida do campo em patrimônio nacional.<br><br><strong>As Empanadas Criollas:</strong> Chegaram com os colonizadores e ganharam identidade nas mãos das mulheres trabalhadoras, indígenas e mestiças. Cada província tem sua receita secreta.<br><br><strong>Do Campo à Mesa:</strong> O Mate é uma herança sagrada dos povos Guarani e Kaingang. Já nos vales de Mendoza, a uva Malbec é cultivada com as águas puras do degelo dos Andes.",
+                    foto: "IMAGENS/foto15.jpg"
                 },
                 "destinos": {
-                    titulo: "Destinos Turísticos – Histórias na Paisagem",
-                    texto: "<strong>Buenos Aires (San Telmo):</strong> O bairro residencial mais antigo, berço da cultura popular portenha, cortiços e resistência operária.<br><br><strong>Quebrada de Humahuaca (Jujuy):</strong> Vale montanhoso com mais de 10.000 anos de história, antigo Caminho do Inca e cenário de batalhas pela independência.",
+                    titulo: "🗺️ Destinos Turísticos – Histórias na Paisagem",
+                    texto: "<strong>Buenos Aires (O Bairro de San Telmo):</strong> O bairro mais antigo da cidade. Antigo lar de aristocratas, após uma epidemia foi ocupado por imigrantes operários e pela população afro-argentina nos casarões (conventillos), tornando-se o berço da cultura portenha.<br><br><strong>Quebrada de Humahuaca (Jujuy):</strong> Vale montanhoso com mais de 10.000 anos de história que integrava o monumental Caminho do Inca. Foi palco de batalhas fundamentais onde camponeses e indígenas lutaram bravamente pela independência.",
                     foto: "IMAGENS/foto18.jpg"
                 },
                 "festas": {
-                    titulo: "Festas Populares – A Voz do Povo nas Ruas",
-                    texto: "<strong>O Carnaval de Gualeguaychú:</strong> Explosão de ritmo e carros alegóricos com mensagens fortes de conscientização social e orgulho latino-americano.<br><br><strong>Festival Nacional do Folclore de Cosquín:</strong> O maior encontro folclórico da América Latina, celebrando as tradições do campo com o som do bombo legüero.",
+                    titulo: "💃 Festas Populares – A Voz do Povo nas Ruas",
+                    texto: "<strong>O Carnaval de Gualeguaychú:</strong> Explosão de ritmos e carros alegóricos gigantescos no Corsódromo. Sua essência remete às batidas de tambores afrodescendentes do século XIX, trazendo mensagens de conscientização social e ambiental.<br><br><strong>Festival Nacional do Folclore de Cosquín:</strong> Criado em 1961 para preservar a música nativa, reúne músicos, poetas e artesãos durante as 'Nove Luas'. Seus grandes símbolos são os lenços brancos no ar e o bombo legüero.",
                     foto: "IMAGENS/foto19.jpg"
                 },
                 "musica": {
-                    titulo: "Danças e Ritmos – A Identidade em Movimento",
-                    texto: "<strong>MÚSICA: 'Solo le pido a Dios':</strong> Hino de resistência e clamor pela paz que exalta o valor da vida e do trabalhador.<br><br><strong>DANÇA: O Tango:</strong> Nascido nos subúrbios portuários, funde tambores afro-argentinos, melancolia europeia e malícia gaúcha.",
+                    titulo: "🎵 Danças e Ritmos – A Identidade em Movimento",
+                    texto: "<strong>MÚSICA: 'Solo le pido a Dios' (León Gieco):</strong> Lançada em 1978, tornou-se um hino de resistência contra a opressão política e um clamor para que o ser humano não seja indiferente à dor do trabalhador e do próximo.<br><br><strong>DANÇA: O Tango:</strong> Nascido nos subúrbios portuários, funde os tambores das comunidades negras afro-argentinas com a melancolia dos imigrantes europeus e a malícia gaúcha, criando uma linguagem baseada no abraço e no olhar.",
                     foto: "IMAGENS/foto22.jpg"
                 }
             }
-            // Quando formos fazer o Brasil, basta abrir as chaves aqui embaixo!
         };
 
-        // Função para abrir/fechar as bandeiras (Botão Navegar)
         function toggleBandeiras() {
             var fileira = document.getElementById("fileiraPaises");
             fileira.classList.toggle("escondido");
         }
 
-        // FUNÇÃO QUE ATUALIZA A TELA BASEADO NO PAÍS E TEMA SELECIONADOS
         function atualizarTela() {
-            // Se não tiver nenhum país ativo, volta para a tela inicial (Manifesto)
             if (!paisAtivo) {
                 document.getElementById("container-paises-dinamico").style.display = "none";
                 document.getElementById("imagens-iniciais").style.display = "block";
@@ -283,48 +170,40 @@
                 return;
             }
 
-            // Se o país existe no banco de dados
             if (bancoDados[paisAtivo] && bancoDados[paisAtivo][temaAtivo]) {
                 var dados = bancoDados[paisAtivo][temaAtivo];
                 
-                // Esconde a tela inicial
                 document.getElementById("imagens-iniciais").style.display = "none";
                 document.getElementById("conteudo-manifesto").style.display = "none";
                 
-                // Atualiza o Quadrante Quadrado com o conteúdo do tema
                 document.getElementById("dinamico-titulo").innerHTML = dados.titulo;
                 document.getElementById("dinamico-texto").innerHTML = dados.texto;
                 document.getElementById("dinamico-foto").src = dados.foto;
                 
-                // Mostra o quadrante
                 document.getElementById("container-paises-dinamico").style.display = "block";
             } else {
                 alert("As informações deste tema para este país estão sendo preparadas!");
             }
         }
 
-        // MONITOR DE CLIQUES INTELIGENTE
         document.addEventListener("click", function(evento) {
-            
-            // 1. Clicou em uma Bandeira
             var linkBandeira = evento.target.closest(".fileira-bandeiras a");
             if (linkBandeira) {
                 evento.preventDefault();
-                paisAtivo = linkBandeira.getAttribute("href").substring(1); // Define o país (ex: secao-argentina)
-                temaAtivo = "inicio"; // Sempre que clica no país, começa na introdução dele
+                paisAtivo = linkBandeira.getAttribute("href").substring(1);
+                temaAtivo = "inicio"; 
                 atualizarTela();
             }
 
-            // 2. Clicou nos botões da barra lateral
             var linkBotao = evento.target.closest(".coluna-botoes a");
             if (linkBotao) {
                 evento.preventDefault();
                 var tituloBotao = linkBotao.getAttribute("title");
 
                 if (tituloBotao === "Página Inicial") {
-                    paisAtivo = ""; // Limpa o país para voltar ao manifesto original
+                    paisAtivo = ""; 
                     temaAtivo = "inicio";
-                } else if (paisAtivo) { // Só muda o tema se já tiver um país selecionado!
+                } else if (paisAtivo) { 
                     if (tituloBotao === "Gastronomia") temaAtivo = "gastronomia";
                     if (tituloBotao === "Destinos") temaAtivo = "destinos";
                     if (tituloBotao === "Festas Populares") temaAtivo = "festas";
@@ -337,7 +216,6 @@
             }
         });
 
-        // Controle da tela de boas-vindas
         setTimeout(function() {
             var telaIntro = document.getElementById("tela-boas-vindas");
             if(telaIntro) {
@@ -349,6 +227,5 @@
             }
         }, 2200);
     </script>
-
 </body>
 </html>
