@@ -721,8 +721,9 @@ html {
 /* Força o container a ignorar o 'flex-row' do pai e ocupar uma linha inteira própria */
 #container-paises-dinamico {
     margin: 20px 0;
-    width: 100%;
-    display: none; /* Mantém escondido até o clique */
+    width: 100% !important;
+    flex: 1 1 100% !important; /* MÁGICA: Obriga o flexbox a dar 100% da largura da tela pra ele */
+    display: none; /* O motor JS vai mudar isso para 'block' ou 'inline-block' ao clicar */
 }
 
 /* O Quadrante Principal - Agora com o fundo verde suave da natureza e letras pretas */

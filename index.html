@@ -117,7 +117,6 @@
         let paisAtivo = "";  
         let temaAtivo = "inicio"; 
 
-        // O NOVO BANCO DE DADOS ESTRUTURADO EM BLOCOS DE TEXTO E IMAGEM
         const bancoDados = {
             "secao-argentina": {
                 "inicio": {
@@ -125,7 +124,7 @@
                     blocos: [
                         {
                             subtitulo: "Bem-vindo à Argentina",
-                            texto: "Prepare-se para cruzar as fronteiras e desembarcar em uma terra onde o drama vira poesia e cada esquina tem uma história para contar. A Argentina é um espetáculo de diversidade: vai do calor das peñas do interior ao frio das geleiras da Patagônia, tudo embalado pelo orgulho de um povo que vive suas tradições com intensidade máxima. Papo reto: você vai se encantar com esse solo que transborda herança e identidade!",
+                            texto: "Prepare-se para cruzar as fronteiras e desembarcar em uma terra onde o drama vira poesia e cada esquina tem uma história para contar. A Argentina é um espetáculo de diversidade: vai do calor das peñas do interior ao frio das geleiras da Patagônia, tudo embalado pelo orgulho de um povo que vive suas traditions com intensidade máxima. Papo reto: você vai se encantar com esse solo que transborda herança e identidade!",
                             foto: "IMAGENS/foto14.jpg"
                         }
                     ]
@@ -175,7 +174,7 @@
                         },
                         {
                             subtitulo: "Festival Nacional do Folclore de Cosquín",
-                            texto: "Se você quer ver a verdadeira integração do interior da Argentina, o destino é Cosquín. Criado in 1961 por um grupo de moradores locais que queria reviver as tradições do campo e da música nativa, o festival se tornou o maior encontro folclórico da América Latina. Durante nove noites (chamadas de Nove Luas de Cosquín), o festival reúne músicos, poetas, artesãos e dançarinos de todas as províncias do país e de nações vizinhas.<br><br><strong>O que se faz e Símbolos:</strong> O palco principal recebe lendas da música popular, enquanto as ruas da cidade viram palcos abertos conhecidos como peñas, onde o público come, bebe e dança livremente até o amanhecer. O principal símbolo do festival é o lenço branco (usado nas danças folclóricas) ondulando no ar e o bombo legüero, o tambor feito de tronco de árvore cujo som, diz a lenda, pode ser ouvido a uma légua de distância.",
+                            texto: "Se você quer ver a verdadeira integração do interior da Argentina, o destino é Cosquín. Criado em 1961 por um grupo de moradores locais que queria reviver as tradições do campo e da música nativa, o festival se tornou o maior encontro folclórico da América Latina. Durante nove noites (chamadas de Nove Luas de Cosquín), o festival reúne músicos, poetas, artesãos e dançarinos de todas as províncias do país e de nações vizinhas.<br><br><strong>O que se faz e Símbolos:</strong> O palco principal recebe lendas da música popular, enquanto as ruas da cidade viram palcos abertos conhecidos como peñas, onde o público come, bebe e dança livremente até o amanhecer. O principal símbolo do festival é o lenço branco (usado nas danças folclóricas) ondulando no ar e o bombo legüero, o tambor feito de tronco de árvore cujo som, diz a lenda, pode ser ouvido a uma légua de distância.",
                             foto: "IMAGENS/foto20.jpg"
                         }
                     ]
@@ -203,7 +202,6 @@
             fileira.classList.toggle("escondido");
         }
 
-        // NOVO MOTOR QUE CONSTRÓI OS BLOCOS DINAMICAMENTE IGUAL AO SEU RASCUNHO
         function atualizarTela() {
             if (!paisAtivo) {
                 document.getElementById("container-paises-dinamico").style.display = "none";
@@ -215,18 +213,14 @@
             if (bancoDados[paisAtivo] && bancoDados[paisAtivo][temaAtivo]) {
                 var dadosCapa = bancoDados[paisAtivo][temaAtivo];
                 
-                // Esconde as imagens e o manifesto do início
                 document.getElementById("imagens-iniciais").style.display = "none";
                 document.getElementById("conteudo-manifesto").style.display = "none";
                 
-                // Define o título da categoria
                 document.getElementById("dinamico-titulo").innerHTML = dadosCapa.titulo;
                 
-                // Limpa os blocos antigos para construir os novos
                 var containerBlocos = document.getElementById("dinamico-conteudo-blocos");
                 containerBlocos.innerHTML = "";
                 
-                // Cria cada bloco (Texto + Imagem) baseado no rascunho
                 dadosCapa.blocos.forEach(function(bloco) {
                     var divBloco = document.createElement("div");
                     divBloco.className = "bloco-conteudo-pais";
@@ -243,54 +237,13 @@
                     containerBlocos.appendChild(divBloco);
                 });
                 
-                // Mostra o container na tela cheia
-                document.getElementById("container-paises-dinamico").style.display = "block";
+                // MUDADO AQUI PARA INLINE-BLOCK CONFORME CONVERSAMOS
+                document.getElementById("container-paises-dinamico").style.display = "inline-block";
             } else {
                 alert("As informações deste tema estão sendo preparadas!");
             }
         }
 
-        // CONTROLE DE CLIQUES
-        document.addEventListener("click", function(evento) {
-            var linkBandeira = evento.target.closest(".fileira-bandeiras a");
-            if (linkBandeira) {
-                evento.preventDefault();
-                paisAtivo = linkBandeira.getAttribute("href").substring(1);
-                temaAtivo = "inicio"; 
-                atualizarTela();
-            }
-
-            var linkBotao = evento.target.closest(".coluna-botoes a");
-            if (linkBotao) {
-                evento.preventDefault();
-                var tituloBotao = linkBotao.getAttribute("title");
-
-                if (tituloBotao === "Página Inicial") {
-                    paisAtivo = ""; 
-                    temaAtivo = "inicio";
-                } else if (paisAtivo) { 
-                    if (tituloBotao === "Gastronomia") temaAtivo = "gastronomia";
-                    if (tituloBotao === "Destinos") temaAtivo = "destinos";
-                    if (tituloBotao === "Festas Populares") temaAtivo = "festas";
-                    if (tituloBotao === "Ritmo e Música") temaAtivo = "musica";
-                } else {
-                    alert("Por favor, selecione um país nas bandeiras primeiro para ver seus temas!");
-                    return;
-                }
-                atualizarTela();
-            }
-        });
-
-        setTimeout(function() {
-            var telaIntro = document.getElementById("tela-boas-vindas");
-            if(telaIntro) {
-                telaIntro.style.opacity = "0";
-                telaIntro.style.transition = "opacity 800ms ease";
-                setTimeout(function() {
-                    telaIntro.style.display = "none";
-                }, 800);
-            }
-        }, 2200);
-    </script>
+        // DEIXE SEU BLOCO DE "CONTROLE DE CLIQUES" CONTINUAR LOGO ABAIXO DAQUI...
 </body>
 </html>
