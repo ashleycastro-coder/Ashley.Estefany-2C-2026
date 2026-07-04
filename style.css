@@ -16,9 +16,6 @@ h1, h2, .botao-acao-navegar {
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
 }
-html {
-    scroll-behavior: smooth; /* Faz a página deslizar suavemente até o conteúdo */
-}
 
 /* ==========================================================================
    1. LAYOUT DO TOPOCABEÇALHO
@@ -713,101 +710,4 @@ html {
 /* Pequeno efeito para quando passar o mouse no botão do GitHub */
 .links-tecnicos .link-externo:hover {
     transform: scale(1.05); /* Aumenta um pouquinho de tamanho, seguindo sua ideia de ampliar */
-}
-/* ==========================================================================
-   ESTILO FINAL DOS BLOCOS DOS PAÍSES (ADAPTADO AO RASCUNHO)
-   ========================================================================== */
-
-//* Força o container a ignorar o 'flex-row' do pai e ocupar uma linha inteira própria */
-#container-paises-dinamico {
-    margin: 30px 0;
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: none !important; /* Desativa qualquer ordem de virar coluna do Flexbox pai */
-    clear: both !important; /* Garante que nenhuma coluna flutue ao lado dele */
-}
-
-/* O Quadrante Principal - Ajustado para formato horizontal de tela cheia */
-.quadrante-pais {
-    width: 100%;
-    padding: 35px;
-    background-color: #f4f7f5; /* Verde suave de natureza clara */
-    border: 3px solid #000000;
-    border-radius: 16px;
-    box-shadow: 8px 8px 0px #000000;
-    box-sizing: border-box;
-}
-
-/* Título principal do tema selecionado */
-#dinamico-titulo {
-    font-family: 'Fredoka', sans-serif;
-    color: #000000;
-    font-size: 2.2rem;
-    margin-bottom: 35px;
-    margin-top: 0;
-    text-transform: uppercase;
-    border-bottom: 3px solid #000000;
-    padding-bottom: 10px;
-}
-
-/* Cada Bloco Horizontal (Texto + Imagem lado a lado igual ao seu rascunho) */
-.bloco-conteudo-pais {
-    display: flex !important;
-    flex-direction: row !important; /* Garante que texto e imagem fiquem lado a lado */
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 50px;
-    width: 100%;
-}
-
-/* Inverte a ordem nos blocos pares para o visual ficar dinâmico */
-.bloco-conteudo-pais:nth-child(even) {
-    flex-direction: row-reverse !important;
-}
-
-/* Lado do Texto */
-.bloco-texto {
-    flex: 1;
-}
-
-.bloco-texto h3 {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 1.6rem;
-    color: #000000;
-    margin-top: 0;
-    margin-bottom: 12px;
-}
-
-.bloco-texto p {
-    font-family: 'Belleza', sans-serif;
-    font-size: 1.25rem;
-    color: #000000;
-    line-height: 1.8;
-    text-align: justify;
-    margin: 0;
-}
-
-/* Lado da Imagem com a moldura e efeito de zoom do seu projeto */
-.bloco-imagem {
-    width: 440px;
-    min-width: 440px;
-    height: 290px;
-    border: 3px solid #000000;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 5px 5px 0px #000000;
-}
-
-.bloco-imagem img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-/* Efeito de zoom profissional ao passar o mouse */
-.bloco-imagem:hover img {
-    transform: scale(1.08);
 }
