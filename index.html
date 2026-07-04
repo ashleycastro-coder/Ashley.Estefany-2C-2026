@@ -69,7 +69,15 @@
             <img src="IMAGENS/foto3.jpg" alt="Cores da América do Sul" class="foto-bloco">
         </div>
 
-        <main class="espaco-leitura">
+      <main class="espaco-leitura">
+
+            <div id="container-paises-dinamico" style="display: none;">
+                <div class="quadrante-pais">
+                    <h1 id="dinamico-titulo"></h1>
+                    <div id="dinamico-conteudo-blocos"></div>
+                </div>
+            </div>
+
             <div class="caixa-manifesto">
                 <h2 class="titulo-manifesto">O Coração Pulsante do Mundo</h2>
                 <p class="subtitulo-manifesto">Muito além dos mapas: uma viagem de arrepiar pelos sabores, ritmos e cores do continente mais vivo do planeta.</p>
@@ -92,7 +100,26 @@
 
     </div>
 
-    <script>
+   <script>
+        // ==========================================================================
+        // PASSO 3: BANCO DE DADOS ATUALIZADO COM SEU TEXTO (AGRINHO 2026)
+        // ==========================================================================
+        const dadosPaises = {
+            argentina: {
+                inicial: {
+                    titulo: "🇦🇷 Argentina: A Paixão na Brasa e o Sentimento que Dança",
+                    blocos: [
+                        {
+                            subtitulo: "Bem-vindo à Argentina",
+                            texto: "Prepare-se para cruzar as fronteiras e desembarcar em uma terra onde o drama vira poesia e cada esquina tem uma história para contar. A Argentina é um espetáculo de diversidade: vai do calor das peñas do interior ao frio das geleiras da Patagônia, tudo embalado pelo orgulho de um povo que vive suas traditions com intensidade máxima. Papo reto: você vai se encantar com esse solo que transborda herança e identidade!",
+                            imagem: "imagens/foto14.jpg"
+                        }
+                    ]
+                }
+            }
+        };
+
+        // Outras funções de controle do seu site
         function toggleBandeiras() {
             var fileira = document.getElementById("fileiraPaises");
             fileira.classList.toggle("escondido");
@@ -101,38 +128,38 @@
         // Script configurado para sumir bem mais rápido (3 segundos no total)
         setTimeout(function() {
             var telaIntro = document.getElementById("tela-boas-vindas");
-            telaIntro.style.opacity = "0";
-            telaIntro.style.transition = "opacity 800ms ease"; /* Tempo sumindo */
-            
-            setTimeout(function() {
-                telaIntro.style.display = "none";
-            }, 800);
+            if (telaIntro) {
+                telaIntro.style.opacity = "0";
+                telaIntro.style.transition = "opacity 800ms ease"; /* Tempo sumindo */
+                
+                setTimeout(function() {
+                    telaIntro.style.display = "none";
+                }, 800);
+            }
         }, 2200); /* 2.2 segundos travada na tela */
     </script>
 
-</body>
-</html>
-</div> <footer class="rodape-projeto">
+    <footer class="rodape-projeto">
         <p class="titulo-rodape">A Força e o Sabor da América do Sul</p>
         <p class="creditos-autoria">Desenvolvido com 💚 por Ashley | Projeto Agrinho 2026</p>
-<div class="logos-fontes">
-                <span class="tag-fonte youtube" title="YouTube">
-                    <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="Logo YouTube" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> YouTube
-                </span>
-                <span class="tag-fonte google" title="Google">
-                    <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="Logo Google" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Google
-                </span>
-                <span class="tag-fonte gemini" title="Gemini AI">
-                    <img src="https://cdn-icons-png.flaticon.com/128/16143/16143202.png" alt="Logo Gemini" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Gemini
-                </span>
-                <span class="tag-fonte spotify" title="Spotify">
-                    <img src="https://cdn-icons-png.flaticon.com/128/2111/2111624.png" alt="Logo Spotify" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Spotify
-                </span>
-                <span class="tag-fonte todamateria" title="Toda Matéria">
-                    <img src="https://cdn-icons-png.flaticon.com/128/2232/2232688.png" alt="Logo Livro" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Toda Matéria
-                </span>
-            </div>
-      </div>
+        
+        <div class="logos-fontes">
+            <span class="tag-fonte youtube" title="YouTube">
+                <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="Logo YouTube" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> YouTube
+            </span>
+            <span class="tag-fonte google" title="Google">
+                <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="Logo Google" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Google
+            </span>
+            <span class="tag-fonte gemini" title="Gemini AI">
+                <img src="https://cdn-icons-png.flaticon.com/128/16143/16143202.png" alt="Logo Gemini" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Gemini
+            </span>
+            <span class="tag-fonte spotify" title="Spotify">
+                <img src="https://cdn-icons-png.flaticon.com/128/2111/2111624.png" alt="Logo Spotify" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Spotify
+            </span>
+            <span class="tag-fonte todamateria" title="Toda Matéria">
+                <img src="https://cdn-icons-png.flaticon.com/128/2232/2232688.png" alt="Logo Livro" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> Toda Matéria
+            </span>
+        </div>
 
         <div class="links-tecnicos">
             <a href="https://github.com/ashleycastro-coder/Ashley.Estefany-2C-2026" target="_blank" class="link-externo">
@@ -141,4 +168,5 @@
         </div>
     </footer>
 
-    <script>
+</body>
+</html>
