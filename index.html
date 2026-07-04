@@ -95,7 +95,7 @@
                 <div id="dinamico-conteudo-blocos"></div>
             </div>
         </div>
-        
+
     <footer class="rodape-projeto">
         <p class="titulo-rodape">A Força e o Sabor da América do Sul</p>
         <p class="creditos-autoria">Desenvolvido com 💚 por Ashley | Projeto Agrinho 2026</p>
@@ -117,33 +117,83 @@
         let paisAtivo = "";  
         let temaAtivo = "inicio"; 
 
-        // Banco de dados com todos os textos e imagens que você me passou para a Argentina!
+        // O NOVO BANCO DE DADOS ESTRUTURADO EM BLOCOS DE TEXTO E IMAGEM
         const bancoDados = {
             "secao-argentina": {
                 "inicio": {
                     titulo: "Argentina: A Paixão na Brasa e o Sentimento que Dança",
-                    texto: "Prepare-se para cruzar as fronteiras e desembarcar em uma terra onde o drama vira poesia e cada esquina tem uma história para contar. A Argentina é um espetáculo de diversidade: vai do calor das peñas do interior ao frio das geleiras da Patagônia, tudo embalado pelo orgulho de um povo que vive suas tradições com intensidade máxima. Papo reto: você vai se encantar com esse solo que transborda herança e identidade!",
-                    foto: "IMAGENS/foto14.jpg"
+                    blocos: [
+                        {
+                            subtitulo: "Bem-vindo à Argentina",
+                            texto: "Prepare-se para cruzar as fronteiras e desembarcar em uma terra onde o drama vira poesia e cada esquina tem uma história para contar. A Argentina é um espetáculo de diversidade: vai do calor das peñas do interior ao frio das geleiras da Patagônia, tudo embalado pelo orgulho de um povo que vive suas tradições com intensidade máxima. Papo reto: você vai se encantar com esse solo que transborda herança e identidade!",
+                            foto: "IMAGENS/foto14.jpg"
+                        }
+                    ]
                 },
                 "gastronomia": {
                     titulo: "🍲 Gastronomia – Sabores com Alma",
-                    texto: "<strong>O Asado Argentino:</strong> Dizer que o asado é apenas um churrasco é não entender nada da cultura argentina. Ele remonta ao século XVIII e XIX, nascido nas mãos dos gaúchos dos pampas, trabalhadores e descendentes de espanhóis e indígenas que transformaram a lida do campo em patrimônio nacional.<br><br><strong>As Empanadas Criollas:</strong> Chegaram com os colonizadores e ganharam identidade nas mãos das mulheres trabalhadoras, indígenas e mestiças. Cada província tem sua receita secreta.<br><br><strong>Do Campo à Mesa:</strong> O Mate é uma herança sagrada dos povos Guarani e Kaingang. Já nos vales de Mendoza, a uva Malbec é cultivada com as águas puras do degelo dos Andes.",
-                    foto: "IMAGENS/foto15.jpg"
+                    blocos: [
+                        {
+                            subtitulo: "O Asado Argentino",
+                            texto: "Dizer que o asado é apenas um churrasco é não entender nada da cultura argentina. O asado é o maior ritual de integração social do país. Ele remonta ao século XVIII e XIX, nascido nas mãos dos gaúchos, os trabalhadores do campo, cavaleiros livres e destemidos dos pampas. Muitos desses trabalhadores eram mestiços, descendentes de espanhóis e dos povos indígenas originários (como os Pampas e Mapuches). Eles passavam dias cavalgando e aprenderam a assar a carne ao ar livre, usando apenas estacas de madeira cravadas na terra, fogo de lenha e sal grosso. O asado é o símbolo máximo do trabalhador do campo que transformou a lida diária em patrimônio nacional.<br><br><strong>Ingredientes principais:</strong> Cortes de carne bovina selecionados (como tira de asado e vacío), lenha ou carvão de alta qualidade, sal grosso e o clássico molho chimichurri (uma mistura potente de ervas, alho, vinagre e óleo).",
+                            foto: "IMAGENS/foto15.jpg"
+                        },
+                        {
+                            subtitulo: "As Empanadas Criollas",
+                            texto: "As empanadas chegaram à América do Sul com os colonizadores espanhóis, que por sua vez haviam aprendido a receita com os povos árabes. Mas na Argentina, elas ganharam uma identidade totalmente nova através da mistura cultural. Foram as mãos das mulheres trabalhadoras, indígenas e mestiças, que transformaram esse pastel assado na comida de rua mais famosa do país. Cada província argentina tem sua própria receita secreta: no norte, levam batata; em Mendoza, levam muitas azeitonas. Elas eram o alimento prático dos trabalhadores que precisavam de algo nutritivo e fácil de carregar para comer durante as longas jornadas de trabalho no campo.<br><br><strong>Ingredientes principais:</strong> Massa de farinha de trigo, recheio de carne picada à faca, cebola, cominho, pimenta-da-terra, ovo cozido e azeitonas.",
+                            foto: "IMAGENS/foto16.jpg"
+                        },
+                        {
+                            subtitulo: "Do Campo à Mesa: O Segredo da Erva-Mate e da Uva",
+                            texto: "A engrenagem por trás da gastronomia argentina vem do cuidado com a terra. O Mate (a bebida nacional) é uma herança direta dos povos indígenas Guarani e Kaingang, que consideravam a árvore da erva-mate um presente sagrado dos deuses. Eles já sabiam que ela dava força e energia, respeitando o tempo de colheita da floresta. Hoje, o cultivo sustentável dessa planta move o norte do país. Da mesma forma, nos vales secos de Mendoza, aos pés da Cordilheira dos Andes, a combinação da água pura do degelo das montanhas com o trabalho dos produtores de Uva Malbec transformou a região em um dos maiores polos mundiais da viticultura, provando que o respeito à natureza gera frutos extraordinários.",
+                            foto: "IMAGENS/foto17.jpg"
+                        }
+                    ]
                 },
                 "destinos": {
                     titulo: "🗺️ Destinos Turísticos – Histórias na Paisagem",
-                    texto: "<strong>Buenos Aires (O Bairro de San Telmo):</strong> O bairro mais antigo da cidade. Antigo lar de aristocratas, após uma epidemia foi ocupado por imigrantes operários e pela população afro-argentina nos casarões (conventillos), tornando-se o berço da cultura portenha.<br><br><strong>Quebrada de Humahuaca (Jujuy):</strong> Vale montanhoso com mais de 10.000 anos de história que integrava o monumental Caminho do Inca. Foi palco de batalhas fundamentais onde camponeses e indígenas lutaram bravamente pela independência.",
-                    foto: "IMAGENS/foto18.jpg"
+                    blocos: [
+                        {
+                            subtitulo: "Buenos Aires: O Bairro de San Telmo",
+                            texto: "San Telmo é o bairro residencial mais antigo de Buenos Aires e caminhar por suas ladeiras de paralelepípedo é respirar história pura. Construído no século XIX, ele foi inicialmente o lar das famílias mais ricas da cidade. No entanto, em 1871, uma terrível epidemia de febre amarela fez a elite abandonar o bairro. Aqueles casarões aristocráticos coloniais foram ocupados por imigrantes europeus trabalhadores e pela população negra afro-argentina. O local se transformou em grandes cortiços conhecidos como conventillos. Foi nessa mistura de origens, sotaques e lutas operárias que San Telmo se tornou o berço da cultura popular portenha.<br><br><strong>O que fazer e Importância:</strong> Visitar a feira de antiguidades da Plaza Dorrego aos domingos, caminhar entre os artistas de rua, músicos e dançarinos, e fotografar a arquitetura colonial preservada. San Telmo é crucial porque representa a resistência das classes trabalhadoras que redesenharam a identidade da capital.",
+                            foto: "IMAGENS/foto18.jpg"
+                        },
+                        {
+                            subtitulo: "Quebrada de Humahuaca (Jujuy)",
+                            texto: "Localizada no extremo norte da Argentina, a Quebrada de Humahuaca é um vale montanhoso que parece uma pintura viva, famoso por suas montanhas de camadas coloridas, como o Cerro de los Siete Colores. Este lugar tem mais de 10.000 anos de história. Ele era parte do monumental Caminho do Inca e funcionava como uma rota comercial e cultural que ligava o Império Inca às terras baixas. O mais impactante é que este local foi cenário de batalhas cruciais durante a Guerra da Independência da Argentina, onde os povos indígenas locais e os camponeses lutaram bravamente pela liberdade do continente.<br><br><strong>O que fazer e Importância:</strong> Explorar os sítios arqueológicos (como o Pucará de Tilcara, uma antiga fortaleza nativa), conversar com os moradores que mantêm viva a língua e os costumes ancestrais, e trilhar os caminhos cercados por cactos gigantes. Declarada Patrimônio da Humanidade pela UNESCO, sua importância reside no fato de ser um testemunho vivo da herança indígena que resistiu ao tempo e cuida da terra com profunda espiritualidade.",
+                            foto: "IMAGENS/foto18.jpg"
+                        }
+                    ]
                 },
                 "festas": {
                     titulo: "💃 Festas Populares – A Voz do Povo nas Ruas",
-                    texto: "<strong>O Carnaval de Gualeguaychú:</strong> Explosão de ritmos e carros alegóricos gigantescos no Corsódromo. Sua essência remete às batidas de tambores afrodescendentes do século XIX, trazendo mensagens de conscientização social e ambiental.<br><br><strong>Festival Nacional do Folclore de Cosquín:</strong> Criado em 1961 para preservar a música nativa, reúne músicos, poetas e artesãos durante as 'Nove Luas'. Seus grandes símbolos são os lenços brancos no ar e o bombo legüero.",
-                    foto: "IMAGENS/foto19.jpg"
+                    blocos: [
+                        {
+                            subtitulo: "O Carnaval de Gualeguaychú",
+                            texto: "Considerado um dos carnavais mais importantes do mundo, a festa em Gualeguaychú é uma explosão de ritmo, carros alegóricos gigantescos e fantasias luxuosas que lotam o Corsódromo da cidade. Embora o formato atual lembre os grandes desfiles modernos, a origem do carnaval na região remete às antigas celebrações de rua organizadas pelas comunidades de imigrantes e trabalhadores afro-descendentes no século XIX, que usavam as batidas e tambores para cantar suas realidades.<br><br><strong>O que se faz e Símbolos:</strong> O público assiste e dança junto com as comparsas (escolas de samba locais) que disputam o título do ano. Os grandes símbolos são as 'batucadas', os trajes repletos de penas e pedrarias brilhantes e, principalmente, os enredos dos carros alegóricos, que frequentemente trazem mensagens fortes de conscientização social, defesa da natureza e orgulho latino-americano.",
+                            foto: "IMAGENS/foto19.jpg"
+                        },
+                        {
+                            subtitulo: "Festival Nacional do Folclore de Cosquín",
+                            texto: "Se você quer ver a verdadeira integração do interior da Argentina, o destino é Cosquín. Criado in 1961 por um grupo de moradores locais que queria reviver as tradições do campo e da música nativa, o festival se tornou o maior encontro folclórico da América Latina. Durante nove noites (chamadas de Nove Luas de Cosquín), o festival reúne músicos, poetas, artesãos e dançarinos de todas as províncias do país e de nações vizinhas.<br><br><strong>O que se faz e Símbolos:</strong> O palco principal recebe lendas da música popular, enquanto as ruas da cidade viram palcos abertos conhecidos como peñas, onde o público come, bebe e dança livremente até o amanhecer. O principal símbolo do festival é o lenço branco (usado nas danças folclóricas) ondulando no ar e o bombo legüero, o tambor feito de tronco de árvore cujo som, diz a lenda, pode ser ouvido a uma légua de distância.",
+                            foto: "IMAGENS/foto20.jpg"
+                        }
+                    ]
                 },
                 "musica": {
                     titulo: "🎵 Danças e Ritmos – A Identidade em Movimento",
-                    texto: "<strong>MÚSICA: 'Solo le pido a Dios' (León Gieco):</strong> Lançada em 1978, tornou-se um hino de resistência contra a opressão política e um clamor para que o ser humano não seja indiferente à dor do trabalhador e do próximo.<br><br><strong>DANÇA: O Tango:</strong> Nascido nos subúrbios portuários, funde os tambores das comunidades negras afro-argentinas com a melancolia dos imigrantes europeus e a malícia gaúcha, criando uma linguagem baseada no abraço e no olhar.",
-                    foto: "IMAGENS/foto22.jpg"
+                    blocos: [
+                        {
+                            subtitulo: "MÚSICA: 'Solo le pido a Dios' (Composta por León Gieco)",
+                            texto: "Lançada em 1978, esta canção é muito mais do que uma música; ela é um hino de resistência, integração e clamor pela paz que ecoou por toda a América do Sul. Escrita em um período de grande opressão política e tensões de guerra na região, a letra apela para que o ser humano não seja indiferente à dor do outro, à injustiça e ao sofrimento do mundo.<br><br><strong>O Significado da Música:</strong> A música utiliza a estrutura da música folclórica do interior argentino, tocada com violão e harmônica. O seu real significado está na exaltação do valor da vida humana e do trabalhador. Ela defende que a cultura e a união entre as pessoas são as únicas armas capazes de vencer a violência. É uma canção que valoriza a Argentina profunda, humilde e trabalhadora, convertendo-se em um hino entoado por coros estudantis e protestos pacíficos no mundo inteiro.",
+                            foto: "IMAGENS/foto21.jpg"
+                        },
+                        {
+                            subtitulo: "DANÇA: O Tango",
+                            texto: "O tango é o maior ícone cultural da Argentina e uma das danças mais fascinantes do planeta. Ele nasceu no final do século XIX nos subúrbios portuários de Buenos Aires. O tango é o resultado perfeito da integração e diversidade absoluta: ele funde o ritmo dos tambores das comunidades negras afro-argentinas (o termo tangó originalmente denominava os locais onde os negros escravizados dançavam) com a melancolia dos imigrantes europeus e a malícia dos gaúchos que migravam para a cidade grande.<br><br><strong>O Significado da Dança:</strong> Dançado em pares entrelaçados em um abraço fechado, o tango é uma conversa sem palavras baseada no improviso dos passos e no olhar. Os movimentos firmes das pernas simulam cortes e cruzamentos complexos. O seu significado profundo está ligado à nostalgia, à busca por identidade, à saudade da terra natal e à paixão das classes operárias que encontravam na dança um refúgio contra a dura realidade da época. O tango prova como a mistura de peles, dores e culturas gerou uma das maiores artes do mundo.<br><br><strong>Instrumento principal:</strong> O bandoneón (uma espécie de acordeão que dá o som melancólico clássico), violino e piano.",
+                            foto: "IMAGENS/foto22.jpg"
+                        }
+                    ]
                 }
             }
         };
@@ -153,6 +203,7 @@
             fileira.classList.toggle("escondido");
         }
 
+        // NOVO MOTOR QUE CONSTRÓI OS BLOCOS DINAMICAMENTE IGUAL AO SEU RASCUNHO
         function atualizarTela() {
             if (!paisAtivo) {
                 document.getElementById("container-paises-dinamico").style.display = "none";
@@ -162,21 +213,44 @@
             }
 
             if (bancoDados[paisAtivo] && bancoDados[paisAtivo][temaAtivo]) {
-                var dados = bancoDados[paisAtivo][temaAtivo];
+                var dadosCapa = bancoDados[paisAtivo][temaAtivo];
                 
+                // Esconde as imagens e o manifesto do início
                 document.getElementById("imagens-iniciais").style.display = "none";
                 document.getElementById("conteudo-manifesto").style.display = "none";
                 
-                document.getElementById("dinamico-titulo").innerHTML = dados.titulo;
-                document.getElementById("dinamico-texto").innerHTML = dados.texto;
-                document.getElementById("dinamico-foto").src = dados.foto;
+                // Define o título da categoria
+                document.getElementById("dinamico-titulo").innerHTML = dadosCapa.titulo;
                 
+                // Limpa os blocos antigos para construir os novos
+                var containerBlocos = document.getElementById("dinamico-conteudo-blocos");
+                containerBlocos.innerHTML = "";
+                
+                // Cria cada bloco (Texto + Imagem) baseado no rascunho
+                dadosCapa.blocos.forEach(function(bloco) {
+                    var divBloco = document.createElement("div");
+                    divBloco.className = "bloco-conteudo-pais";
+                    
+                    divBloco.innerHTML = `
+                        <div class="bloco-texto">
+                            <h3>${bloco.subtitulo}</h3>
+                            <p>${bloco.texto}</p>
+                        </div>
+                        <div class="bloco-imagem">
+                            <img src="${bloco.foto}" alt="${bloco.subtitulo}">
+                        </div>
+                    `;
+                    containerBlocos.appendChild(divBloco);
+                });
+                
+                // Mostra o container na tela cheia
                 document.getElementById("container-paises-dinamico").style.display = "block";
             } else {
-                alert("As informações deste tema para este país estão sendo preparadas!");
+                alert("As informações deste tema estão sendo preparadas!");
             }
         }
 
+        // CONTROLE DE CLIQUES
         document.addEventListener("click", function(evento) {
             var linkBandeira = evento.target.closest(".fileira-bandeiras a");
             if (linkBandeira) {
