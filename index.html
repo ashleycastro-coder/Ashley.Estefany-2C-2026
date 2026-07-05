@@ -101,7 +101,7 @@
     </div>
 
    <script>
-    
+
         // ==========================================================================
         // PASSO 3: BANCO DE DADOS COMPLETO E ALINHADO (AGRINHO 2026)
         // ==========================================================================
@@ -112,7 +112,7 @@
                     blocos: [
                         {
                             subtitulo: "Bem-vindo à Argentina",
-                            texto: "Prepare-se para cruzar as fronteiras e desembarcar em uma terra onde o drama vira poesia e cada esquina tem uma história para contar. A Argentina é um espetáculo de diversidade: vai do calor das peñas do interior ao frio das geleiras da Patagônia, tudo embalado pelo orgulho de um povo que vive suas traditions com intensidade máxima. Papo reto: você vai se encantar com esse solo que transborda herança e identidade!",
+                            texto: "Prepare-se para cruzar as fronteiras e desembarcar em uma terra onde o drama vira poesia e cada esquina tem uma história para contar. A Argentina é um espetáculo de diversidade: vai do calor das peñas do interior ao frio das geleiras da Patagônia, tudo embalado pelo orgulho de um povo que vive suas tradiçoês com intensidade máxima. Papo reto: você vai se encantar com esse solo que transborda herança e identidade!",
                             imagem: "IMAGENS/foto14.jpg"
                         }
                     ]
@@ -161,9 +161,9 @@
             }
         }, 2200);
         // ==========================================================================
-        // PASSO 4: FUNÇÃO PARA ALTERNAR A TELA E MOSTRAR O PAÍS SELECIONADO
+        // PASSO 4: FUNÇÃO PARA ALTERNAR A TELA E MOSTRAR O PAÍS E A SEÇÃO SELECIONADA
         // ==========================================================================
-        function selecionarPais(nomePais) {
+        function selecionarPais(nomePais, secao = 'inicial') {
             const pais = dadosPaises[nomePais];
             
             if (!pais) {
@@ -171,20 +171,25 @@
                 return;
             }
 
-            // 1. Buscamos as informações do estado 'inicial' do país
-            const infoInicial = pais.inicial;
+            // 1. Buscamos as informações da seção escolhida (inicial ou gastronomia)
+            const infoSecao = pais[secao];
+
+            if (!infoSecao) {
+                console.error("Seção não encontrada para este país.");
+                return;
+            }
 
             // 2. Atualizamos o título principal do quadrante novo
-            document.getElementById("dinamico-titulo").innerText = infoInicial.titulo;
+            document.getElementById("dinamico-titulo").innerText = infoSecao.titulo;
 
             // 3. Limpamos qualquer conteúdo antigo que estava na caixa de blocos
             const containerBlocos = document.getElementById("dinamico-conteudo-blocos");
             containerBlocos.innerHTML = "";
 
-            // 4. Construímos a estrutura de Texto + Imagem exatamente como no seu rascunho
-            infoInicial.blocos.forEach(bloco => {
+            // 4. Construímos a estrutura de Texto + Imagem de todos os blocos da seção
+            infoSecao.blocos.forEach(bloco => {
                 const estruturaBloco = `
-                    <div class="bloco-conteudo-pais">
+                    <div class="bloco-conteudo-pais" style="margin-bottom: 35px;">
                         <div class="bloco-texto">
                             <h3>${bloco.subtitulo}</h3>
                             <p>${bloco.texto}</p>
