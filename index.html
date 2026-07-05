@@ -69,14 +69,21 @@
             <img src="IMAGENS/foto3.jpg" alt="Cores da América do Sul" class="foto-bloco">
         </div>
 
-      <main class="espaco-leitura">
+     <main class="espaco-leitura">
+    <div id="container-paises-dinamico" class="quadrante-pais" style="display: none;">
+        
+        <div class="abas-navegacao" style="margin-bottom: 25px;">
+            <button onclick="selecionarPais('argentina', 'inicial')" class="botao-aba">Informações</button>
+            <button onclick="selecionarPais('argentina', 'gastronomia')" class="botao-aba">Gastronomia</button>
+            <button onclick="selecionarPais('argentina', 'destinos')" class="botao-aba">Destinos</button>
+            <button onclick="selecionarPais('argentina', 'festas')" class="botao-aba">Festas Populares</button>
+            <button onclick="selecionarPais('argentina', 'musica')" class="botao-aba">Ritmo e Música</button>
+        </div>
 
-            <div id="container-paises-dinamico" style="display: none;">
-                <div class="quadrante-pais">
-                    <h1 id="dinamico-titulo"></h1>
-                    <div id="dinamico-conteudo-blocos"></div>
-                </div>
-            </div>
+        <h2 id="dinamico-titulo"></h2>
+        <div id="dinamico-conteudo-blocos"></div>
+    </div>
+</main>
 
             <div class="caixa-manifesto">
                 <h2 class="titulo-manifesto">O Coração Pulsante do Mundo</h2>
@@ -102,7 +109,7 @@
 
    <script>
 
-        // ==========================================================================
+ // ==========================================================================
         // PASSO 3: BANCO DE DADOS COMPLETO E ALINHADO (AGRINHO 2026)
         // ==========================================================================
         const dadosPaises = {
@@ -112,7 +119,7 @@
                     blocos: [
                         {
                             subtitulo: "Bem-vindo à Argentina",
-                            texto: "Prepare-se para cruzar as fronteiras e desembarcar em uma terra onde o drama vira poesia e cada esquina tem uma história para contar. A Argentina é um espetáculo de diversidade: vai do calor das peñas do interior ao frio das geleiras da Patagônia, tudo embalado pelo orgulho de um povo que vive suas tradiçoês com intensidade máxima. Papo reto: você vai se encantar com esse solo que transborda herança e identidade!",
+                            texto: "Prepare-se para cruzar as fronteiras e desembarcar em uma terra onde o drama vira poesia e cada esquina tem uma história para contar. A Argentina é um espetáculo de diversidade: vai do calor das peñas do interior ao frio das geleiras da Patagônia, tudo embalado pelo orgulho de um povo que vive suas tradições com intensidade máxima. Papo reto: você vai se encantar com esse solo que transborda herança e identidade!",
                             imagem: "IMAGENS/foto14.jpg"
                         }
                     ]
@@ -132,8 +139,38 @@
                         },
                         {
                             subtitulo: "3. 🌾 Do Campo à Mesa: O Segredo da Erva-Mate e da Uva",
-                            texto: "A engrenagem por trás da gastronomia argentina vem do cuidado com a terra. O Mate (a bebida nacional) é uma herança direta dos povos indígenas Guarani e Kaingang, que consideravam a árvore da erva-mate umプレゼント sagrado dos deuses. Eles já sabiam que ela dava força e energia, respeitando o tempo de colheita da floresta. Hoje, o cultivo sustentável dessa planta move o norte do país. Da mesma forma, nos vales secos de Mendoza, aos pés da Cordilheira dos Andes, a combinação da água pura do degelo das montanhas com o trabalho dos produtores de Uva Malbec transformou a região em um dos maiores polos mundiais da viticultura, provando que o respeito à natureza gera frutos extraordinários.",
+                            texto: "A engrenagem por trás da gastronomia argentina vem do cuidado com a terra. O Mate (a bebida nacional) é uma herança direta dos povos indígenas Guarani e Kaingang, que consideravam a árvore da erva-mate um presente sagrado dos deuses. Eles já sabiam que ela dava força e energia, respeitando o tempo de colheita da floresta. Hoje, o cultivo sustentável dessa planta move o norte do país. Da mesma forma, nos vales secos de Mendoza, aos pés da Cordilheira dos Andes, a combinação da água pura do degelo das montanhas com o trabalho dos produtores de Uva Malbec transformou a região em um dos maiores polos mundiais da viticultura, provando que o respeito à natureza gera frutos extraordinários.",
                             imagem: "IMAGENS/foto17.jpg"
+                        }
+                    ]
+                },
+                destinos: {
+                    titulo: "🗺️ Destinos Impressionantes: Da Patagônia aos Pampas",
+                    blocos: [
+                        {
+                            subtitulo: "Em breve...",
+                            texto: "Aqui vão entrar os textos sobre os destinos incríveis da Argentina!",
+                            imagem: "IMAGENS/foto18.jpg"
+                        }
+                    ]
+                },
+                festas: {
+                    titulo: "🎉 Festas Populares: A Identidade de um Povo Festeiro",
+                    blocos: [
+                        {
+                            subtitulo: "Em breve...",
+                            texto: "Aqui vão entrar os textos sobre as festas e celebrações tradicionais!",
+                            imagem: "IMAGENS/foto19.jpg"
+                        }
+                    ]
+                },
+                musica: {
+                    titulo: "🎶 Ritmo e Música: O Som que Embala o Solo Argentino",
+                    blocos: [
+                        {
+                            subtitulo: "Em breve...",
+                            texto: "Aqui vão entrar os textos sobre o Tango, o Folclore e a musicalidade do campo!",
+                            imagem: "IMAGENS/foto20.jpg"
                         }
                     ]
                 }
