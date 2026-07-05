@@ -197,10 +197,16 @@
                 }, 800);
             }
         }, 2200);
+  // Criamos essa caixinha para salvar qual país está aberto na tela
+        let paisAtual = "argentina"; 
+
         // ==========================================================================
         // PASSO 4: FUNÇÃO PARA ALTERNAR A TELA E MOSTRAR O PAÍS E A SEÇÃO SELECIONADA
         // ==========================================================================
         function selecionarPais(nomePais, secao = 'inicial') {
+            // Guarda o nome do país clicado para usar no menu lateral
+            paisAtual = nomePais; 
+
             const pais = dadosPaises[nomePais];
             
             if (!pais) {
@@ -208,7 +214,7 @@
                 return;
             }
 
-            // 1. Buscamos as informações da seção escolhida (inicial ou gastronomia)
+            // 1. Buscamos as informações da seção escolhida
             const infoSecao = pais[secao];
 
             if (!infoSecao) {
@@ -219,11 +225,11 @@
             // 2. Atualizamos o título principal do quadrante novo
             document.getElementById("dinamico-titulo").innerText = infoSecao.titulo;
 
-            // 3. Limpamos qualquer conteúdo antigo que estava na caixa de blocos
+            // 3. Limpamos qualquer conteúdo antigo
             const containerBlocos = document.getElementById("dinamico-conteudo-blocos");
             containerBlocos.innerHTML = "";
 
-            // 4. Construímos a estrutura de Texto + Imagem de todos os blocos da seção
+            // 4. Construímos a estrutura de Texto + Imagem
             infoSecao.blocos.forEach(bloco => {
                 const estruturaBloco = `
                     <div class="bloco-conteudo-pais" style="margin-bottom: 35px;">
@@ -239,20 +245,18 @@
                         </div>
                     </div>
                 `;
-                // Coloca o bloco estruturado dentro do container
                 containerBlocos.innerHTML += estruturaBloco;
             });
 
-            // 5. A MÁGICA DA TROCA: Esconde o manifesto e as colunas de imagens da home
+            // 5. Esconde os elementos da home
             document.querySelector(".caixa-manifesto").style.display = "none";
             
-            // Procura a coluna de imagens do meio/laterais e esconde
             const colunaImagens = document.querySelector(".coluna-imagens-meio");
             if (colunaImagens) {
                 colunaImagens.style.display = "none";
             }
 
-            // Mostra o quadrante do país
+            // Mostra o quadrante dinâmico
             document.getElementById("container-paises-dinamico").style.display = "block";
         }
     </script>
