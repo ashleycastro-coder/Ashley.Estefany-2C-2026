@@ -55,13 +55,17 @@
 
     <div class="divisao-layout">
         
-        <aside class="coluna-botoes">
-            <a href="index.html" title="Página Inicial"><button class="botao-circulo">🏠</button></a>
-            <a href="gastronomia.html" title="Gastronomia"><button class="botao-circulo">🌮</button></a>
-            <a href="destinos.html" title="Destinos"><button class="botao-circulo">✈️</button></a>
-            <a href="festas.html" title="Festas Populares"><button class="botao-circulo">🎉</button></a>
-            <a href="musica.html" title="Ritmo e Música"><button class="botao-circulo">🎵</button></a>
-        </aside>
+      <aside class="coluna-botoes">
+    <button onclick="selecionarPais(paisAtual, 'inicial')" class="botao-circulo" title="Página Inicial">🏠</button>
+    
+    <button onclick="selecionarPais(paisAtual, 'gastronomia')" class="botao-circulo" title="Gastronomia">🌮</button>
+    
+    <button onclick="selecionarPais(paisAtual, 'destinos')" class="botao-circulo" title="Destinos">✈️</button>
+    
+    <button onclick="selecionarPais(paisAtual, 'festas')" class="botao-circulo" title="Festas Populares">🎉</button>
+    
+    <button onclick="selecionarPais(paisAtual, 'musica')" class="botao-circulo" title="Ritmo e Música">🎵</button>
+</aside>
 
         <div class="coluna-imagens-meio">
             <img src="IMAGENS/foto1.jpg" alt="Sabores da América do Sul" class="foto-bloco">
@@ -71,15 +75,6 @@
 
      <main class="espaco-leitura">
     <div id="container-paises-dinamico" class="quadrante-pais" style="display: none;">
-        
-        <div class="abas-navegacao" style="margin-bottom: 25px;">
-            <button onclick="selecionarPais('argentina', 'inicial')" class="botao-aba">Informações</button>
-            <button onclick="selecionarPais('argentina', 'gastronomia')" class="botao-aba">Gastronomia</button>
-            <button onclick="selecionarPais('argentina', 'destinos')" class="botao-aba">Destinos</button>
-            <button onclick="selecionarPais('argentina', 'festas')" class="botao-aba">Festas Populares</button>
-            <button onclick="selecionarPais('argentina', 'musica')" class="botao-aba">Ritmo e Música</button>
-        </div>
-
         <h2 id="dinamico-titulo"></h2>
         <div id="dinamico-conteudo-blocos"></div>
     </div>
