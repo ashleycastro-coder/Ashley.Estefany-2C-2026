@@ -753,6 +753,8 @@ h1, h2, .botao-acao-navegar {
     justify-content: space-between;
     gap: 40px; /* Espaço elegante entre eles */
     width: 100%;
+    max-width: 1100px;       /* Evita que o conteúdo se espalhe demais em telas grandes */
+    margin: 0 auto 35px auto; /* Centraliza o bloco inteiro na tela */
 }
 
 /* Coluna de Texto Robusta */
