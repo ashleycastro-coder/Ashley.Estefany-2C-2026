@@ -38,18 +38,18 @@
         <button class="botao-acao-navegar" onclick="toggleBandeiras()">Navegar 👉🏾</button>
         
         <div id="fileiraPaises" class="fileira-bandeiras escondido">
-            <img src="https://flagcdn.com/w40/ar.png" onclick="selecionarPais('argentina')" alt="Argentina" title="Argentina" class="desenho-bandeira" style="cursor: pointer;">
+<img src="https://flagcdn.com/w40/ar.png" onclick="selecionarPais('argentina')" alt="Argentina" title="Argentina" class="desenho-bandeira" style="cursor: pointer;">
             <img src="https://flagcdn.com/w40/bo.png" onclick="selecionarPais('bolivia')" alt="Bolivia" title="Bolivia" class="desenho-bandeira" style="cursor: pointer;">
             <img src="https://flagcdn.com/w40/br.png" onclick="selecionarPais('brasil')" alt="Brasil" title="Brasil" class="desenho-bandeira" style="cursor: pointer;">
-            <img src="https://flagcdn.com/w40/cl.png" alt="Chile" title="Chile" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/co.png" alt="Colômbia" title="Colômbia" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/ec.png" alt="Equador" title="Equador" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/gy.png" alt="Guiana" title="Guiana" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/py.png" alt="Paraguai" title="Paraguai" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/pe.png" alt="Peru" title="Peru" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/sr.png" alt="Suriname" title="Suriname" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/uy.png" alt="Uruguai" title="Uruguai" class="desenho-bandeira">
-            <img src="https://flagcdn.com/w40/ve.png" alt="Venezuela" title="Venezuela" class="desenho-bandeira">
+            <img src="https://flagcdn.com/w40/cl.png" onclick="selecionarPais('chile')" alt="Chile" title="Chile" class="desenho-bandeira" style="cursor: pointer;">
+            <img src="https://flagcdn.com/w40/co.png" onclick="selecionarPais('colombia')" alt="Colômbia" title="Colômbia" class="desenho-bandeira" style="cursor: pointer;">
+            <img src="https://flagcdn.com/w40/ec.png" onclick="selecionarPais('equador')" alt="Equador" title="Equador" class="desenho-bandeira" style="cursor: pointer;">
+            <img src="https://flagcdn.com/w40/gy.png" onclick="selecionarPais('guiana')" alt="Guiana" title="Guiana" class="desenho-bandeira" style="cursor: pointer;">
+            <img src="https://flagcdn.com/w40/py.png" onclick="selecionarPais('paraguai')" alt="Paraguai" title="Paraguai" class="desenho-bandeira" style="cursor: pointer;">
+            <img src="https://flagcdn.com/w40/pe.png" onclick="selecionarPais('peru')" alt="Peru" title="Peru" class="desenho-bandeira" style="cursor: pointer;">
+            <img src="https://flagcdn.com/w40/sr.png" onclick="selecionarPais('suriname')" alt="Suriname" title="Suriname" class="desenho-bandeira" style="cursor: pointer;">
+            <img src="https://flagcdn.com/w40/uy.png" onclick="selecionarPais('uruguai')" alt="Uruguai" title="Uruguai" class="desenho-bandeira" style="cursor: pointer;">
+            <img src="https://flagcdn.com/w40/ve.png" onclick="selecionarPais('venezuela')" alt="Venezuela" title="Venezuela" class="desenho-bandeira" style="cursor: pointer;">
         </div>
     </nav>
 
@@ -339,7 +339,84 @@ bolivia: {
                         }
                     ]
                 }
-            } // Fim do Brasil
+            }, // Fim do Brasil
+chile: {
+                inicial: {
+                    titulo: "🇨🇱 Chile: A Força da Cordilheira e o Vento que Canta nos Vales",
+                    blocos: [
+                        {
+                            subtitulo: "Segura essa marra: É o Chile!",
+                            texto: "Prepare-se para contornar os gigantes de pedra e desembarcar numa terra de contrastes brutais, onde a natureza dita as regras e o isolamento geográfico moldou uma identidade única no mundo. O Chile é pura poesia e resistência: estende-se desde o deserto mais árido do planeta, no norte, até aos gelos eternos da <strong>Patagónia</strong>, no sul, tudo protegido pela imponência da <strong>Cordilheira dos Andes</strong>. Embalado pelo orgulho de um povo trabalhador — nascido da fusão entre os guerreiros indígenas originários e os migrantes que desafiaram o fim do mundo —, este país vive a sua história com uma paixão silenciosa e profunda. Papo reto: tu vais-te apaixonar por este solo que transborda marra, beleza indomável e um <i>sazón</i> que vem direto das entranhas da Terra!",
+                            imagem: "IMAGENS/foto44.jpg"
+                        }
+                    ]
+                },
+                gastronomia: {
+                    titulo: "🍳 A Gastronomia Chilena: Sabores com Alma",
+                    blocos: [
+                        {
+                            subtitulo: "1. El Pastel de Choclo",
+                            texto: "O <i>pastel de choclo</i> é o prato que melhor traduz o aconchego e o calor do lar chileno, sendo tradicionalmente saboreado durante o verão numa travessa de barro cozido (<i>paila de greda</i>). A sua origem é um exemplo perfeito de integração cultural: combina o <i>pino</i> (um guisado de carne picada com cebola herdado da culinária espanhola) com uma cobertura cremosa de milho fresco ralado e manjericão. O milho (<i>choclo</i>) era o ingrediente sagrado dos povos indígenas da região, que já o cultivavam com imenso respeito muito antes da chegada dos europeus, sabendo como aproveitar a generosidade da terra.<br><br><strong>Ingredientes principais:</strong> Milho fresco ralado (<i>choclo</i>), carne bovina e frango, cebola, ovos cozidos, azeitonas pretas, passas de uva, manjericão e um toque de açúcar por cima para dourar no forno.",
+                            imagem: "IMAGENS/foto45.jpg"
+                        },
+                        {
+                            subtitulo: "2. El Caldillo de Congrio",
+                            texto: "Imortalizado pelo poeta chileno Pablo Neruda num dos seus poemas mais famosos, o <i>caldillo de congrio</i> é uma sopa de peixe rica e fumegante que aquece as vilas litorais do país. Nascido nas cozinhas dos pescadores e trabalhadores do mar, este prato destaca a relação íntima do povo chileno com o <strong>Oceano Pacífico</strong>. A receita foi aperfeiçoada ao longo dos séculos pelas comunidades costeiras mestiças, que uniram os peixes frescos das correntes frias aos vegetais cultivados nos vales férteis, criando um bálsamo nutritivo que revigora qualquer trabalhador após um dia duro no mar.<br><br><strong>Ingredientes principais:</strong> Congro (peixe local), batatas, cebola, alho, cenoura, tomate, pimento, vinho branco, natas e coentros frescos.",
+                            imagem: "IMAGENS/foto46.jpg"
+                        },
+                        {
+                            subtitulo: "3. 🌾 Do Campo à Mesa: O Milagre da Água do Degelo e a Uva Carménère",
+                            texto: "A agricultura chilena é uma prova viva de superação e engenho em condições extremas. Os povos indígenas, como os <i>Diaguitas</i> no norte, desenvolveram sistemas brilhantes de canais para direcionar a água pura do degelo da <strong>Cordilheira dos Andes</strong> para os vales secos. Hoje, esse mesmo cuidado com a água sustenta o cultivo sustentável da Uva <i>Carménère</i> no <strong>Vale do Colchagua</strong>. Esta casta francesa, que se julgava extinta no mundo devido a uma praga no século XIX, reencontrou o seu lar perfeito e renasceu no Chile graças ao trabalho dedicado dos produtores locais. Da mesma forma, o cultivo tradicional do Milho Nativo e do Trigo em pequenas propriedades familiares mostra que o respeito pelos ciclos da terra garante a força e a sustentabilidade que chegam à mesa.",
+                            imagem: "IMAGENS/foto47.jpg"
+                        }
+                    ]
+                },
+                destinos: {
+                    titulo: "🗺️ Destinos Impressionantes: Histórias na Paisagem",
+                    blocos: [
+                        {
+                            subtitulo: "1. Valparaíso: Los Cerros y los Ascensores",
+                            texto: "Conhecida como a \"Joia do Pacífico\", <strong>Valparaíso</strong> é uma cidade portuária fascinante, construída sobre um anfiteatro natural de colinas (<i>cerros</i>) que encaram o oceano. No século XIX, a cidade explodiu como o porto mais importante da rota que ligava os oceanos Atlântico e Pacífico. Para que os trabalhadores operários e os estivadores das docas pudessem subir diariamente até às suas casas coloridas no topo dos morros sem enfrentarem escadarias infinitas, a cidade inaugurou uma rede de ascensores (funiculares de madeira e metal), que funcionam como verdadeiros elevadores urbanos na rocha.<br><br><strong>O que fazer e Importância:</strong> Andar nos ascensores históricos (como o <strong>Artillería</strong> ou o <strong>Concepción</strong>), caminhar pelas ruelas cheias de arte urbana e grafites, e visitar a <strong>La Sebastiana</strong>, a antiga casa de Pablo Neruda. Declarada Património da Humanidade pela UNESCO, a importância de <strong>Valparaíso</strong> reside na sua arquitetura única e na história da sua classe trabalhadora, que transformou a dificuldade geográfica num labirinto de arte, cor e resistência.",
+                            imagem: "IMAGENS/foto48.jpg"
+                        },
+                        {
+                            subtitulo: "2. San Pedro de Atacama y el Valle de la Luna",
+                            texto: "Localizado no norte do Chile, a mais de 2.400 metros de altitude, <strong>San Pedro de Atacama</strong> é um oásis no meio do deserto mais seco do mundo. Ali perto fica o <strong>Valle de la Luna</strong>, uma depressão desértica cercada por cristas afiadas que as forças do vento e da água esculpiram ao longo de milhões de anos, criando formações de sal, argila e rocha que imitam perfeitamente uma paisagem lunar. Este território árido é o lar ancestral do povo indígena <i>Likan Antai</i> (ou Atacamenhos), que há mais de 11.000 anos habita e protege este solo precioso.<br><br><strong>O que fazer e Importância:</strong> Assistir ao pôr do sol nas dunas do <strong>Valle de la Luna</strong> (onde as rochas mudam de cor, indo do dourado ao violeta profundo), observar o céu noturno (um dos mais límpidos do planeta para astronomia) e visitar as antigas fortalezas de pedra. A sua importância é arqueológica e espiritual: é um santuário ecológico onde as comunidades nativas mantêm viva a sua ligação sagrada com a terra e os espíritos das montanhas (<i>Apus</i>).",
+                            imagem: "IMAGENS/foto49.jpg"
+                        }
+                    ]
+                },
+                festas: {
+                    titulo: "🎉 Festas Populares: A Voz do Povo nas Ruas",
+                    blocos: [
+                        {
+                            subtitulo: "1. La Fiesta de la Tirana",
+                            texto: "Todos os anos, em julho, a pequena vila de <strong>La Tirana</strong>, no meio do deserto do norte chileno, transforma-se no palco de uma das festas religiosas e folclóricas mais impressionantes da América do Sul. A festa nasceu no século XVI e está ligada a uma lenda local: uma jovem princesa inca rebelde, conhecida como \"La Tirana\" pela sua ferocidade contra os conquistadores, apaixonou-se por um prisioneiro espanhol e converteu-se ao cristianismo. A celebração funde de forma brutal a devoção à Virgem do Carmo com as tradições, rituais e cultos indígenas à Mãe Terra (<i>Pachamama</i>).<br><br><strong>O que se faz e Símbolos:</strong> Milhares de bailarinos divididos em confrarias desfilam pelas ruas de terra batida durante dias, sem parar, num transe de música e movimento. Os principais símbolos são as <i>Diabladas</i> (danças com máscaras monstruosas de diabos que representam a luta entre o bem e o mal), os trajes coloridos repletos de espelhos que refletem a luz do sol do deserto e o som ensurdecedor dos bumbos e instrumentos de sopro de metal.",
+                            imagem: "IMAGENS/foto50.jpg"
+                        },
+                        {
+                            subtitulo: "2. Las Festas Pátrias y las \"Fondas\"",
+                            texto: "Celebradas em meados de setembro para comemorar o início do processo de independência do país, as Festas Pátrias são a maior manifestação de orgulho e identidade popular do Chile. O epicentro da festa são as <i>Fondas</i> ou <i>Ramadas</i>, que são grandes barracas temporárias feitas com tetos de ramos de árvores e palha, erguidas em parques e espaços abertos de todas as cidades e vilas. Esta tradição remete ao século XIX, quando as classes trabalhadoras e camponesas se reuniam em tabernas rústicas para festejar longe da elite aristocrática.<br><br><strong>O que se faz e Símbolos:</strong> O povo reúne-se para comer empanadas, beber o clássico <i>terremoto</i> (uma bebida local à base de vinho e gelado de pica-pau), jogar jogos tradicionais e dançar o ritmo nacional. Os grandes símbolos são as bandeiras chilenas espalhadas por todos os cantos, as fogueiras ao ar livre e o som do violão que dita o compasso da festa.",
+                            imagem: "IMAGENS/foto51.jpg"
+                        }
+                    ]
+                },
+                musica: {
+                    titulo: "🎶 Ritmo e Música: A Identidade em Movimento",
+                    blocos: [
+                        {
+                            subtitulo: "1. MÚSICA: \"Gracias a la vida\" (Composta por Violeta Parra)",
+                            texto: "Lançada em 1966 por **Violeta Parra**, esta canção é um dos monumentos musicais mais importantes da história da humanidade e a espinha dorsal do movimento da <i>Nueva Canción Chilena</i>. Violeta Parra foi uma artista e investigadora incansável que viajou pelas zonas rurais do Chile para recolher, salvar e registar as canções e poesias perdidas dos camponeses e trabalhadores do campo.<br><br><strong>O Significado da Música:</strong> A música utiliza a batida acústica e profunda do <i>charango</i> e do violão. A letra é um agradecimento poético e visceral à existência, celebrando os sentidos humanos, a natureza, o som da chuva e o amor. No entanto, o seu verdadeiro significado é político, social e humano: ela valoriza a sabedoria do povo humilde, do trabalhador da terra e das pessoas comuns. Tornou-se um hino de esperança, fraternidade e integração que uniu corações em toda a América Latina e no mundo, mostrando que a verdadeira riqueza de um país está nas suas raízes populares.<br><br><a href='https://open.spotify.com/intl-es/track/6NBJ943UfZUOv3HuxCv4H1?si=34c5605d300f4b19' target='_blank' style='display: inline-flex; align-items: center; background-color: #1DB954; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; font-family: sans-serif; gap: 8px; margin-top: 10px; transition: background-color 0.3s;' onmouseover='this.style.backgroundColor=\"#1ed760\"' onmouseout='this.style.backgroundColor=\"#1DB954\"'>🟢 Ouvir no Spotify</a>",
+                            imagem: "IMAGENS/foto52.jpg"
+                        },
+                        {
+                            subtitulo: "2. DANÇA: La Cueca",
+                            texto: "A <i>Cueca</i> é a dança nacional do Chile, declarada por lei como o ritmo oficial do país. Nascida nas tabernas e bairros populares no início do século XIX, ela resulta de uma mistura riquíssima de influências espanholas, ritmos africanos trazidos pelas populações escravizadas e a sensibilidade dos povos indígenas locais. Era a dança das classes operárias e dos camponeses (<i>huasos</i>) antes de ser adotada por toda a sociedade.<br><br><strong>O Significado da Dança:</strong> Dançada em pares soltos que nunca se tocam diretamente, a <i>Cueca</i> é uma representação coreográfica da conquista amorosa, inspirada no cortejo entre o galo e a galinha. O homem adota uma postura firme e altiva, enquanto a mulher realiza voltas e giros elegantes. O elemento sagrado e obrigatório da dança é o lenço branco que ambos seguram na mão direita, agitando-o no ar em círculos para guiar os movimentos. O significado profundo da <i>Cueca</i> está na celebração da vida comunitária, na marra do povo que bate os pés com força no chão (<i>zapateado</i>) e no respeito pela história partilhada, provando que a alma chilena sabe ser firme como a rocha e leve como o vento.<br><br><strong style='display:block; margin-bottom:10px;'>Assista à Dança da Cueca:</strong><iframe width='100%' height='240' src='https://www.youtube.com/embed/R5LNRjnyOn8' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen style='border-radius:12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);'></iframe>",
+                            imagem: "IMAGENS/foto53.jpg"
+                        }
+                    ]
+                }
+            }
 
         }; // Fim do dadosPaises (A CHAVE COLETIVA DE FECHAMENTO CONTINUA AQUI)
 
