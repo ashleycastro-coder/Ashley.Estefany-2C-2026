@@ -1191,159 +1191,176 @@ suriname: {
     </div>
 
     <script>
-        // BANCO COMPLETO DE COMENTÁRIOS PRONTOS PARA A AMÉRICA DO SUL (5 por país)
-        const comentariosProntos = {
-            argentina: [
-                { nome: "Mariana S.", texto: "O alfajor artesanal de Bariloche e o show de tango em San Telmo foram inesquecíveis!", data: "Há 1 dia" },
-                { nome: "Carlos E.", texto: "A vista do Glaciar Perito Moreno é emocionante, a natureza assusta de tão linda.", data: "Há 3 dias" },
-                { nome: "Fernanda L.", texto: "Comer uma parrillada completa no Caminito com um bom vinho Malbec é parada obrigatória.", data: "Há 5 dias" },
-                { nome: "Diego M.", texto: "Mendoza surpreendeu muito! Fazer o passeio de bicicleta pelas vinícolas foi nota 10.", data: "Há 1 semana" },
-                { nome: "Camila R.", texto: "A livraria El Ateneo em Buenos Aires é maravilhosa, parece um teatro clássico.", data: "Há 2 semanas" }
-            ],
-            bolivia: [
-                { nome: "Lucas T.", texto: "O Salar de Uyuni com o efeito espelho na época de chuva é a coisa mais mágica que já vi.", data: "Há 2 dias" },
-                { nome: "Ana Paula G.", texto: "Andar de teleférico em La Paz vendo as montanhas ao fundo é uma experiência única.", data: "Há 4 dias" },
-                { nome: "Renato B.", texto: "O Lago Titicaca e a Isla del Sol têm uma energia espiritual inacreditável.", data: "Há 6 dias" },
-                { nome: "Valéria M.", texto: "Provar a salteña tradicional pela manhã é o melhor café da manhã boliviano!", data: "Há 1 semana" },
-                { nome: "Igor K.", texto: "A arquitetura colonial de Sucre (a cidade branca) é encantadora e bem conservada.", data: "Há 2 semanas" }
-            ],
-            brasil: [
-                { nome: "Thiago F.", texto: "Ver o pôr do sol no Arpoador no Rio de Janeiro é um clássico que nunca perde a graça.", data: "Há 1 dia" },
-                { nome: "Juliana P.", texto: "A gastronomia baiana em Salvador me conquistou. O acarajé com pimenta de verdade é sensacional!", data: "Há 2 dias" },
-                { nome: "Matheus N.", texto: "As Cataratas do Iguaçu impressionam de perto. A força da água é surreal.", data: "Há 4 dias" },
-                { nome: "Beatriz M.", texto: "O Jalapão tem as águas mais límpidas que já mergulhei. Fervedouros são incríveis.", data: "Há 1 semana" },
-                { nome: "Rafael C.", texto: "Navegar pelos rios da Amazônia e ver o encontro das águas mudou minha visão sobre o país.", data: "Há 2 semanas" }
-            ],
-            chile: [
-                { nome: "Gabriel A.", texto: "Ver o céu estrelado no Deserto do Atacama é algo que todo mundo deveria vivenciar.", data: "Há 2 dias" },
-                { nome: "Sofia D.", texto: "Esquiar no Valle Nevado e depois tomar um vinho chileno no restaurante da montanha foi perfeito.", data: "Há 3 dias" },
-                { nome: "Rodrigo H.", texto: "As casas coloridas e os elevadores históricos de Valparaíso rendem fotos maravilhosas.", data: "Há 5 dias" },
-                { nome: "Larissa M.", texto: "A Patagônia Chilena (Torres del Paine) exige preparo físico, mas cada trilha compensa demais.", data: "Há 1 semana" },
-                { nome: "Felipe S.", texto: "Provar a empanada pino fresca na feira local de Santiago é bom demais!", data: "Há 2 semanas" }
-            ],
-            colombia: [
-                { nome: "Daniela V.", texto: "Cana de açúcar e café fresco na Zona Cafetera. O aroma das fazendas de café é inesquecível.", data: "Há 1 dia" },
-                { nome: "Marcelo O.", texto: "A Cidade Murada de Cartagena à noite tem uma iluminação de cinema e clima super romântico.", data: "Há 3 dias" },
-                { nome: "Carolina P.", texto: "Medellín é um exemplo de transformação urbana. A Comuna 13 e os teleféricos são aula de história.", data: "Há 5 dias" },
-                { nome: "André L.", texto: "Subir a Piedra del Peñol em Guatapé cansa, mas a vista 360 graus do lago compensa cada degrau.", data: "Há 1 semana" },
-                { nome: "Jessica B.", texto: "A Bandeja Paisa é bem fartíssima! Dá pra alimentar duas pessoas de tão bem servida.", data: "Há 2 semanas" }
-            ],
-            equador: [
-                { nome: "Gustavo K.", texto: "As Ilhas Galápagos parecem outro planeta. Nadar ao lado de tartarugas e leões-marinhos é demais!", data: "Há 2 dias" },
-                { nome: "Priscila N.", texto: "Estar com um pé em cada hemisfério no monumento Mitad del Mundo rendeu fotos ótimas.", data: "Há 4 dias" },
-                { nome: "Fábio R.", texto: "O centro histórico de Quito é de uma riqueza arquitetônica impressionante.", data: "Há 6 dias" },
-                { nome: "Vanessa T.", texto: "O balanço no 'Fim do Mundo' em Baños dá um frio na barriga inesquecível!", data: "Há 1 semana" },
-                { nome: "Leonardo C.", texto: "Provar o Ceviche equatoriano com chifles (chips de banana) foi uma surpresa deliciosa.", data: "Há 2 semanas" }
-            ],
-            guiana: [
-                { nome: "Aline V.", texto: "As Cataratas de Kaieteur são gigantescas e quase intocadas pelo turismo de massa. Experiência selvagem!", data: "Há 3 dias" },
-                { nome: "Marcos S.", texto: "A mistura das culturas caribenha, indiana e indígena em Georgetown reflete muito na comida.", data: "Há 5 dias" },
-                { nome: "Patricia G.", texto: "A Catedral de Saint George em madeira é uma verdadeira obra de arte da arquitetura.", data: "Há 1 semana" },
-                { nome: "Bruno M.", texto: "Fazer um ecoturismo pela savana de Rupununi é ideal para quem busca aventura de verdade.", data: "Há 1 semana" },
-                { nome: "Camila F.", texto: "Provar o Pepperpot tradicional num almoço de domingo foi uma imersão cultural sem igual.", data: "Há 2 semanas" }
-            ],
-            paraguai: [
-                { nome: "Mariana R.", texto: "O Vori Vori que comi em Assunção foi inesquecível! Vale muito a pena conhecer as Missões Jesuíticas.", data: "Há 2 dias" },
-                { nome: "Carlos M.", texto: "Tomar um Tereré bem gelado com ervas no calor do Chaco é tradição obrigatória!", data: "Há 4 dias" },
-                { nome: "Fernanda B.", texto: "A Sopa Paraguai (que na verdade é um bolo de milho e queijo salgado) é deliciosa.", data: "Há 6 dias" },
-                { nome: "Roberto N.", texto: "O artesanato em tecido Ñandutí é rico em detalhes e cores lindas.", data: "Há 1 semana" },
-                { nome: "Luciana T.", texto: "O Panteão Nacional dos Heróis no centro de Assunção tem muita história preservada.", data: "Há 2 semanas" }
-            ],
-            peru: [
-                { nome: "Henrique G.", texto: "Chegar a Machu Picchu logo pela manhã com a névoa subindo é arrepiante de tão mágico.", data: "Há 1 dia" },
-                { nome: "Isabela C.", texto: "Lima é a capital gastronômica da América do Sul sem dúvidas. O Ceviche na praia é perfeito!", data: "Há 3 dias" },
-                { nome: "Eduardo P.", texto: "Cusco respira cultura Inca em cada esquina. A mistura das construções espanholas sobre bases incas é incrível.", data: "Há 5 dias" },
-                { nome: "Natalia D.", texto: "Fazer a caminhada até a Montanha das 7 Cores (Vinicunca) exige fôlego, mas a paisagem é surreal.", data: "Há 1 semana" },
-                { nome: "Samuel L.", texto: "Navegar pelas ilhas flutuantes dos Uros no Lago Titicaca foi um aprendizado cultural imenso.", data: "Há 2 semanas" }
-            ],
-            suriname: [
-                { nome: "Lucas S.", texto: "Comer o Roti em Paramaribo foi a melhor experiência da viagem! Povo extremamente acolhedor.", data: "Há 1 dia" },
-                { nome: "Aline T.", texto: "A arquitetura de madeira do centro histórico é linda demais e super bem preservada.", data: "Há 4 dias" },
-                { nome: "David P.", texto: "Ver uma mesquita e uma sinagoga construídas lado a lado no centro mostra a harmonia religiosa do país.", data: "Há 6 dias" },
-                { nome: "Kátia R.", texto: "Passeio de barco pelo rio Suriname no fim da tarde com avistamento de golfinhos fluviais!", data: "Há 1 semana" },
-                { nome: "Renan O.", texto: "A reserva natural de Central Suriname é uma floresta intocada espetacular.", data: "Há 2 semanas" }
-            ],
-            uruguai: [
-                { nome: "Beatriz K.", texto: "Assistir ao espetáculo do Candombe nas ruas de Montevidéu deu arrepios. Energia incrível!", data: "Há 3 dias" },
-                { nome: "Rodrigo P.", texto: "O Chivito é gigante e delicioso! E o pôr do sol em Cabo Polonio é simplesmente mágico.", data: "Há 5 dias" },
-                { nome: "Claudia M.", texto: "Colonia del Sacramento parece que parou no tempo. As ruas de pedra e a Calle de los Suspiros são apaixonantes.", data: "Há 1 semana" },
-                { nome: "Tiago S.", texto: "Tomar mate na rambla de Montevidéu junto com os locais no fim da tarde é a essência do país.", data: "Há 1 semana" },
-                { nome: "Letícia B.", texto: "As carnes na parrilla do Mercado del Puerto têm um sabor com lenha incomparável.", data: "Há 2 semanas" }
-            ],
-            venezuela: [
-                { nome: "Gabriel A.", texto: "A Arepa Reina Pepiada é disparada a melhor combinação de sabores do mundo!", data: "Há 2 dias" },
-                { nome: "Sofia L.", texto: "Ver o Salto Ángel de perto é uma experiência inesquecível. Natureza surreal!", data: "Há 4 dias" },
-                { nome: "Ramon C.", texto: "O Pabellón Criollo com a banana da terra frita (tajadas) traz um contraste doce e salgado ótimo.", data: "Há 6 dias" },
-                { nome: "Vanessa P.", texto: "As praias de Los Roques têm a areia mais branca e o mar mais azul transparente que já vi no Caribe.", data: "Há 1 semana" },
-                { nome: "Guilherme M.", texto: "A dança dos Diablos Danzantes de Yare é uma riqueza de tradição e cultura impressionante.", data: "Há 2 semanas" }
-            ]
-        };
+    // 1. BANCO COMPLETO DE COMENTÁRIOS (5 por país)
+    const comentariosProntos = {
+        argentina: [
+            { nome: "Mariana S.", texto: "O alfajor artesanal de Bariloche e o show de tango em San Telmo foram inesquecíveis!", data: "Há 1 dia" },
+            { nome: "Carlos E.", texto: "A vista do Glaciar Perito Moreno é emocionante, a natureza assusta de tão linda.", data: "Há 3 dias" },
+            { nome: "Fernanda L.", texto: "Comer uma parrillada completa no Caminito com um bom vinho Malbec é parada obrigatória.", data: "Há 5 dias" },
+            { nome: "Diego M.", texto: "Mendoza surpreendeu muito! Fazer o passeio de bicicleta pelas vinícolas foi nota 10.", data: "Há 1 semana" },
+            { nome: "Camila R.", texto: "A livraria El Ateneo em Buenos Aires é maravilhosa, parece um teatro clássico.", data: "Há 2 semanas" }
+        ],
+        bolivia: [
+            { nome: "Lucas T.", texto: "O Salar de Uyuni com o efeito espelho na época de chuva é a coisa mais mágica que já vi.", data: "Há 2 dias" },
+            { nome: "Ana Paula G.", texto: "Andar de teleférico em La Paz vendo as montanhas ao fundo é uma experiência única.", data: "Há 4 dias" },
+            { nome: "Renato B.", texto: "O Lago Titicaca e a Isla del Sol têm uma energia espiritual inacreditável.", data: "Há 6 dias" },
+            { nome: "Valéria M.", texto: "Provar a salteña tradicional pela manhã é o melhor café da manhã boliviano!", data: "Há 1 semana" },
+            { nome: "Igor K.", texto: "A arquitetura colonial de Sucre (a cidade branca) é encantadora e bem conservada.", data: "Há 2 semanas" }
+        ],
+        brasil: [
+            { nome: "Thiago F.", texto: "Ver o pôr do sol no Arpoador no Rio de Janeiro é um clássico que nunca perde a graça.", data: "Há 1 dia" },
+            { nome: "Juliana P.", texto: "A gastronomia baiana em Salvador me conquistou. O acarajé com pimenta de verdade é sensacional!", data: "Há 2 dias" },
+            { nome: "Matheus N.", texto: "As Cataratas do Iguaçu impressionam de perto. A força da água é surreal.", data: "Há 4 dias" },
+            { nome: "Beatriz M.", texto: "O Jalapão tem as águas mais límpidas que já mergulhei. Fervedouros são incríveis.", data: "Há 1 semana" },
+            { nome: "Rafael C.", texto: "Navegar pelos rios da Amazônia e ver o encontro das águas mudou minha visão sobre o país.", data: "Há 2 semanas" }
+        ],
+        chile: [
+            { nome: "Gabriel A.", texto: "Ver o céu estrelado no Deserto do Atacama é algo que todo mundo deveria vivenciar.", data: "Há 2 dias" },
+            { nome: "Sofia D.", texto: "Esquiar no Valle Nevado e depois tomar um chocolate quente na montanha foi perfeito.", data: "Há 3 dias" },
+            { nome: "Rodrigo H.", texto: "As casas coloridas e os elevadores históricos de Valparaíso rendem fotos maravilhosas.", data: "Há 5 dias" },
+            { nome: "Larissa M.", texto: "A Patagônia Chilena (Torres del Paine) exige preparo físico, mas cada trilha compensa demais.", data: "Há 1 semana" },
+            { nome: "Felipe S.", texto: "Provar a empanada pino fresca na feira local de Santiago é bom demais!", data: "Há 2 semanas" }
+        ],
+        colombia: [
+            { nome: "Daniela V.", texto: "O aroma das fazendas de café na Zona Cafetera é inesquecível.", data: "Há 1 dia" },
+            { nome: "Marcelo O.", texto: "A Cidade Murada de Cartagena à noite tem uma iluminação de cinema e clima super romântico.", data: "Há 3 dias" },
+            { nome: "Carolina P.", texto: "Medellín é um exemplo de transformação urbana. A Comuna 13 e os teleféricos são aula de história.", data: "Há 5 dias" },
+            { nome: "André L.", texto: "Subir a Piedra del Peñol em Guatapé cansa, mas a vista 360 graus do lago compensa cada degrau.", data: "Há 1 semana" },
+            { nome: "Jessica B.", texto: "A Bandeja Paisa é bem fartíssima! Dá pra alimentar duas pessoas de tão bem servida.", data: "Há 2 semanas" }
+        ],
+        equador: [
+            { nome: "Gustavo K.", texto: "As Ilhas Galápagos parecem outro planeta. Nadar ao lado de tartarugas e leões-marinhos é demais!", data: "Há 2 dias" },
+            { nome: "Priscila N.", texto: "Estar com um pé em cada hemisfério no monumento Mitad del Mundo rendeu fotos ótimas.", data: "Há 4 dias" },
+            { nome: "Fábio R.", texto: "O centro histórico de Quito é de uma riqueza arquitetônica impressionante.", data: "Há 6 dias" },
+            { nome: "Vanessa T.", texto: "O balanço no 'Fim do Mundo' em Baños dá um frio na barriga inesquecível!", data: "Há 1 semana" },
+            { nome: "Leonardo C.", texto: "Provar o Ceviche equatoriano com chifles (chips de banana) foi uma surpresa deliciosa.", data: "Há 2 semanas" }
+        ],
+        guiana: [
+            { nome: "Aline V.", texto: "As Cataratas de Kaieteur são gigantescas e intocadas. Experiência selvagem!", data: "Há 3 dias" },
+            { nome: "Marcos S.", texto: "A mistura de culturas em Georgetown reflete muito na comida temperada e saborosa.", data: "Há 5 dias" },
+            { nome: "Patricia G.", texto: "A Catedral de Saint George em madeira é uma verdadeira obra de arte da arquitetura.", data: "Há 1 semana" },
+            { nome: "Bruno M.", texto: "Fazer ecoturismo pela savana de Rupununi é ideal para quem busca aventura de verdade.", data: "Há 1 semana" },
+            { nome: "Camila F.", texto: "Provar o Pepperpot tradicional num almoço de domingo foi uma imersão cultural sem igual.", data: "Há 2 semanas" }
+        ],
+        paraguai: [
+            { nome: "Mariana R.", texto: "O Vori Vori que comi em Assunção foi inesquecível! Vale muito a pena conhecer as Missões Jesuíticas.", data: "Há 2 dias" },
+            { nome: "Carlos M.", texto: "Tomar um Tereré bem gelado com ervas no calor é tradição obrigatória!", data: "Há 4 dias" },
+            { nome: "Fernanda B.", texto: "A Sopa Paraguai (que na verdade é um bolo de milho e queijo salgado) é deliciosa.", data: "Há 6 dias" },
+            { nome: "Roberto N.", texto: "O artesanato em tecido Ñandutí é rico em detalhes e cores lindas.", data: "Há 1 semana" },
+            { nome: "Luciana T.", texto: "O Panteão Nacional dos Heróis no centro de Assunção tem muita história preservada.", data: "Há 2 semanas" }
+        ],
+        peru: [
+            { nome: "Henrique G.", texto: "Chegar a Machu Picchu logo pela manhã com a névoa subindo é arrepiante de tão mágico.", data: "Há 1 dia" },
+            { nome: "Isabela C.", texto: "Lima é a capital gastronômica da América do Sul sem dúvidas. O Ceviche na praia é perfeito!", data: "Há 3 dias" },
+            { nome: "Eduardo P.", texto: "Cusco respira cultura Inca em cada esquina. As ruas históricas são incríveis.", data: "Há 5 dias" },
+            { nome: "Natalia D.", texto: "Fazer a caminhada até a Montanha das 7 Cores exige fôlego, mas a paisagem é surreal.", data: "Há 1 semana" },
+            { nome: "Samuel L.", texto: "Navegar pelas ilhas flutuantes dos Uros no Lago Titicaca foi um aprendizado cultural imenso.", data: "Há 2 semanas" }
+        ],
+        suriname: [
+            { nome: "Lucas S.", texto: "Comer o Roti em Paramaribo foi a melhor experiência da viagem! Povo extremamente acolhedor.", data: "Há 1 dia" },
+            { nome: "Aline T.", texto: "A arquitetura de madeira do centro histórico é linda demais e super bem preservada.", data: "Há 4 dias" },
+            { nome: "David P.", texto: "Ver uma mesquita e uma sinagoga construídas lado a lado no centro mostra a harmonia do país.", data: "Há 6 dias" },
+            { nome: "Kátia R.", texto: "Passeio de barco pelo rio Suriname no fim da tarde com avistamento de golfinhos fluviais!", data: "Há 1 semana" },
+            { nome: "Renan O.", texto: "A reserva natural de Central Suriname é uma floresta intocada espetacular.", data: "Há 2 semanas" }
+        ],
+        uruguai: [
+            { nome: "Beatriz K.", texto: "Assistir ao espetáculo do Candombe nas ruas de Montevidéu deu arrepios. Energia incrível!", data: "Há 3 dias" },
+            { nome: "Rodrigo P.", texto: "O Chivito é gigante e delicioso! E o pôr do sol em Cabo Polonio é simplesmente mágico.", data: "Há 5 dias" },
+            { nome: "Claudia M.", texto: "Colonia del Sacramento parece que parou no tempo. As ruas de pedra são apaixonantes.", data: "Há 1 semana" },
+            { nome: "Tiago S.", texto: "Tomar mate na rambla junto com os locais no fim da tarde é a essência do país.", data: "Há 1 semana" },
+            { nome: "Letícia B.", texto: "As carnes na parrilla do Mercado del Puerto têm um sabor com lenha incomparável.", data: "Há 2 semanas" }
+        ],
+        venezuela: [
+            { nome: "Gabriel A.", texto: "A Arepa Reina Pepiada é disparada a melhor combinação de sabores do mundo!", data: "Há 2 dias" },
+            { nome: "Sofia L.", texto: "Ver o Salto Ángel de perto é uma experiência inesquecível. Natureza surreal!", data: "Há 4 dias" },
+            { nome: "Ramon C.", texto: "O Pabellón Criollo com a banana da terra frita traz um contraste doce e salgado ótimo.", data: "Há 6 dias" },
+            { nome: "Vanessa P.", texto: "As praias de Los Roques têm a areia mais branca e o mar mais azul transparente do Caribe.", data: "Há 1 semana" },
+            { nome: "Guilherme M.", texto: "A dança dos Diablos Danzantes de Yare é uma riqueza de tradição e cultura impressionante.", data: "Há 2 semanas" }
+        ]
+    };
+
+    // País inicial padrão
+    let paisAtivoGlobal = 'argentina';
+
+    // 2. FUNÇÃO CHAMADA QUANDO QUALQUER BANDEIRA É CLICADA
+    function selecionarPais(nomeDoPais) {
+        paisAtivoGlobal = nomeDoPais;
+
+        // Se o chat já estiver aberto no momento do clique, ele atualiza os comentários na hora
+        const painel = document.getElementById('painel-chat');
+        if (painel && painel.classList.contains('chat-aberto')) {
+            carregarComentarios(nomeDoPais);
+            document.getElementById('chat-titulo-pais').innerText = `💬 Experiências: ${nomeDoPais.toUpperCase()}`;
+        }
+
+        // Coloque aqui abaixo qualquer outra função que você já tinha para carregar os textos/fotos do seu site:
+        // ex: carregarDadosDoPais(nomeDoPais);
+    }
+
+    // 3. FUNÇÕES DO CHAT
+    function abrirChat(chavePais) {
+        if (!chavePais) chavePais = paisAtivoGlobal;
+        paisAtivoGlobal = chavePais;
+
+        const painel = document.getElementById('painel-chat');
+        const titulo = document.getElementById('chat-titulo-pais');
         
+        titulo.innerText = `💬 Experiências: ${chavePais.toUpperCase()}`;
+        carregarComentarios(chavePais);
+        
+        painel.classList.remove('chat-fechado');
+        painel.classList.add('chat-aberto');
+    }
 
-        // FUNÇÕES DO CHAT
-        function abrirChat(chavePais) {
-            if (!chavePais) chavePais = paisAtivoGlobal;
-            paisAtivoGlobal = chavePais;
+    function fecharChat() {
+        const painel = document.getElementById('painel-chat');
+        painel.classList.remove('chat-aberto');
+        painel.classList.add('chat-fechado');
+    }
 
-            const painel = document.getElementById('painel-chat');
-            const titulo = document.getElementById('chat-titulo-pais');
-            
-            titulo.innerText = `💬 Experiências: ${chavePais.toUpperCase()}`;
-            carregarComentarios(chavePais);
-            
-            painel.classList.remove('chat-fechado');
-            painel.classList.add('chat-aberto');
+    function carregarComentarios(chavePais) {
+        const container = document.getElementById('lista-mensagens');
+        container.innerHTML = '';
+
+        const lista = comentariosProntos[chavePais] || [];
+
+        if (lista.length === 0) {
+            container.innerHTML = '<p style="color:#777; text-align:center; padding: 20px 0;">Seja o primeiro a compartilhar uma experiência sobre este país!</p>';
+            return;
         }
 
-        function fecharChat() {
-            const painel = document.getElementById('painel-chat');
-            painel.classList.remove('chat-aberto');
-            painel.classList.add('chat-fechado');
+        lista.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'card-comentario';
+            card.innerHTML = `
+                <strong>${item.nome}</strong>
+                <p>"${item.texto}"</p>
+                <span class="data-comentario">${item.data}</span>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    function adicionarComentario(event) {
+        event.preventDefault();
+
+        const nomeInput = document.getElementById('nome-usuario');
+        const textoInput = document.getElementById('texto-usuario');
+
+        if (!comentariosProntos[paisAtivoGlobal]) {
+            comentariosProntos[paisAtivoGlobal] = [];
         }
 
-        function carregarComentarios(chavePais) {
-            const container = document.getElementById('lista-mensagens');
-            container.innerHTML = '';
+        comentariosProntos[paisAtivoGlobal].unshift({
+            nome: nomeInput.value,
+            texto: textoInput.value,
+            data: 'Agora mesmo'
+        });
 
-            const lista = comentariosProntos[chavePais] || [];
+        carregarComentarios(paisAtivoGlobal);
 
-            if (lista.length === 0) {
-                container.innerHTML = '<p style="color:#777; text-align:center; padding: 20px 0;">Seja o primeiro a compartilhar uma experiência sobre este país!</p>';
-                return;
-            }
-
-            lista.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'card-comentario';
-                card.innerHTML = `
-                    <strong>${item.nome}</strong>
-                    <p>"${item.texto}"</p>
-                    <span class="data-comentario">${item.data}</span>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        function adicionarComentario(event) {
-            event.preventDefault();
-
-            const nomeInput = document.getElementById('nome-usuario');
-            const textoInput = document.getElementById('texto-usuario');
-
-            if (!comentariosProntos[paisAtivoGlobal]) {
-                comentariosProntos[paisAtivoGlobal] = [];
-            }
-
-            comentariosProntos[paisAtivoGlobal].unshift({
-                nome: nomeInput.value,
-                texto: textoInput.value,
-                data: 'Agora mesmo'
-            });
-
-            carregarComentarios(paisAtivoGlobal);
-
-            nomeInput.value = '';
-            textoInput.value = '';
-        }
-    </script>
+        nomeInput.value = '';
+        textoInput.value = '';
+    }
+</script>
 </body>
