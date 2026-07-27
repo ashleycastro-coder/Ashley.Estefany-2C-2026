@@ -1038,3 +1038,43 @@ h1, h2, .botao-acao-navegar {
         font-size: 24px !important;
     }
 }
+/* CORREÇÃO PARA TAMANHO DE IMAGENS E TEXTOS NO CELULAR */
+
+/* 1. Faz TODAS as imagens do site caberem na tela sem estourar */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* 2. Ajustes específicos para telas pequenas (Celular) */
+@media screen and (max-width: 768px) {
+    
+    /* Garante que o texto não "fuga" da tela */
+    p, span, h1, h2, h3, li {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Reduz o tamanho dos textos grandes no celular */
+    h1, .titulo-esboco {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+    }
+
+    h2 {
+        font-size: 18px !important;
+    }
+
+    p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Tira margens exageradas das caixas de texto que empurram as coisas para fora */
+    body, main, section, div, article {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
