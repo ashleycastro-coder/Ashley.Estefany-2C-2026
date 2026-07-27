@@ -986,7 +986,7 @@ h1, h2, .botao-acao-navegar {
     background: linear-gradient(135deg, #ff5fba, #fe7bdd); /* Gradiente chamativo */
     color: #ffffff;
     text-decoration: none;
-    padding: 12px 24px;
+    padding: 20px 40px;
     border-radius: 30px;
     font-size: 15px;
     font-weight: bold;
