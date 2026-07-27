@@ -1190,7 +1190,7 @@ suriname: {
         </form>
     </div>
 
-    <script>
+<script>
     // 1. BANCO DE COMENTÁRIOS PRONTOS (5 por país)
     const comentariosProntos = {
         argentina: [
@@ -1279,35 +1279,33 @@ suriname: {
         ]
     };
 
-    // Variável para rastrear qual país está selecionado
+    // Guarda qual país está selecionado no momento
     let paisAtivoGlobal = 'argentina';
 
-    // 2. FUNÇÃO PRINCIPAL: Executada ao clicar em qualquer bandeira
+    // 2. FUNÇÃO EXECUTADA AO CLICAR NA BANDEIRA DO PAÍS
     function selecionarPais(nomeDoPais) {
         paisAtivoGlobal = nomeDoPais;
 
-        // A) Atualiza o Chat com os comentários do país
+        // A) MOSTRAR O PAÍS NA TELA PRINCIPAL (E ESCONDER OS OUTROS)
+        const listaChaves = Object.keys(comentariosProntos);
+        listaChaves.forEach(chave => {
+            const bloco = document.getElementById(chave);
+            if (bloco) {
+                if (chave === nomeDoPais) {
+                    bloco.style.display = 'block';
+                    bloco.classList.remove('escondido');
+                } else {
+                    bloco.style.display = 'none';
+                    bloco.classList.add('escondido');
+                }
+            }
+        });
+
+        // B) PREPARAR O CHAT PARA O PAÍS SELECIONADO
         carregarComentarios(nomeDoPais);
         const tituloChat = document.getElementById('chat-titulo-pais');
         if (tituloChat) {
             tituloChat.innerText = `💬 Experiências: ${nomeDoPais.toUpperCase()}`;
-        }
-
-        // B) Exibe as informações do país na tela e esconde os outros países
-        // Procura todas as seções ou containers com classe ou ID referente a países
-        const elementosPais = document.querySelectorAll('[data-pais], .conteudo-pais, .bloco-pais, section[id]');
-        
-        if (elementosPais.length > 0) {
-            elementosPais.forEach(el => {
-                const idEl = el.id || el.getAttribute('data-pais');
-                if (idEl === nomeDoPais) {
-                    el.classList.remove('escondido');
-                    el.style.display = 'block';
-                } else if (comentariosProntos[idEl]) {
-                    el.classList.add('escondido');
-                    el.style.display = 'none';
-                }
-            });
         }
     }
 
