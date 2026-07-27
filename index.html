@@ -1283,20 +1283,20 @@ suriname: {
     let paisAtivoGlobal = 'argentina';
 
     // 2. FUNÇÃO CHAMADA QUANDO QUALQUER BANDEIRA É CLICADA
+    
     function selecionarPais(nomeDoPais) {
-        paisAtivoGlobal = nomeDoPais;
+        // 1. Atualiza o país ativo para o Chat de Experiências
+        trocarPais(nomeDoPais);
 
-        // Se o chat já estiver aberto no momento do clique, ele atualiza os comentários na hora
-        const painel = document.getElementById('painel-chat');
-        if (painel && painel.classList.contains('chat-aberto')) {
-            carregarComentarios(nomeDoPais);
-            document.getElementById('chat-titulo-pais').innerText = `💬 Experiências: ${nomeDoPais.toUpperCase()}`;
+        // 2. Chame AQUI a sua função original que mostra as informações do país na tela!
+        // (Se a sua função original tinha outro nome, troque 'mostrarDadosPais' pelo nome dela)
+        if (typeof mostrarDadosPais === "function") {
+            mostrarDadosPais(nomeDoPais);
+        } else if (typeof carregarPais === "function") {
+            carregarPais(nomeDoPais);
         }
-
-        // Coloque aqui abaixo qualquer outra função que você já tinha para carregar os textos/fotos do seu site:
-        // ex: carregarDadosDoPais(nomeDoPais);
     }
-
+    
     // 3. FUNÇÕES DO CHAT
     function abrirChat(chavePais) {
         if (!chavePais) chavePais = paisAtivoGlobal;
