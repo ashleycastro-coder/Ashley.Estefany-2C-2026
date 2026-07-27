@@ -977,26 +977,26 @@ h1, h2, .botao-acao-navegar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 40px;
+    padding: 70px 800px;
 }
 
 /* Estilo do Botão do Jogo */
 .btn-jogo-quiz {
     display: inline-block;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente chamativo */
+    background: linear-gradient(135deg, #ff5fba, #fe7bdd); /* Gradiente chamativo */
     color: #ffffff;
     text-decoration: none;
     padding: 12px 24px;
     border-radius: 30px;
     font-size: 15px;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+    box-shadow: 0 4px 15px rgba(255, 95, 196, 0.4);
     transition: all 0.3s ease;
 }
 
 /* Efeito ao passar o mouse */
 .btn-jogo-quiz:hover {
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 6px 20px rgba(255, 126, 95, 0.6);
-    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    box-shadow: 0 6px 20px rgba(255, 95, 188, 0.6);
+    background: linear-gradient(135deg, #fe7be4, #ff5fcf);
 }
