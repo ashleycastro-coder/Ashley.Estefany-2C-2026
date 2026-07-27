@@ -1000,3 +1000,41 @@ h1, h2, .botao-acao-navegar {
     box-shadow: 0 6px 20px rgba(255, 95, 188, 0.6);
     background: linear-gradient(135deg, #fe7be4, #ff5fcf);
 }
+
+/* AJUSTE PARA CELULAR */
+@media screen and (max-width: 768px) {
+    /* Impede que a página fique rolando para os lados */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Faz os containers principais caberem na tela do celular */
+    div, header, main, section, container {
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Se o topo tiver flexbox, coloca o título em cima e o botão embaixo */
+    .topo-imagem {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 20px 10px !important;
+        gap: 15px !important;
+    }
+
+    /* Deixa o botão ajustado para o celular */
+    .btn-jogo-quiz, .btn-header-mural {
+        width: 90% !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    /* Reduz um pouco as fontes do título para não quebrarem o layout */
+    h1, .titulo-esboco {
+        font-size: 24px !important;
+    }
+}
