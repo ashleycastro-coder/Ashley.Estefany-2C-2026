@@ -823,7 +823,7 @@ h1, h2, .botao-acao-navegar {
 
 #btn-flutuante-chat:hover {
     transform: scale(1.05);
-    background-color: #ff5252;
+    background-color: #52cbff;
 }
 
 /* 2. Painel Lateral (Gaveta) */
