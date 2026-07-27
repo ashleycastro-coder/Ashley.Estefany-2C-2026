@@ -1279,25 +1279,40 @@ suriname: {
         ]
     };
 
-    // País inicial padrão
+    // País padrão inicial
     let paisAtivoGlobal = 'argentina';
 
-    // 2. FUNÇÃO CHAMADA QUANDO QUALQUER BANDEIRA É CLICADA
-    
-    function selecionarPais(nomeDoPais) {
-        // 1. Atualiza o país ativo para o Chat de Experiências
-        trocarPais(nomeDoPais);
-
-        // 2. Chame AQUI a sua função original que mostra as informações do país na tela!
-        // (Se a sua função original tinha outro nome, troque 'mostrarDadosPais' pelo nome dela)
-        if (typeof mostrarDadosPais === "function") {
-            mostrarDadosPais(nomeDoPais);
-        } else if (typeof carregarPais === "function") {
-            carregarPais(nomeDoPais);
+    // 2. FUNÇÃO MUDAR O PAÍS DO CHAT
+    function trocarPais(chavePais) {
+        paisAtivoGlobal = chavePais;
+        
+        // Atualiza os comentários e o título do chat
+        carregarComentarios(chavePais);
+        const titulo = document.getElementById('chat-titulo-pais');
+        if (titulo) {
+            titulo.innerText = `💬 Experiências: ${chavePais.toUpperCase()}`;
         }
     }
-    
-    // 3. FUNÇÕES DO CHAT
+
+    // 3. FUNÇÃO CHAMADA QUANDO QUALQUER BANDEIRA É CLICADA
+    function selecionarPais(nomeDoPais) {
+        // A) Atualiza o país ativo para o Chat de Experiências
+        trocarPais(nomeDoPais);
+
+        // B) Mostra/Esconde os blocos de conteúdo do país no seu site (Lógica de exibição das informações)
+        const todosOsBlocos = document.querySelectorAll('.bloco-pais, .conteudo-pais, section[id]');
+        todosOsBlocos.forEach(bloco => {
+            if (bloco.id === nomeDoPais) {
+                bloco.classList.remove('escondido');
+                bloco.style.display = 'block';
+            } else if (bloco.id && comentariosProntos[bloco.id]) {
+                bloco.classList.add('escondido');
+                bloco.style.display = 'none';
+            }
+        });
+    }
+
+    // 4. FUNÇÕES DO CHAT
     function abrirChat(chavePais) {
         if (!chavePais) chavePais = paisAtivoGlobal;
         paisAtivoGlobal = chavePais;
@@ -1305,21 +1320,29 @@ suriname: {
         const painel = document.getElementById('painel-chat');
         const titulo = document.getElementById('chat-titulo-pais');
         
-        titulo.innerText = `💬 Experiências: ${chavePais.toUpperCase()}`;
+        if (titulo) {
+            titulo.innerText = `💬 Experiências: ${chavePais.toUpperCase()}`;
+        }
         carregarComentarios(chavePais);
         
-        painel.classList.remove('chat-fechado');
-        painel.classList.add('chat-aberto');
+        if (painel) {
+            painel.classList.remove('chat-fechado');
+            painel.classList.add('chat-aberto');
+        }
     }
 
     function fecharChat() {
         const painel = document.getElementById('painel-chat');
-        painel.classList.remove('chat-aberto');
-        painel.classList.add('chat-fechado');
+        if (painel) {
+            painel.classList.remove('chat-aberto');
+            painel.classList.add('chat-fechado');
+        }
     }
 
     function carregarComentarios(chavePais) {
         const container = document.getElementById('lista-mensagens');
+        if (!container) return;
+        
         container.innerHTML = '';
 
         const lista = comentariosProntos[chavePais] || [];
