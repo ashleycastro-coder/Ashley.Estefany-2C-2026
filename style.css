@@ -1000,3 +1000,27 @@ h1, h2, .botao-acao-navegar {
     box-shadow: 0 6px 20px rgba(255, 95, 188, 0.6);
     background: linear-gradient(135deg, #fe7be4, #ff5fcf);
 }
+/* Ajustes para telas de celular */
+@media (max-width: 768px) {
+    
+    /* 1. O topo (Header) empilha o título e o botão em vez de deixar lado a lado */
+    .topo-imagem {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 15px;
+    }
+
+    /* 2. O botão do quiz se adapta ao tamanho da tela */
+    .btn-jogo-quiz {
+        width: 100%;       /* Ocupa a largura disponível no celular */
+        max-width: 280px;  /* Não fica gigante demais */
+        font-size: 14px;
+        padding: 12px 10px;
+    }
+
+    /* 3. Ajusta títulos grandes para não estourarem a tela */
+    .titulo-esboco {
+        font-size: 24px;
+    }
+}
