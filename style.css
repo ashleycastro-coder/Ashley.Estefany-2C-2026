@@ -983,14 +983,14 @@ h1, h2, .botao-acao-navegar {
 /* Estilo do Botão do Jogo */
 .btn-jogo-quiz {
     display: inline-block;
-    background: linear-gradient(135deg, #ff5fba, #fe7bdd); /* Gradiente chamativo */
+    background: linear-gradient(135deg, #ffbf5f, #fef57b); /* Gradiente chamativo */
     color: #ffffff;
     text-decoration: none;
     padding: 20px 40px;
     border-radius: 30px;
     font-size: 15px;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(255, 95, 196, 0.4);
+    box-shadow: 0 4px 15px rgba(255, 220, 95, 0.4);
     transition: all 0.3s ease;
 }
 
