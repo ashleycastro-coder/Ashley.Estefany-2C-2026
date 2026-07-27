@@ -1189,7 +1189,8 @@ suriname: {
             <button type="submit" class="btn-enviar">Publicar Experiência 🚀</button>
         </form>
     </div>
-    // 1. BANCO DE RELATOS GERAIS DA AMÉRICA DO SUL (15 Histórias e Sensações)
+    <script>
+    // 1. BANCO DE RELATOS GERAIS DA AMÉRICA DO SUL (15 Histórias)
     const relatosGerais = [
         {
             nome: "Lucas & Sofia",
@@ -1267,4 +1268,61 @@ suriname: {
             data: "Há 1 mês"
         }
     ];
+
+    // 2. FUNÇÕES PARA ABRIR E FECHAR O MURAL GERAL
+    function abrirMuralGeral() {
+        carregarRelatosGerais();
+        const painel = document.getElementById('painel-mural-geral');
+        if (painel) {
+            painel.classList.remove('chat-fechado');
+            painel.classList.add('chat-aberto');
+        }
+    }
+
+    function fecharMuralGeral() {
+        const painel = document.getElementById('painel-mural-geral');
+        if (painel) {
+            painel.classList.remove('chat-aberto');
+            painel.classList.add('chat-fechado');
+        }
+    }
+
+    // 3. INSERE OS COMENTÁRIOS NA DIV HTML (#lista-mural-geral)
+    function carregarRelatosGerais() {
+        const container = document.getElementById('lista-mural-geral');
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        relatosGerais.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'card-comentario';
+            card.innerHTML = `
+                <strong>${item.nome}</strong>
+                <p>"${item.texto}"</p>
+                <span class="data-comentario">${item.data}</span>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // 4. ADICIONA O NOVO COMENTÁRIO DIGITADO NO FORMULÁRIO HTML
+    function adicionarRelatoGeral(event) {
+        event.preventDefault();
+        const nomeInput = document.getElementById('nome-usuario');
+        const textoInput = document.getElementById('texto-usuario');
+
+        if (!nomeInput || !textoInput || !nomeInput.value.trim() || !textoInput.value.trim()) return;
+
+        relatosGerais.unshift({
+            nome: nomeInput.value,
+            texto: textoInput.value,
+            data: 'Agora mesmo'
+        });
+
+        carregarRelatosGerais();
+        nomeInput.value = '';
+        textoInput.value = '';
+    }
+</script>
 </body>
