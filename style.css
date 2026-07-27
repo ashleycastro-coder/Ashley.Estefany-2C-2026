@@ -977,7 +977,7 @@ h1, h2, .botao-acao-navegar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 70px 800px;
+    padding: 30px 80px;
 }
 
 /* Estilo do Botão do Jogo */
